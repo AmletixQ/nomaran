@@ -1,1 +1,71 @@
 @import "tailwindcss";
+
+@theme {
+  --color-red: #c8082b;
+  --color-white: #fffdf5;
+  --color-black: #19181a;
+  --color-dark-red: #970d1d; /* hover */
+  --color-gray: #a7a7a7; /* disabled */
+}
+
+@font-face {
+  font-family: "Courier New";
+  src: url("/fonts/courier_new/couriercyrps_bold.woff2") format("woff2"),
+    url("/fonts/courier_new/couriercyrps_boldinclined.woff2") format("woff2"),
+    url("/fonts/courier_new/couriercyrps_inclined.woff2") format("woff2"),
+    url("/fonts/courier_new/couriercyrps.woff2") format("woff2");
+
+  font-weight: normal;
+}
+
+@layer base {
+  body {
+    font-family: "Courier New";
+  }
+
+  h1 {
+    font-size: 64px;
+    line-height: 140%;
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: 46px;
+    line-height: 120%;
+    font-weight: bold;
+  }
+
+  h3 {
+    font-size: 40px;
+    line-height: 120%;
+    font-weight: bold;
+  }
+
+  h4 {
+    font-size: 32px;
+    line-height: 120%;
+    font-weight: bold;
+  }
+
+  h5 {
+    font-size: 28px;
+    line-height: 120%;
+    font-weight: bold;
+  }
+
+  h6 {
+    font-size: 26px;
+    line-height: 130%;
+    font-weight: bold;
+  }
+
+  .text {
+    font-size: 18px;
+    line-height: 120%;
+  }
+
+  .text-sm {
+    font-size: 14px;
+    line-height: 120%;
+  }
+}

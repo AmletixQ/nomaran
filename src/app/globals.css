@@ -10,17 +10,43 @@
 
 @font-face {
   font-family: "Courier New";
-  src: url("/fonts/courier_new/couriercyrps_bold.woff2") format("woff2"),
-    url("/fonts/courier_new/couriercyrps_boldinclined.woff2") format("woff2"),
-    url("/fonts/courier_new/couriercyrps_inclined.woff2") format("woff2"),
-    url("/fonts/courier_new/couriercyrps.woff2") format("woff2");
-
+  src: url("/fonts/courier_new/couriercyrps.woff2") format("woff2");
   font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Courier New";
+  src: url("/fonts/courier_new/couriercyrps_inclined.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Courier New";
+  src: url("/fonts/courier_new/couriercyrps_bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Courier New";
+  src: url("/fonts/courier_new/couriercyrps_boldinclined.woff2") format("woff2");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
 }
 
 @layer base {
   body {
-    font-family: "Courier New";
+    font-family: "Courier New", sans-serif;
+
+    /* normal text */
+    font-size: 18px;
+    line-height: 120%;
   }
 
   h1 {
@@ -57,11 +83,6 @@
     font-size: 26px;
     line-height: 130%;
     font-weight: bold;
-  }
-
-  .text {
-    font-size: 18px;
-    line-height: 120%;
   }
 
   .text-sm {

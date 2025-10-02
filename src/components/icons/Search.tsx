@@ -1,6 +1,8 @@
 import React from "react";
 
-export default function Search() {
+export default function Search({ type = "white" }: { type?: "white" | "black" }) {
+  const color = type === "white" ? "#fffdf5" : "#19181a";
+
   return (
     <svg
       className="cursor-pointer"
@@ -13,14 +15,14 @@ export default function Search() {
       <g clipPath="url(#clip0_101_314)">
         <path
           d="M10.286 19.7143C15.4933 19.7143 19.7146 15.493 19.7146 10.2857C19.7146 5.07849 15.4933 0.857178 10.286 0.857178C5.07873 0.857178 0.857422 5.07849 0.857422 10.2857C0.857422 15.493 5.07873 19.7143 10.286 19.7143Z"
-          stroke="#FFFDF5"
+          stroke={color}
           strokeWidth="1.71429"
           strokeLinecap="round"
           strokeLinejoin="round"
         />
         <path
           d="M22.7148 23.1428L16.7148 17.1428"
-          stroke="#FFFDF5"
+          stroke={color}
           strokeWidth="1.71429"
           strokeLinecap="round"
           strokeLinejoin="round"

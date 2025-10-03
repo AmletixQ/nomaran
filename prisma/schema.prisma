@@ -8,15 +8,21 @@ datasource db {
 }
 
 model Victim {
-  id          Int    @id @default(autoincrement())
+  id Int @id @default(autoincrement())
 
-  fullname    String
-  birth_year  Int?
-  birth_place String?
-  national    String?
-  otherData   String?
+  fullname   String
+  birthYear  Int?    @map("birth_year")
+  birthPlace String? @map("birth_place")
+  national   String?
+  otherData  String? @map("other_data")
 
   category Category
+
+  @@index([fullname])
+  @@index([birthPlace])
+  @@index([national])
+  @@index([otherData])
+  @@map("victims")
 }
 
 enum Category {

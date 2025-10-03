@@ -1,0 +1,26 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Victim {
+  id          Int    @id @default(autoincrement())
+
+  fullname    String
+  birth_year  Int?
+  birth_place String?
+  national    String?
+  otherData   String?
+
+  category Category
+}
+
+enum Category {
+  REPRESSED
+  DISPOSSESSED
+  NATATTRIBUTE
+}

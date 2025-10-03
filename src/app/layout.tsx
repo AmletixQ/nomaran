@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="ru">
       <body className="mx-auto mt-10 max-w-[1200px]">
         <Header />
-        <main className="">{children}</main>
+        {children}
       </body>
     </html>
   );

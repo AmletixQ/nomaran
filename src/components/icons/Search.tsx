@@ -1,7 +1,16 @@
+"use client";
+import { usePathname } from "next/navigation";
 import React from "react";
 
-export default function Search({ type = "white" }: { type?: "white" | "black" }) {
-  const color = type === "white" ? "#fffdf5" : "#19181a";
+export default function Search({
+  type = "white",
+}: {
+  type?: "white" | "black";
+}) {
+  const pathname = usePathname();
+
+  const color =
+    pathname !== "/" ? "#19181a" : type === "black" ? "#19181a" : "#fffdf5";
 
   return (
     <svg

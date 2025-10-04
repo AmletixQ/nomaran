@@ -45,6 +45,9 @@
     font-family: "Courier New", sans-serif;
 
     background-image: url("/images/body-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 
     /* normal text */
     font-size: 18px;

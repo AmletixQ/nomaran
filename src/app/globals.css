@@ -49,6 +49,8 @@
     /* normal text */
     font-size: 18px;
     line-height: 120%;
+
+    scroll-behavior: smooth;
   }
 
   h1 {

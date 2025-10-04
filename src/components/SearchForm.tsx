@@ -1,6 +1,7 @@
 import Checkbox from "./Checkbox";
 import Search from "./icons/Search";
 import Input from "./Input";
+import ResetButton from "./ResetButton";
 
 interface ISearchForm {
   query: string;
@@ -9,7 +10,11 @@ interface ISearchForm {
 
 export default function SearchForm({ filters, query }: ISearchForm) {
   return (
-    <form method="get" className="relative flex w-10/12 flex-col gap-3">
+    <form
+      method="get"
+      action="#results"
+      className="relative flex w-10/12 flex-col gap-3"
+    >
       <div className="border-gray flex justify-between rounded-[10px] border-3 bg-white px-4 py-[14px]">
         <Input
           name="query"
@@ -18,9 +23,12 @@ export default function SearchForm({ filters, query }: ISearchForm) {
           placeholder="Введите информацию про репрессированного"
           defaultValue={query}
         />
-        <button type="submit">
-          <Search type="black" />
-        </button>
+        <div className="flex gap-2 items-center">
+          <ResetButton />
+          <button type="submit">
+            <Search type="black" />
+          </button>
+        </div>
       </div>
       <div className="grid grid-cols-2 gap-3">
         <Checkbox

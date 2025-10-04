@@ -3,8 +3,13 @@ import prisma from "./prisma";
 import { Prisma } from "@prisma/client";
 import { NATIONALS } from "@/constants/nationals";
 
-export async function getCachedVictims(query: string, filters: string[]) {
-  const cacheKey = `victims_${query}_${filters.join("_")}`;
+export async function getCachedVictims(
+  query: string,
+  filters: string[],
+  page: number,
+  pageSize: number = 15,
+) {
+  const cacheKey = `victims_${query}_${filters.join("_")}_page_${page}`;
   const where: Prisma.VictimWhereInput = {};
 
   if (query) {
@@ -68,16 +73,22 @@ export async function getCachedVictims(query: string, filters: string[]) {
     }
   }
 
-  return unstable_cache(
-    async () => {
-      return await prisma.victim.findMany({
-        where: {
-          AND: where,
-        },
-        take: 15,
-      });
-    },
-    [cacheKey],
-    { revalidate: 900, tags: ["victims", cacheKey] },
-  )();
+  const [victims, total] = await Promise.all([
+    unstable_cache(
+      async () => {
+        return await prisma.victim.findMany({
+          where: {
+            AND: where,
+          },
+          take: pageSize,
+          skip: (page - 1) * pageSize
+        });
+      },
+      [cacheKey],
+      { revalidate: 900, tags: ["victims", cacheKey] },
+    )(),
+    prisma.victim.count({ where }),
+  ]);
+
+  return { victims, total };
 }

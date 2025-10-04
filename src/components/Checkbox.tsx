@@ -1,26 +1,28 @@
 import { cn } from "@/utils/cn";
-// import Input from "./Input";
 import { InputHTMLAttributes } from "react";
 
-interface ICheckbox extends InputHTMLAttributes<HTMLInputElement> {
-  title: string;
-}
+type ICheckbox = InputHTMLAttributes<HTMLInputElement>;
 
 export default function Checkbox({
   id,
   className,
-  title,
+  children,
   ...props
 }: ICheckbox) {
   return (
-    <div className="flex w-full items-center gap-2 rounded-[8px] bg-white/80 px-5 py-3 text-black select-none">
+    <div
+      className={cn(
+        "flex w-full items-center gap-2 rounded-[8px] bg-white/80 px-5 py-4 text-black select-none",
+        className,
+      )}
+    >
       <input
         id={id}
         {...props}
         type="checkbox"
-        className={cn("h-5 w-5 border", className)}
+        className={cn("min-h-5 min-w-5 border")}
       />
-      <label htmlFor={id}>{title}</label>
+      <label htmlFor={id}>{children}</label>
     </div>
   );
 }

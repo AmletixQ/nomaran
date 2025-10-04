@@ -2,7 +2,7 @@ import { Victim } from "@prisma/client";
 import VictimRow from "./VictimRow";
 
 interface IVictimsProps {
-  victims: Victim[];
+  victims?: Victim[];
 }
 
 export default function VictimList({ victims }: IVictimsProps) {

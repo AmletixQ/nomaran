@@ -30,7 +30,7 @@ export default async function Home({
 
   return (
     <main className="min-h-screen pb-25">
-      <div className="absolute top-0 left-0 -z-20 h-full w-full bg-[url(/images/hero-bg.jpg)]" />
+      <div className="absolute top-0 left-0 -z-20 h-full w-full bg-[url(/images/hero-bg.jpg)] bg-cover bg-no-repeat bg-center bg-fixed" />
 
       <section className="flex min-h-screen flex-col items-center justify-center gap-10 text-white">
         <div className="flex flex-col items-center text-center">

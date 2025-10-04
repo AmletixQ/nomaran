@@ -1,3 +1,4 @@
+import Pagination from "@/components/Pagination";
 import SearchForm from "@/components/SearchForm";
 import VictimList from "@/components/VictimList";
 import { getCachedVictims } from "@/utils/getCachedVictims";
@@ -18,7 +19,14 @@ export default async function Home({
       ? [params.filter]
       : [];
 
-  const res = await getCachedVictims(query, filters);
+  const page = Math.max(1, Number(params.page) || 1);
+  const pageSize = 15;
+
+  const res = await getCachedVictims(query, filters, page, pageSize);
+  const victims = res?.victims ?? [];
+  const total = res?.total ?? 1;
+
+  const totalPages = Math.ceil(total / pageSize);
 
   return (
     <main className="min-h-screen pb-25">
@@ -36,8 +44,14 @@ export default async function Home({
         <SearchForm query={query} filters={filters} />
       </section>
 
-      <section>
-        <VictimList victims={res} />
+      <section id="results">
+        <VictimList victims={victims} />
+        <Pagination
+          query={query}
+          filters={filters}
+          page={page}
+          totalPages={totalPages}
+        />
       </section>
     </main>
   );

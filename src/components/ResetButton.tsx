@@ -6,8 +6,6 @@ export default function ResetButton() {
   const router = useRouter();
   const params = useSearchParams();
 
-  console.log();
-
   return (
     params.toString() !== "" && (
       <button

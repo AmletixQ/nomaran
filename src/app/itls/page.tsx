@@ -4,13 +4,13 @@ import React from "react";
 
 export default function page() {
   return (
-    <main className="flex flex-col gap-15 pt-25">
+    <main className="flex flex-col gap-15 py-25">
       <h2>Список аббревиатур</h2>
       <ul className="flex flex-col gap-6">
         {ITLS.map((itl, i) => (
           <div
             key={i}
-            className="flex items-center gap-2.5 list-none border-b border-black/20 pb-1.5 text-[22px]"
+            className="flex list-none items-center gap-2.5 border-b border-black/20 pb-1.5 text-[22px]"
           >
             <Image
               src="/images/star.png"

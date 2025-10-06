@@ -1,5 +1,5 @@
 export const links = [
-  { title: "Об организации", href: "/about-organization" },
+  { title: "Об организации", href: "/about" },
   { title: "Деятельность", href: "/activity" },
   { title: "Жертвы репрессий", href: "/victims" },
   { title: "Список ИТЛ", href: "/itls" },

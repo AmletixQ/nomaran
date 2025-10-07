@@ -12,7 +12,12 @@ export default function Anchor({
   const pathname = usePathname();
 
   return (
-    <Link className={pathname === href ? "text-red font-bold border-b border-red" : ""} href={href}>
+    <Link
+      className={
+        pathname === href ? "text-red border-red h-fit border-b font-bold" : ""
+      }
+      href={href}
+    >
       {title}
     </Link>
   );

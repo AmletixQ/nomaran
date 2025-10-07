@@ -14,35 +14,37 @@ export default async function VictimProfile({
   });
 
   return (
-    <main className="flex flex-col gap-8 pt-25">
-      <Backlink />
-      <h3>{victim?.fullname}</h3>
+    <main className="mx-25 pt-25">
+      <div className="flex flex-col gap-8">
+        <Backlink />
+        <h3>{victim?.fullname}</h3>
 
-      <div className="flex flex-col gap-3">
-        {victim?.birthYear && (
+        <div className="flex flex-col gap-3">
+          {victim?.birthYear && (
+            <div className="flex items-center gap-2.5">
+              <h6 className="text-[18px]">Дата рождения:</h6>
+              <p>{victim.birthYear}</p>
+            </div>
+          )}
+          {victim?.birthPlace && (
+            <div className="flex items-center gap-2.5">
+              <h6 className="text-[18px]">Дата рождения:</h6>
+              <p>{victim.birthPlace}</p>
+            </div>
+          )}
           <div className="flex items-center gap-2.5">
-            <h6 className="text-[18px]">Дата рождения:</h6>
-            <p>{victim.birthYear}</p>
+            <h6 className="text-[18px]">Категория:</h6>
+            <p>{victim?.category}</p>
           </div>
-        )}
-        {victim?.birthPlace && (
-          <div className="flex items-center gap-2.5">
-            <h6 className="text-[18px]">Дата рождения:</h6>
-            <p>{victim.birthPlace}</p>
-          </div>
-        )}
-        <div className="flex items-center gap-2.5">
-          <h6 className="text-[18px]">Категория:</h6>
-          <p>{victim?.category}</p>
         </div>
+
+        {victim?.otherData && (
+          <div>
+            <h5>Дополнительная информация</h5>
+            <p>{victim.otherData}</p>
+          </div>
+        )}
       </div>
-
-      {victim?.otherData && (
-        <div>
-          <h5>Дополнительная информация</h5>
-          <p>{victim.otherData}</p>
-        </div>
-      )}
     </main>
   );
 }

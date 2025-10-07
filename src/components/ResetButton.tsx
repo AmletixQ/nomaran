@@ -9,7 +9,7 @@ export default function ResetButton() {
   return (
     params.toString() !== "" && (
       <button
-        onClick={() => router.push("/")}
+        onClick={() => router.push("/search")}
         type="button"
         className="cursor-pointer"
       >

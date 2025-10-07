@@ -2,7 +2,7 @@ import { ABBREVIATIONS } from "@/constants/abbreviations";
 
 export default function page() {
   return (
-    <main className="flex flex-col gap-15 py-25">
+    <main className="mx-25 flex flex-col gap-15 py-25">
       <h2>Список аббревиатур</h2>
       <ul className="flex flex-col gap-6">
         {ABBREVIATIONS.map((abbr, i) => (

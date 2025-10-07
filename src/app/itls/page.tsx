@@ -4,7 +4,7 @@ import React from "react";
 
 export default function page() {
   return (
-    <main className="flex flex-col gap-15 py-25">
+    <main className="mx-25 flex flex-col gap-15 py-25">
       <h2>Список аббревиатур</h2>
       <ul className="flex flex-col gap-6">
         {ITLS.map((itl, i) => (

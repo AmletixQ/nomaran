@@ -1,8 +1,9 @@
 import React from "react";
 
-export default function Cross() {
+export default function Cross({ className }: { className?: string }) {
   return (
     <svg
+      className={className}
       width="30"
       height="30"
       viewBox="0 0 24 24"

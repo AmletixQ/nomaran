@@ -13,24 +13,24 @@ export default function SearchForm({ filters, query }: ISearchForm) {
     <form
       method="get"
       action="#results"
-      className="relative flex w-10/12 flex-col gap-3"
+      className="relative flex flex-col gap-3 2xl:w-10/12"
     >
-      <div className="border-gray flex justify-between rounded-[10px] border-3 bg-white px-4 py-[14px]">
+      <div className="border-gray flex w-full justify-between rounded-[10px] border-3 bg-white px-2.5 py-2 md:px-4 md:py-[14px]">
         <Input
           name="query"
-          className="placeholder:text-gray outline-gray w-10/12 rounded-sm p-1 text-black outline-0 focus:outline-2"
+          className="placeholder:text-gray w-full outline-gray rounded-sm p-1 text-black outline-0 placeholder:text-[10px] focus:outline-2 2xl:w-10/12"
           type="text"
           placeholder="Введите информацию про репрессированного"
           defaultValue={query}
         />
-        <div className="flex gap-2 items-center">
+        <div className="flex items-center gap-2">
           <ResetButton />
           <button type="submit">
             <Search type="black" />
           </button>
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-3">
+      <div className="flex grid-cols-2 flex-col gap-3 md:grid">
         <Checkbox
           id="list-of-itl"
           value="list-of-itl"

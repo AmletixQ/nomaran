@@ -49,51 +49,90 @@
     background-size: cover;
     background-position: center;
 
-    /* normal text */
-    font-size: 18px;
+    font-size: 12px;
     line-height: 120%;
 
     scroll-behavior: smooth;
   }
 
+  @media (width >= 56rem) {
+    h1 {
+      font-size: 64px;
+      line-height: 140%;
+      font-weight: bold;
+    }
+
+    h2 {
+      font-size: 46px;
+      line-height: 120%;
+      font-weight: bold;
+    }
+
+    h3 {
+      font-size: 40px;
+      line-height: 120%;
+      font-weight: bold;
+    }
+
+    h4 {
+      font-size: 32px;
+      line-height: 120%;
+      font-weight: bold;
+    }
+
+    h5 {
+      font-size: 28px;
+      line-height: 120%;
+      font-weight: bold;
+    }
+
+    h6 {
+      font-size: 26px;
+      line-height: 130%;
+      font-weight: bold;
+    }
+
+    .text-sm {
+      font-size: 14px;
+      line-height: 120%;
+    }
+  }
+
+  @media (width >= 48rem) {
+  }
+
   h1 {
-    font-size: 64px;
-    line-height: 140%;
+    font-size: 40px;
+    line-height: 90%;
+    /* letter-spacing: 0.03%; */
     font-weight: bold;
   }
 
   h2 {
-    font-size: 46px;
+    font-size: 22px;
     line-height: 120%;
     font-weight: bold;
   }
 
   h3 {
-    font-size: 40px;
-    line-height: 120%;
-    font-weight: bold;
-  }
-
-  h4 {
-    font-size: 32px;
+    font-size: 22px;
     line-height: 120%;
     font-weight: bold;
   }
 
   h5 {
-    font-size: 28px;
+    font-size: 18px;
     line-height: 120%;
     font-weight: bold;
   }
 
   h6 {
-    font-size: 26px;
-    line-height: 130%;
+    line-height: 120%;
     font-weight: bold;
   }
 
-  .text-sm {
-    font-size: 14px;
+  p {
+    font-size: 12px;
     line-height: 120%;
   }
 }

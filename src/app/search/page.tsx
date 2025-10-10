@@ -1,4 +1,5 @@
 import Pagination from "@/components/Pagination";
+import ScreenContainer from "@/components/ScreenContainer";
 import SearchForm from "@/components/SearchForm";
 import VictimList from "@/components/VictimList";
 import { getCachedVictims } from "@/utils/getCachedVictims";
@@ -29,13 +30,13 @@ export default async function SearchPage({
   const totalPages = Math.ceil(total / pageSize);
   return (
     <main className="pb-25">
-      <section className="flex min-h-[80vh] justify-center">
-        <div className="absolute top-0 left-0 -z-20 h-full w-full bg-[url(/images/hero-bg.jpg)] bg-cover bg-fixed bg-center bg-no-repeat" />
+      <ScreenContainer className="flex items-center justify-center">
+        <div className="absolute top-0 left-0 -z-20 h-full w-full bg-[url(/images/hero-bg.jpg)] bg-cover bg-center bg-no-repeat md:bg-fixed" />
 
-        <section className="flex max-w-[80%] flex-col items-center gap-10 text-white">
+        <section className="flex flex-col items-center gap-10 text-white md:max-w-[80%]">
           <div className="flex flex-col items-center text-center">
-            <h1>Поиск жертв репрессий</h1>
-            <p className="w-5/7">
+            <h1 className="pb-2 text-[24px]">Поиск жертв репрессий</h1>
+            <p className="leading-[140%] md:w-5/7">
               Этот сайт предназначен для поиска информации о людях, пострадавших
               от политических репрессий в Северо-Осетинской АССР.
             </p>
@@ -43,9 +44,9 @@ export default async function SearchPage({
 
           <SearchForm query={query} filters={filters} />
         </section>
-      </section>
+      </ScreenContainer>
 
-      <section id="results" className="mx-25">
+      <section id="results" className="mt-12.5 md:mt-20 2xl:mx-25 2xl:mt-20">
         <VictimList victims={victims} />
         <Pagination
           query={query}

@@ -2,10 +2,12 @@ import Image from "next/image";
 
 export default function VictimsPage() {
   return (
-    <main className="mx-25 py-25">
-      <h2 className="text-center uppercase">Три массовые категории...</h2>
-      <div className="grid grid-cols-5 gap-5 pt-15 leading-[160%]">
-        <div className="col-start-1 col-end-4 flex flex-col gap-5">
+    <main className="py-25 pb-12.5 md:pt-40 2xl:mx-25 2xl:py-70">
+      <h2 className="text-center text-[20px] uppercase">
+        Три массовые категории...
+      </h2>
+      <div className="flex flex-col gap-7.5 pt-7.5 leading-[160%] md:grid md:grid-cols-5 md:gap-5 2xl:pt-15">
+        <div className="flex flex-col gap-3 md:col-start-1 md:col-end-4 md:gap-2.5 2xl:gap-5">
           <p className="font-bold">
             I. Первая массовая категория - люди, арестованные по политическим
             обвинениям органами государственной безопасности
@@ -41,18 +43,17 @@ export default function VictimsPage() {
             миллиона человек.
           </p>
         </div>
-        <div className="relative col-start-4 col-end-6 flex flex-col gap-6">
+        <div className="relative order-first flex flex-col items-center gap-6 md:order-none md:col-start-4 md:col-end-6">
           <Image
             src="/images/victims-ill.png"
             width={500}
             height={500}
-            // className="h-min"
             alt="victims"
           />
 
-          <div className="border-gray flex flex-col rounded-[10px] border bg-white px-5.5 py-12.5 text-center">
+          <div className="border-gray order-first flex flex-col rounded-[10px] border bg-white px-2.5 py-7.5 text-center md:order-none 2xl:px-5.5 2xl:py-12.5">
             <h1>13 222</h1>
-            <p className="font-bold">
+            <p className="text-[11px] font-bold">
               Столько насчитывается людей, подвергшихся репрессиям в
               Северо-Осетинской АССР.
             </p>

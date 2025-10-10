@@ -4,9 +4,9 @@ import React from "react";
 
 export default function page() {
   return (
-    <main className="mx-25 flex flex-col gap-15 py-25">
+    <main className="flex flex-col gap-7.5 py-25 md:pt-40 pb-12.5 2xl:mx-25 2xl:gap-15 2xl:py-80">
       <h2>Список аббревиатур</h2>
-      <ul className="flex flex-col gap-6">
+      <ul className="flex flex-col gap-5">
         {ITLS.map((itl, i) => (
           <div
             key={i}
@@ -15,8 +15,8 @@ export default function page() {
             <Image
               src="/images/star.png"
               alt="star itl"
-              width="32"
-              height="28"
+              width="20"
+              height="18"
             />
             <p>{itl}</p>
           </div>

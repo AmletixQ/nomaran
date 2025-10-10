@@ -1,11 +1,11 @@
 "use client";
-import { links } from "@/constants/links";
-import Anchor from "./Anchor";
 import Logo from "./icons/Logo";
-import Search from "./icons/Search";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/utils/cn";
+import SearchAnchorButton from "./SearchAnchorButton";
+import Links from "./Links";
+import BurgerMenu from "./BurgerMenu";
 
 export default function Header() {
   const pathname = usePathname();
@@ -13,8 +13,9 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "flex",
-        "justify-between",
+        "absolute w-[95%]",
+        "flex justify-between",
+        "mt-3 2xl:mt-10",
         ["/", "/search"].includes(pathname) ? "text-white" : "text-black",
       )}
     >
@@ -22,27 +23,13 @@ export default function Header() {
         <Logo />
       </Link>
 
-      <div className="flex h-fit items-center justify-start gap-7">
-        <div className="flex gap-7.5">
-          {links.map((link, i) => (
-            <Anchor {...link} key={i} />
-          ))}
-        </div>
-
-        <Link
-          href="/search"
-          className={cn(
-            "flex h-fit cursor-pointer items-center gap-2.5",
-            "rounded-[10px] px-5.5 py-4 font-bold",
-            ["/", "/search"].includes(pathname)
-              ? "bg-white/60"
-              : "bg-red text-white",
-          )}
-        >
-          Поиск репрессированных
-          <Search />
-        </Link>
+      <div className="hidden h-fit gap-7.5 pt-4 2xl:flex">
+        <Links />
       </div>
+
+      <SearchAnchorButton pathname={pathname} className="hidden 2xl:block" />
+
+      <BurgerMenu />
     </header>
   );
 }

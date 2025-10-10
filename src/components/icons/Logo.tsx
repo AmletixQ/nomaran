@@ -1,5 +1,29 @@
 import Image from "next/image";
 
 export default function Logo() {
-  return <Image src="/images/logo.svg" width="218" height="208" alt="logo" />;
+  return (
+    <>
+      <Image
+        src="/images/logo-mobile.svg"
+        width="67"
+        height="56"
+        alt="logo"
+        className="block md:hidden"
+      />
+      <Image
+        src="/images/logo-tablet.svg"
+        width="121"
+        height="112"
+        alt="logo"
+        className="hidden md:block 2xl:hidden"
+      />
+      <Image
+        src="/images/logo-desktop.svg"
+        width="218"
+        height="208"
+        alt="logo"
+        className="hidden 2xl:block"
+      />
+    </>
+  );
 }

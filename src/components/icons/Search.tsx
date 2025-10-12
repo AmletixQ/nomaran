@@ -9,7 +9,7 @@ export default function Search({
 
   return (
     <svg
-      className="cursor-pointer"
+      className="cursor-pointer lg:h-6 lg:w-6"
       width="20"
       height="20"
       viewBox="0 0 24 24"

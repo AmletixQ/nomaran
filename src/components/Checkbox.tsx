@@ -13,7 +13,7 @@ export default function Checkbox({
     <div
       className={cn(
         "flex w-full items-center gap-2 rounded-[8px] bg-white/80 px-2.5 py-2 text-black select-none",
-        "md:px-2.5 md:py-1.5",
+        "md:px-3 md:py-2 lg:px-5 lg:py-3",
         "",
         className,
       )}
@@ -24,7 +24,7 @@ export default function Checkbox({
         type="checkbox"
         className={cn("min-h-3 min-w-3 border xl:min-h-5 xl:min-w-5")}
       />
-      <label htmlFor={id} className="text-[9px]">
+      <label htmlFor={id} className="text-[11px] md:text-[14px] lg:text-[18px]">
         {children}
       </label>
     </div>

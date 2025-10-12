@@ -10,7 +10,7 @@ export default function MenuToggle(
   const color = ["/", "/search"].includes(pathname) ? "white" : "black";
 
   return (
-    <button {...props} className="h-fit">
+    <button {...props} className="h-fit xl:hidden">
       <svg
         width="32"
         height="32"

@@ -35,8 +35,8 @@ export default async function SearchPage({
 
         <section className="flex flex-col items-center gap-10 text-white md:max-w-[80%]">
           <div className="flex flex-col items-center text-center">
-            <h1 className="pb-2 text-[24px]">Поиск жертв репрессий</h1>
-            <p className="leading-[140%] md:w-5/7">
+            <h1 className="pb-2">Поиск жертв репрессий</h1>
+            <p className="leading-[140%] xl:w-5/7">
               Этот сайт предназначен для поиска информации о людях, пострадавших
               от политических репрессий в Северо-Осетинской АССР.
             </p>
@@ -46,7 +46,7 @@ export default async function SearchPage({
         </section>
       </ScreenContainer>
 
-      <section id="results" className="mt-12.5 md:mt-20 2xl:mx-25 2xl:mt-20">
+      <section id="results" className=" md:mt-20 2xl:mx-25 2xl:mt-20">
         <VictimList victims={victims} />
         <Pagination
           query={query}

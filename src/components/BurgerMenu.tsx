@@ -21,7 +21,10 @@ export default function BurgerMenu() {
           open ? "left-0" : "",
         )}
       >
-        <Links className="text-[20px] text-black" />
+        <Links
+          handleClick={() => setOpen(false)}
+          className="text-[20px] text-black"
+        />
         <SearchAnchorButton />
 
         <button

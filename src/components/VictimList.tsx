@@ -10,8 +10,8 @@ export default function VictimList({ victims }: IVictimsProps) {
     <div className="flex flex-col gap-7.5 md:gap-10">
       <h6 className="text-[22px] font-bold">ФИО</h6>
       <ol className="flex list-inside list-decimal flex-col gap-5 text-[22px]">
-        {victims.map((v) => (
-          <VictimRow key={v.id} {...v} />
+        {victims.map((v, i) => (
+          <VictimRow number={i + 1} key={v.id} {...v} />
         ))}
       </ol>
     </div>

@@ -55,7 +55,107 @@
     scroll-behavior: smooth;
   }
 
+  h1 {
+    font-size: 24px;
+    line-height: 90%;
+    /* letter-spacing: 0.03%; */
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: 21px;
+    line-height: 120%;
+    font-weight: bold;
+  }
+
+  h3 {
+    font-size: 22px;
+    line-height: 120%;
+    font-weight: bold;
+  }
+
+  h5 {
+    font-size: 18px;
+    line-height: 120%;
+    font-weight: bold;
+  }
+
+  h6 {
+    font-size: 12px;
+    line-height: 120%;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 12px;
+    line-height: 120%;
+  }
+
+  @media (width >= 48rem) {
+    h1 {
+      font-size: 36px;
+    }
+
+    h2 {
+      font-size: 32px;
+      line-height: 120%;
+      font-weight: bold;
+    }
+  }
+
   @media (width >= 56rem) {
+    p {
+      font-size: 16px;
+    }
+
+    h1 {
+      font-size: 48px;
+      line-height: 140%;
+      font-weight: bold;
+    }
+
+    h2 {
+      font-size: 40px;
+      line-height: 120%;
+      font-weight: bold;
+    }
+
+    h3 {
+      font-size: 36px;
+      line-height: 120%;
+      font-weight: bold;
+    }
+
+    h4 {
+      font-size: 30px;
+      line-height: 120%;
+      font-weight: bold;
+    }
+
+    h5 {
+      font-size: 26px;
+      line-height: 120%;
+      font-weight: bold;
+    }
+
+    h6 {
+      font-size: 20px;
+      line-height: 130%;
+      font-weight: bold;
+    }
+
+    .text-sm {
+      font-size: 14px;
+      line-height: 120%;
+    }
+  }
+
+  @media (width >= 64rem) {
+    body,
+    p {
+      font-size: 16px;
+    }
+
     h1 {
       font-size: 64px;
       line-height: 140%;
@@ -87,7 +187,7 @@
     }
 
     h6 {
-      font-size: 26px;
+      font-size: 22px;
       line-height: 130%;
       font-weight: bold;
     }
@@ -96,43 +196,5 @@
       font-size: 14px;
       line-height: 120%;
     }
-  }
-
-  @media (width >= 48rem) {
-  }
-
-  h1 {
-    font-size: 40px;
-    line-height: 90%;
-    /* letter-spacing: 0.03%; */
-    font-weight: bold;
-  }
-
-  h2 {
-    font-size: 22px;
-    line-height: 120%;
-    font-weight: bold;
-  }
-
-  h3 {
-    font-size: 22px;
-    line-height: 120%;
-    font-weight: bold;
-  }
-
-  h5 {
-    font-size: 18px;
-    line-height: 120%;
-    font-weight: bold;
-  }
-
-  h6 {
-    line-height: 120%;
-    font-weight: bold;
-  }
-
-  p {
-    font-size: 12px;
-    line-height: 120%;
   }
 }

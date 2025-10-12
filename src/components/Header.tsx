@@ -4,8 +4,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/utils/cn";
 import SearchAnchorButton from "./SearchAnchorButton";
-import Links from "./Links";
 import BurgerMenu from "./BurgerMenu";
+import { links } from "@/constants/links";
+import Anchor from "./Anchor";
 
 export default function Header() {
   const pathname = usePathname();
@@ -15,7 +16,7 @@ export default function Header() {
       className={cn(
         "absolute w-[95%]",
         "flex justify-between",
-        "mt-3 2xl:mt-10",
+        "mt-3 lg:mt-5 2xl:mt-10",
         ["/", "/search"].includes(pathname) ? "text-white" : "text-black",
       )}
     >
@@ -23,11 +24,16 @@ export default function Header() {
         <Logo />
       </Link>
 
-      <div className="hidden h-fit gap-7.5 pt-4 2xl:flex">
-        <Links />
-      </div>
+      <nav className="hidden h-fit gap-7.5 pt-4 xl:flex">
+        {links.map((link, i) => (
+          <Anchor {...link} key={i} />
+        ))}
+      </nav>
 
-      <SearchAnchorButton pathname={pathname} className="hidden 2xl:block" />
+      <SearchAnchorButton
+        pathname={pathname}
+        className="hidden xl:flex lg:text-[17px]"
+      />
 
       <BurgerMenu />
     </header>

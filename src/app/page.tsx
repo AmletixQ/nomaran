@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default async function Home() {
   return (
-    <main className="pb-25">
+    <main className="pb-25 lg:px-12">
       <section className="flex flex-col gap-10">
         <div className="absolute top-0 left-0 -z-20 h-full w-full bg-[url(/images/search-bg.jpg)] bg-cover bg-fixed bg-center bg-no-repeat" />
 
@@ -24,7 +24,7 @@ export default async function Home() {
             <Image
               width="106"
               height="156"
-              className="h-fit sm:h-[234px] sm:w-[159px] md:h-[364px] md:w-[256px] 2xl:h-[676px] 2xl:w-[474px]"
+              className="h-fit sm:h-[234px] sm:w-[159px] md:h-[364px] md:w-[256px] lg:h-[437px] lg:w-[307px] 2xl:h-[676px] 2xl:w-[474px]"
               alt="president-image"
               src="/images/president-image.png"
             />
@@ -39,7 +39,7 @@ export default async function Home() {
                 key={b}
                 width="110"
                 height="150"
-                className="sm:w-[167px] sm:h-[229px] md:w-[224px] md:h-[308px]"
+                className="sm:h-[229px] sm:w-[167px] md:h-[308px] md:w-[224px]"
                 src={b}
                 alt={`book-${i}`}
               />

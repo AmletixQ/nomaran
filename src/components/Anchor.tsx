@@ -7,13 +7,20 @@ interface IAnchorProps {
   title: string;
   href: string;
   className?: string;
+  handleClick?: () => void;
 }
 
-export default function Anchor({ title, href, className }: IAnchorProps) {
+export default function Anchor({
+  title,
+  href,
+  className,
+  handleClick,
+}: IAnchorProps) {
   const pathname = usePathname();
 
   return (
     <Link
+      onClick={handleClick}
       className={cn(
         "h-fit w-fit",
         pathname === href ? "text-red border-red border-b font-bold" : "",

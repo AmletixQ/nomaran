@@ -15,7 +15,14 @@ export default function Logo() {
         width="121"
         height="112"
         alt="logo"
-        className="hidden md:block 2xl:hidden"
+        className="hidden md:block xl:hidden"
+      />
+      <Image
+        src="/images/logo-desktop.svg"
+        width="145"
+        height="135"
+        alt="logo"
+        className="hidden xl:block 2xl:hidden"
       />
       <Image
         src="/images/logo-desktop.svg"

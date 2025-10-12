@@ -24,7 +24,7 @@ export default async function VictimProfile({
           <div className="flex flex-col gap-3">
             {victim?.birthYear && (
               <div className="flex items-center gap-2.5">
-                <h6 className="md:text-[18px]">Дата рождения:</h6>
+                <h6 className="md:text-[18px]">Год рождения:</h6>
                 <p>{victim.birthYear}</p>
               </div>
             )}
@@ -36,13 +36,21 @@ export default async function VictimProfile({
             )}
             <div className="flex items-center gap-2.5">
               <h6 className="md:text-[18px]">Категория:</h6>
-              <p>{victim?.category === 'DISPOSSESSED' ? "Раскулаченный" : victim?.category === 'REPRESSED' ? 'Репрессированный' : 'Нац. признак'}</p>
+              <p>
+                {victim?.category === "DISPOSSESSED"
+                  ? "Раскулаченный"
+                  : victim?.category === "REPRESSED"
+                    ? "Репрессированный"
+                    : "Нац. признак"}
+              </p>
             </div>
           </div>
 
           {victim?.otherData && (
             <div className="flex flex-col gap-2.5">
-              <h5 className="text-[22px] md:text-[18px]">Дополнительная информация</h5>
+              <h5 className="text-[22px] md:text-[18px]">
+                Дополнительная информация
+              </h5>
               <p className="leading-[160%]">{victim.otherData}</p>
             </div>
           )}

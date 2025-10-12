@@ -16,9 +16,9 @@ export default function SearchAnchorButton({
       href="/search"
       className={cn(
         "flex h-fit cursor-pointer items-center gap-2.5 text-[14px]",
-        "rounded-[10px] px-5.5 py-4 font-bold md:text-[20px]",
+        "rounded-[10px] px-3 py-3 font-bold md:text-[20px]",
         ["/", "/search"].includes(pathname!)
-          ? "bg-white/60"
+        ? "bg-white/60"
           : "bg-red text-white",
         className,
       )}

@@ -1,7 +1,7 @@
 import { unstable_cache } from "next/cache";
 import prisma from "./prisma";
-import { Prisma } from "@prisma/client";
-import { NATIONALS } from "@/constants/nationals";
+import { Prisma, Victim } from "@prisma/client";
+import { mapRawVictim } from "./mapRawVictim";
 
 export async function getCachedVictims(
   query: string,
@@ -10,85 +10,76 @@ export async function getCachedVictims(
   pageSize: number = 15,
 ) {
   const cacheKey = `victims_${query}_${filters.join("_")}_page_${page}`;
-  const where: Prisma.VictimWhereInput = {};
+  const whereConditions: Prisma.Sql[] = [];
 
   if (query) {
-    const queryParts = query.split(/[\s,]+/).filter((q) => q.trim() !== "");
-
-    where.OR = [];
+    const queryParts = query.split(/[\s,]/).filter((q) => q.trim() !== "");
     queryParts.forEach((part) => {
       const trimmedPart = part.trim();
       const isNumber = !isNaN(Number(trimmedPart)) && trimmedPart !== "";
 
-      if (NATIONALS.includes(trimmedPart.toLowerCase()))
-        where.OR?.push({
-          national: { contains: trimmedPart, mode: "insensitive" },
-        });
-
       if (isNumber) {
         const year = Number(trimmedPart);
-        where.OR?.push({ birthYear: year });
+        whereConditions.push(Prisma.sql`"birth_year" = ${year}`);
       } else {
-        where.OR?.push(
-          { fullname: { contains: trimmedPart, mode: "insensitive" } },
-          { birthPlace: { contains: trimmedPart, mode: "insensitive" } },
-          { otherData: { contains: trimmedPart, mode: "insensitive" } },
-        );
+        const trimmedPartReplaced = trimmedPart.replace(/'/g, "''");
+
+        whereConditions.push(Prisma.sql`
+          EXISTS (SELECT 1 from unnest(string_to_array(fullname, ' ')) as word WHERE levenshtein(lower(word), ${trimmedPartReplaced}) <= 2) OR
+          EXISTS (SELECT 1 FROM unnest(string_to_array(lower("birth_place"), ' ')) AS word WHERE levenshtein(word, ${trimmedPart}) <= 2) OR
+          levenshtein(lower(national), ${trimmedPartReplaced}) <= 2
+        `);
       }
     });
-
-    where.OR = where.OR.filter(
-      (condition: Record<string, unknown>) =>
-        condition[Object.keys(condition)[0]] !== null &&
-        condition[Object.keys(condition)[0]] !== undefined,
-    );
-
-    if (where.OR.length === 0) {
-      delete where.OR;
-    }
   }
 
   if (filters.length > 0 && !filters.includes("all")) {
-    where.category = { in: [] };
+    const categoryConditions: Prisma.Sql[] = [];
 
-    if (!where.category.in || !Array.isArray(where.category.in)) {
-      return;
-    }
+    if (filters.includes("list-of-itl"))
+      categoryConditions.push(Prisma.sql`category = 'REPRESSED'`);
 
-    if (filters.includes("list-of-itl")) {
-      where.category.in.push("REPRESSED");
-    }
-    if (filters.includes("list-of-shooted")) {
-      where.category.in.push("REPRESSED");
-      where.otherData = {
-        contains: "расстрел",
-        mode: "insensitive",
-      };
-    }
-    if (filters.includes("repressed-nat-attribute")) {
-      where.category.in.push("NATATTRIBUTE");
-    }
-    if (filters.includes("list-of-dispossessed")) {
-      where.category.in.push("DISPOSSESSED");
-    }
+    if (filters.includes("list-of-shooted"))
+      categoryConditions.push(
+        Prisma.sql`(category = 'REPRESSED' AND lower("otherData") LIKE %расстрел%)`,
+      );
+
+    if (filters.includes("repressed-nat-attribute"))
+      categoryConditions.push(Prisma.sql`category = 'NATATTRIBUTE'`);
+
+    if (filters.includes("list-of-dispossessed"))
+      categoryConditions.push(Prisma.sql`category = 'DISPOSSESSED'`);
+
+    if (categoryConditions.length > 0)
+      whereConditions.push(
+        Prisma.sql`(${Prisma.join(categoryConditions, " OR ")})`,
+      );
   }
 
-  const [victims, total] = await Promise.all([
-    unstable_cache(
-      async () => {
-        return await prisma.victim.findMany({
-          where: {
-            AND: where,
-          },
-          take: pageSize,
-          skip: (page - 1) * pageSize
-        });
-      },
-      [cacheKey],
-      { revalidate: 900, tags: ["victims", cacheKey] },
-    )(),
-    prisma.victim.count({ where }),
-  ]);
+  const whereClause =
+    whereConditions.length > 0
+      ? Prisma.sql`WHERE ${Prisma.join(whereConditions, " AND ")}`
+      : Prisma.empty;
+
+  const rawVictims = await unstable_cache(
+    async () => {
+      return prisma.$queryRaw<Victim[]>`
+        SELECT * from victims
+        ${whereClause}
+        LIMIT ${pageSize} OFFSET ${(page - 1) * pageSize}
+      `;
+    },
+    [cacheKey],
+    { revalidate: 900, tags: ["victims", cacheKey] },
+  )();
+
+  const victims = rawVictims.map(mapRawVictim)
+
+  const totalResult = await prisma.$queryRaw<{ count: bigint }[]>`
+    SELECT COUNT(*) as count FROM victims ${whereClause};
+  `;
+
+  const total = Number(totalResult[0].count || 0);
 
   return { victims, total };
 }

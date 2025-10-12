@@ -1,8 +1,6 @@
 import InfiniteVictimList from "@/components/victims/InfiniteVictimList";
-// import Pagination from "@/components/Pagination";
 import ScreenContainer from "@/components/ScreenContainer";
 import SearchForm from "@/components/SearchForm";
-// import VictimList from "@/components/VictimList";
 import { getCachedVictims } from "@/utils/getCachedVictims";
 
 export const dynamic = "force-dynamic";
@@ -28,7 +26,7 @@ export default async function SearchPage({
   const victims = res?.victims ?? [];
   const total = res?.total ?? 1;
 
-  // const totalPages = Math.ceil(total / pageSize);
+  console.log(res?.victims);
 
   return (
     <main className="pb-25" id="top">
@@ -57,13 +55,6 @@ export default async function SearchPage({
           pageSize={pageSize}
           total={total}
         />
-        {/* <VictimList victims={victims} />
-        <Pagination
-          query={query}
-          filters={filters}
-          page={page}
-          totalPages={totalPages}
-        /> */}
       </section>
     </main>
   );

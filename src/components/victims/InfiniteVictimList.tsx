@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import VictimList from "./VictimList";
 import Up from "../icons/Up";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 
 interface IInfiniteVictimList {
   initialVictims: Victim[];
@@ -27,6 +28,14 @@ export default function InfiniteVictimList({
   const [isLoading, setIsLoading] = useState(false);
   const [hasMore, setHasMore] = useState(initialPage * pageSize < total);
   const observeRef = useRef<HTMLDivElement | null>(null);
+
+  const params = useSearchParams();
+
+  useEffect(() => {
+    setVictims(initialVictims);
+    setCurrentPage(initialPage);
+    setHasMore(initialPage * pageSize < total);
+  }, [params, initialVictims, initialPage, pageSize, total]);
 
   const loadMore = useCallback(async () => {
     if (isLoading || !hasMore) return;

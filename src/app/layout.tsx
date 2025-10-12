@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import Header from "@/components/Header";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "НОМАРАН",
@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className="mx-auto mt-10 max-w-[1200px]">
+      <body className="mx-auto max-w-[95%]">
         <Header />
         {children}
       </body>

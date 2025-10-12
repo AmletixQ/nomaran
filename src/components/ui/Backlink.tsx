@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import Arrow from "./icons/Arrow";
+import Arrow from "../icons/Arrow";
 
 export default function Backlink() {
   const router = useRouter();

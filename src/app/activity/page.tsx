@@ -1,7 +1,11 @@
+import ScreenContainer from "@/components/ScreenContainer";
+
 export default function page() {
   return (
-    <main className="py-25">
-      <h1>Деятельность</h1>
+    <main className="pt-25 md:pt-40 2xl:mx-25 2xl:py-70 2xl:pb-25">
+      <ScreenContainer>
+        <h2 className="text-center">Деятельность организации</h2>
+      </ScreenContainer>
     </main>
   );
 }

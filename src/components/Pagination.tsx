@@ -23,7 +23,7 @@ export default function Pagination({
     filters.forEach((filter) => params.set("filter", filter));
     params.set("page", newPage.toString());
 
-    router.push(`/?${params.toString()}#results`);
+    router.push(`/search?${params.toString()}#results`);
   };
 
   return (

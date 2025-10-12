@@ -1,5 +1,3 @@
-"use client";
-import { usePathname } from "next/navigation";
 import React from "react";
 
 export default function Search({
@@ -7,16 +5,13 @@ export default function Search({
 }: {
   type?: "white" | "black";
 }) {
-  const pathname = usePathname();
-
-  const color =
-    pathname !== "/" ? "#19181a" : type === "black" ? "#19181a" : "#fffdf5";
+  const color = type === "black" ? "#19181a" : "#fffdf5";
 
   return (
     <svg
-      className="cursor-pointer"
-      width="24"
-      height="24"
+      className="cursor-pointer lg:h-6 lg:w-6"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

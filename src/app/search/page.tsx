@@ -31,7 +31,7 @@ export default async function SearchPage({
   return (
     <main className="pb-25">
       <ScreenContainer className="flex items-center justify-center">
-        <div className="absolute top-0 left-0 -z-20 h-full w-full bg-[url(/images/hero-bg.jpg)] bg-cover bg-center bg-no-repeat md:bg-fixed" />
+        <div className="absolute top-0 left-0 -z-20 h-full w-full bg-[url(/images/search-bg.jpg)] bg-cover bg-center bg-no-repeat md:bg-fixed" />
 
         <section className="flex flex-col items-center gap-10 text-white md:max-w-[80%]">
           <div className="flex flex-col items-center text-center">
@@ -46,7 +46,7 @@ export default async function SearchPage({
         </section>
       </ScreenContainer>
 
-      <section id="results" className=" md:mt-20 2xl:mx-25 2xl:mt-20">
+      <section id="results" className="md:mt-20 2xl:mx-25 2xl:mt-20">
         <VictimList victims={victims} />
         <Pagination
           query={query}

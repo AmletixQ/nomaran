@@ -1,15 +1,16 @@
 import ScreenContainer from "@/components/ScreenContainer";
-import { BOOKS } from "@/constants/books";
-import Image from "next/image";
+// import { BOOKS } from "@/constants/books";
+// import Image from "next/image";
 
 export default async function Home() {
   return (
-    <main className="pb-25 lg:px-12">
+    <main className="lg:px-12">
       <section className="flex flex-col gap-10">
-        <div className="absolute top-0 left-0 -z-20 h-full w-full bg-[url(/images/search-bg.jpg)] bg-cover bg-fixed bg-center bg-no-repeat" />
+        <div className="absolute top-0 left-0 -z-20 h-full w-full bg-[url(/images/hero-bg.jpg)] bg-cover bg-fixed bg-center bg-no-repeat" />
 
         <ScreenContainer></ScreenContainer>
 
+        {/* 
         <section>
           <div className="flex justify-between gap-3">
             <div className="flex flex-col gap-5">
@@ -46,6 +47,7 @@ export default async function Home() {
             ))}
           </div>
         </section>
+         */}
       </section>
     </main>
   );

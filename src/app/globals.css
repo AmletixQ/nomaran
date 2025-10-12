@@ -106,6 +106,7 @@
   @media (width >= 56rem) {
     p {
       font-size: 16px;
+      line-height: 160%;
     }
 
     h1 {

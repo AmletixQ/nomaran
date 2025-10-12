@@ -25,7 +25,7 @@ export default function BurgerMenu() {
           handleClick={() => setOpen(false)}
           className="text-[20px] text-black"
         />
-        <SearchAnchorButton />
+        <SearchAnchorButton handleClick={() => setOpen(false)} />
 
         <button
           className="absolute top-[5%] right-[5%]"

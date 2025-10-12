@@ -27,7 +27,7 @@ export default function VictimsPage() {
             народы, целиком депортированные с мест традиционного расселения в
             Сибирь, Среднюю Азию и Казахстан.
           </p>
-          
+
           {/* 
           <p>
             По различным предварительным оценкам, за период с 1921 по 1985 г. в
@@ -68,7 +68,7 @@ export default function VictimsPage() {
 
           <div className="border-gray order-first flex flex-col rounded-[10px] border bg-white px-2.5 py-7.5 text-center md:order-none 2xl:px-5.5 2xl:py-12.5">
             <h1>13 222</h1>
-            <p className="text-[11px] font-bold">
+            <p className="text-[11px] font-bold md:text-[14px] xl:text-[18px]">
               Столько насчитывается людей, подвергшихся репрессиям в
               Северо-Осетинской АССР.
             </p>

@@ -13,7 +13,7 @@ export async function getCachedVictims(
   const where: Prisma.VictimWhereInput = {};
 
   if (query) {
-    const queryParts = query.split(/[\s,]/).filter((q) => q.trim() !== "");
+    const queryParts = query.split(/[\s,]+/).filter((q) => q.trim() !== "");
 
     where.OR = [];
     queryParts.forEach((part) => {

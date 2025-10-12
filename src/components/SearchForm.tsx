@@ -1,6 +1,6 @@
-import Checkbox from "./Checkbox";
+import Checkbox from "./ui/Checkbox";
 import Search from "./icons/Search";
-import Input from "./Input";
+import Input from "./ui/Input";
 import ResetButton from "./ResetButton";
 
 interface ISearchForm {

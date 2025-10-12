@@ -4,9 +4,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/utils/cn";
 import SearchAnchorButton from "./SearchAnchorButton";
-import BurgerMenu from "./BurgerMenu";
 import { links } from "@/constants/links";
-import Anchor from "./Anchor";
+import Anchor from "./ui/Anchor";
+import BurgerMenu from "./ui/BurgerMenu";
 
 export default function Header() {
   const pathname = usePathname();
@@ -32,7 +32,7 @@ export default function Header() {
 
       <SearchAnchorButton
         pathname={pathname}
-        className="hidden xl:flex lg:text-[17px]"
+        className="hidden lg:text-[17px] xl:flex"
       />
 
       <BurgerMenu />

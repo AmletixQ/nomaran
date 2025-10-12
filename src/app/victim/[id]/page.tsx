@@ -1,7 +1,7 @@
-import Backlink from "@/components/Backlink";
 import React from "react";
 import prisma from "@/utils/prisma";
 import ScreenContainer from "@/components/ScreenContainer";
+import Backlink from "@/components/ui/Backlink";
 
 export default async function VictimProfile({
   params,

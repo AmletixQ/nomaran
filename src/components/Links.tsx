@@ -1,6 +1,6 @@
 "use client";
 import { links } from "@/constants/links";
-import Anchor from "./Anchor";
+import Anchor from "./ui/Anchor";
 
 export default function Links({
   className,

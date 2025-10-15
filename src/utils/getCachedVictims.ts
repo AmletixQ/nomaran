@@ -41,7 +41,7 @@ export async function getCachedVictims(
 
     if (filters.includes("list-of-shooted"))
       categoryConditions.push(
-        Prisma.sql`(category = 'REPRESSED' AND lower("otherData") LIKE %расстрел%)`,
+        Prisma.sql`(category = 'REPRESSED' AND lower("otherData") LIKE '%расстрел%')`,
       );
 
     if (filters.includes("repressed-nat-attribute"))
@@ -73,7 +73,7 @@ export async function getCachedVictims(
     { revalidate: 900, tags: ["victims", cacheKey] },
   )();
 
-  const victims = rawVictims.map(mapRawVictim)
+  const victims = rawVictims.map(mapRawVictim);
 
   const totalResult = await prisma.$queryRaw<{ count: bigint }[]>`
     SELECT COUNT(*) as count FROM victims ${whereClause};

@@ -7,7 +7,7 @@ export default function VictimsPage() {
         Три массовые категории...
       </h2>
       <div className="flex flex-col gap-7.5 pt-7.5 leading-[160%] md:grid md:grid-cols-5 md:gap-5 2xl:pt-15">
-        <div className="flex flex-col gap-3 md:col-start-1 md:col-end-4 md:gap-2.5 2xl:gap-5">
+        <div className="flex flex-col font-bold gap-3 md:col-start-1 md:col-end-4 md:gap-2.5 2xl:gap-5">
           <p className="font-bold">
             I. Первая массовая категория - люди, арестованные по политическим
             обвинениям органами государственной безопасности
@@ -22,11 +22,17 @@ export default function VictimsPage() {
             ходе кампании «уничтожения кулачества как класса».
           </p>
 
-          <p className="col-start-1 col-end-6 font-bold">
+          <p className="font-bold">
             III. Третья массовая категория жертв политических репрессий -
             народы, целиком депортированные с мест традиционного расселения в
             Сибирь, Среднюю Азию и Казахстан.
           </p>
+
+          <p>Репрессировано по политическим мотивам 8755 чел.</p>
+          <p>По админ, мотивам раскулачено 2177 чел.</p>
+          <p>По национальному признаку 2290 чел.</p>
+          <p>Итого 13222 чел.</p>
+          <p>Из них приговорены к ВМН (расстрел) 1684 чел.</p>
 
           {/* 
           <p>

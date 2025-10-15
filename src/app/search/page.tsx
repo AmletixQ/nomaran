@@ -26,8 +26,6 @@ export default async function SearchPage({
   const victims = res?.victims ?? [];
   const total = res?.total ?? 1;
 
-  console.log(res?.victims);
-
   return (
     <main className="pb-25" id="top">
       <ScreenContainer className="flex items-center justify-center">

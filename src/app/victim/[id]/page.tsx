@@ -16,7 +16,7 @@ export default async function VictimProfile({
 
   return (
     <main className="2xl:mx-30">
-      <ScreenContainer className="flex items-center">
+      <ScreenContainer className="flex items-center xl:pt-15">
         <div className="flex flex-col gap-4 md:gap-8">
           <Backlink />
           <h3>{victim?.fullname}</h3>

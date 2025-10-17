@@ -106,16 +106,6 @@ export async function getCachedVictims(
     orderByClause = Prisma.sql`ORDER BY min_distance ASC, "id" ASC`;
   }
 
-  console.log(
-    Prisma.sql`
-        SELECT * ${minDistanceClause}
-        FROM "victims"
-        ${whereClause}
-        ${orderByClause}
-        LIMIT ${pageSize} OFFSET ${(page - 1) * pageSize}
-    `,
-  );
-
   const rawVictims = await unstable_cache(
     async () => {
       return prisma.$queryRaw<Victim[]>`
@@ -130,7 +120,6 @@ export async function getCachedVictims(
     { revalidate: 900, tags: ["victims", cacheKey] },
   )();
 
-  // console.log(rawVictims);
   const victims = rawVictims.map(mapRawVictim);
 
   const totalResult = await prisma.$queryRaw<{ count: bigint }[]>`

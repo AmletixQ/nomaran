@@ -2,8 +2,6 @@
 import { Victim } from "@prisma/client";
 import { useCallback, useEffect, useRef, useState } from "react";
 import VictimList from "./VictimList";
-import Up from "../icons/ShevronArrow";
-import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import ShevronArrow from "../icons/ShevronArrow";
 

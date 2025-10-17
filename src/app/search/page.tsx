@@ -1,7 +1,8 @@
-import InfiniteVictimList from "@/components/victims/InfiniteVictimList";
 import ScreenContainer from "@/components/ScreenContainer";
-import SearchForm from "@/components/SearchForm";
+import SearchForm from "@/components/search-form/SearchForm";
 import { getCachedVictims } from "@/utils/getCachedVictims";
+import VictimList from "@/components/victims/VictimList";
+import Pagination from "@/components/victims/Pagination";
 
 export const dynamic = "force-dynamic";
 
@@ -20,11 +21,13 @@ export default async function SearchPage({
       : [];
 
   const page = Math.max(1, Number(params.page) || 1);
-  const pageSize = 15;
+  const pageSize = 100;
 
   const res = await getCachedVictims(query, filters, page, pageSize);
   const victims = res?.victims ?? [];
   const total = res?.total ?? 1;
+
+  const totalPages = Math.ceil(total / pageSize);
 
   return (
     <main className="pb-25" id="top">
@@ -45,13 +48,12 @@ export default async function SearchPage({
       </ScreenContainer>
 
       <section id="results" className="md:mt-20 2xl:mx-25 2xl:mt-20">
-        <InfiniteVictimList
-          initialVictims={victims}
-          query={query}
+        <VictimList victims={victims} />
+        <Pagination
           filters={filters}
-          initialPage={page}
-          pageSize={pageSize}
-          total={total}
+          page={page}
+          query={query}
+          totalPages={totalPages}
         />
       </section>
     </main>

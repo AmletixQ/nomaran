@@ -2,9 +2,10 @@
 import { Victim } from "@prisma/client";
 import { useCallback, useEffect, useRef, useState } from "react";
 import VictimList from "./VictimList";
-import Up from "../icons/Up";
+import Up from "../icons/ShevronArrow";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import ShevronArrow from "../icons/ShevronArrow";
 
 interface IInfiniteVictimList {
   initialVictims: Victim[];
@@ -91,9 +92,7 @@ export default function InfiniteVictimList({
             </div>
           )}
 
-          <Link href="#top" className="fixed right-[3%] bottom-[3%]">
-            <Up />
-          </Link>
+          <ShevronArrow href="#top" />
         </>
       )}
     </div>

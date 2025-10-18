@@ -83,7 +83,7 @@ export default function InfiniteVictimList({
         <h2>Не найдено никаких записей...</h2>
       ) : (
         <>
-          <VictimList victims={victims} />
+          <VictimList page={initialPage} pageSize={pageSize} victims={victims} />
           {hasMore && (
             <div ref={observeRef} className="pt-5">
               {isLoading && <h3>Загрузка...</h3>}

@@ -6,6 +6,8 @@
   --color-black: #19181a;
   --color-dark-red: #970d1d; /* hover */
   --color-gray: #a7a7a7; /* disabled */
+
+  --font-times: 'Times New Roman', Times, serif;
 }
 
 @font-face {
@@ -196,6 +198,7 @@
     .text-sm {
       font-size: 14px;
       line-height: 120%;
+
     }
   }
 }

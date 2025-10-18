@@ -21,7 +21,7 @@ export default async function SearchPage({
       : [];
 
   const page = Math.max(1, Number(params.page) || 1);
-  const pageSize = 100;
+  const pageSize = 50;
 
   const res = await getCachedVictims(query, filters, page, pageSize);
   const victims = res?.victims ?? [];
@@ -48,7 +48,7 @@ export default async function SearchPage({
       </ScreenContainer>
 
       <section id="results" className="md:mt-20 2xl:mx-25 2xl:mt-20">
-        <VictimList victims={victims} />
+        <VictimList page={page} pageSize={pageSize} victims={victims} />
         <Pagination
           filters={filters}
           page={page}

@@ -1,14 +1,11 @@
 import { cn } from "@/utils/cn";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ variable: "--font-inter" });
 
 export default function ActivityPage() {
   return (
     <main
       className={cn(
         "flex flex-col gap-10 pt-25 md:pt-40 2xl:mx-25 2xl:py-70",
-        inter.className,
+        "font-times",
       )}
     >
       <h2 className="text-center">Деятельность организации</h2>

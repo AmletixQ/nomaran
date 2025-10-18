@@ -1,15 +1,12 @@
 import ScreenContainer from "@/components/ScreenContainer";
 import { cn } from "@/utils/cn";
-import { Roboto } from "next/font/google";
-
-const roboto = Roboto({ variable: "--font-roboto" });
 
 export default function AboutPage() {
   return (
     <main
       className={cn(
         "flex flex-col justify-center gap-7.5 md:gap-12.5 2xl:mx-25 2xl:gap-30 2xl:py-25",
-        roboto.className,
+        "font-times",
       )}
     >
       <ScreenContainer className="flex flex-col gap-7.5 md:gap-15 lg:gap-30">

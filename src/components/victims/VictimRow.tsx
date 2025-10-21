@@ -3,6 +3,7 @@ import Link from "next/link";
 
 type IVictimProps = Victim & {
   number: number;
+  isShooted: boolean;
 };
 
 export default function VictimRow({
@@ -11,7 +12,7 @@ export default function VictimRow({
   birthYear,
   category,
   fullname,
-  number
+  isShooted,
 }: IVictimProps) {
   const data: string[] = [];
   if (birthPlace) data.push(birthPlace);
@@ -19,15 +20,19 @@ export default function VictimRow({
 
   return (
     <div key={id} className="border-gray flex gap-2.5 border-b-2 pb-1.5">
-      <h6 className="font-normal">{number}.</h6>
+      <h6 className="font-normal">{id}.</h6>
       <div className="flex flex-col gap-1">
-        <Link href={`victim/${id}`}>
+        <Link href={`victim/${id}${isShooted ? "?type=shooted" : ""}`}>
           <h6 className="font-normal">{fullname}</h6>
         </Link>
         <p className="text-[10px] md:text-[16px]">
           {data.join(", ")}
           {data.length ? ", " : ""}
-          {category === "DISPOSSESSED" ? "Раскулаченный" : "Репрессированный"}
+          {isShooted
+            ? "Высшая мера наказания"
+            : category === "DISPOSSESSED"
+              ? "Раскулаченный"
+              : "Репрессированный"}
         </p>
       </div>
     </div>

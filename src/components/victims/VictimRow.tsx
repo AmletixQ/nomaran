@@ -1,3 +1,4 @@
+import { categoryDisplay } from "@/utils/categoryDisplay";
 import { Victim } from "@prisma/client";
 import Link from "next/link";
 
@@ -12,6 +13,7 @@ export default function VictimRow({
   birthYear,
   category,
   fullname,
+  number,
   isShooted,
 }: IVictimProps) {
   const data: string[] = [];
@@ -20,7 +22,7 @@ export default function VictimRow({
 
   return (
     <div key={id} className="border-gray flex gap-2.5 border-b-2 pb-1.5">
-      <h6 className="font-normal">{id}.</h6>
+      <h6 className="font-normal">{number}.</h6>
       <div className="flex flex-col gap-1">
         <Link href={`victim/${id}${isShooted ? "?type=shooted" : ""}`}>
           <h6 className="font-normal">{fullname}</h6>
@@ -28,11 +30,7 @@ export default function VictimRow({
         <p className="text-[10px] md:text-[16px]">
           {data.join(", ")}
           {data.length ? ", " : ""}
-          {isShooted
-            ? "Высшая мера наказания"
-            : category === "DISPOSSESSED"
-              ? "Раскулаченный"
-              : "Репрессированный"}
+          {categoryDisplay(isShooted, category)}
         </p>
       </div>
     </div>

@@ -9,7 +9,7 @@ interface ICheckboxesProps {
 
 const filterOptions = [
   {
-    title: "ИТЛ, тюремное заключение, ссылка",
+    title: "ИТЛ, тюремные заключения, ссылки",
     id: "list-of-itl",
     value: "list-of-itl",
   },

@@ -7,7 +7,7 @@
   --color-dark-red: #970d1d; /* hover */
   --color-gray: #a7a7a7; /* disabled */
 
-  --font-times: 'Times New Roman', Times, serif;
+  --font-times: "Times New Roman", Times, serif;
 }
 
 @font-face {
@@ -166,7 +166,7 @@
     }
 
     h2 {
-      font-size: 46px;
+      font-size: 38px;
       line-height: 120%;
       font-weight: bold;
     }
@@ -198,7 +198,6 @@
     .text-sm {
       font-size: 14px;
       line-height: 120%;
-
     }
   }
 }

@@ -32,21 +32,6 @@ export default async function Home() {
           </div>
         </section>
 
-        <section className="flex flex-col flex-wrap gap-10">
-          <h6 className="text-center text-[22px] font-bold">Заголовок</h6>
-          <div className="flex h-fit flex-wrap justify-between gap-3">
-            {BOOKS.map((b, i) => (
-              <Image
-                key={b}
-                width="110"
-                height="150"
-                className="sm:h-[229px] sm:w-[167px] md:h-[308px] md:w-[224px]"
-                src={b}
-                alt={`book-${i}`}
-              />
-            ))}
-          </div>
-        </section>
          */}
       </section>
     </main>

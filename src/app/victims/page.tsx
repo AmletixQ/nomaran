@@ -37,45 +37,52 @@ export default function VictimsPage() {
                 ПОЛИТИЧЕСКИХ РЕПРЕССИЙ И РЕПРЕССИРОВАННЫМ НАРОДАМ 20-30-40-
                 НАЧАЛА 50-х гг. XX ВЕКА ПО СЕВЕРО-ОСЕТИНСКОЙ АССР.
               </h2>
-              <table className="border-gray table-column border-separate border-spacing-4 rounded-md border bg-white">
-                <thead className="w-fit align-top text-[16px]">
-                  <tr>
-                    <th className="w-fit text-start">
-                      Реабелитировано репрессированных по политическим мотивам
-                    </th>
-                    <th className="text-start">
-                      Реабелитировано по админ. мотивам раскулаченных
-                    </th>
-                    <th className="text-start">
-                      Реабелитировано репрессированных по национальному признаку
-                    </th>
-                    <th className="text-start">
-                      Реабелитированно приговоренных к ВМН (расстрел)
-                    </th>
-                    <th className="text-center">Итого</th>
-                  </tr>
-                </thead>
-                <tbody className="text-[1.8rem]">
-                  <tr>
-                    <td>8755</td>
-                    <td>2177</td>
-                    <td>2290</td>
-                    <td>1684</td>
-                    <td>13222</td>
-                  </tr>
-                </tbody>
-              </table>
+              <div className="border-gray w-fit flex flex-col xl:flex-row border-separate border-spacing-4 gap-4 rounded-md border bg-white">
+                <div className="text-center">
+                  <h5 className="text-[15px]">
+                    Реабелитировано репрессированных по политическим мотивам
+                  </h5>
+                  <p className="text-[1.6rem]">8755</p>
+                </div>
+
+                <div className="text-center">
+                  <h5 className="text-[15px]">
+                    Реабелитировано по админ. мотивам раскулаченных
+                  </h5>
+                  <p className="text-[1.6rem]">2177</p>
+                </div>
+
+                <div className="text-center">
+                  <h5 className="text-[15px]">
+                    Реабелитировано репрессированных по национальному признаку
+                  </h5>
+                  <p className="text-[1.6rem]">2290</p>
+                </div>
+
+                <div className="text-center">
+                  <h5 className="text-[15px]">
+                    Реабелитированно приговоренных к ВМН (расстрел)
+                  </h5>
+                  <p className="text-[1.6rem]">1684</p>
+                </div>
+
+                <div className="text-center">
+                  <h5 className="text-[15px]">Итого</h5>
+                  <p className="text-[1.6rem]">13222</p>
+                </div>
+              </div>
             </div>
           </div>
           <div className="relative order-first flex flex-col items-center gap-6 md:order-none md:col-start-4 md:col-end-6">
             <Image
+              className="hidden lg:block"
               src="/images/victims-ill.png"
               width={500}
               height={500}
               alt="victims"
             />
 
-            <div className="border-gray order-first flex w-[500px] flex-col rounded-[10px] border bg-white px-2.5 py-7.5 text-center md:order-none 2xl:px-5.5 2xl:py-12.5">
+            <div className="border-gray order-first flex max-w-[500px] flex-col rounded-[10px] border bg-white px-2 py-6 text-center md:order-none 2xl:px-5.5 2xl:py-12.5">
               <h1>13 222</h1>
               <p className="text-[11px] font-bold md:text-[14px] xl:text-[18px]">
                 Общее число реабелитированных, подвергшихся незаконным

@@ -27,7 +27,7 @@ export default function Pagination({
   };
 
   return (
-    <div className="border-gray mt-4 flex justify-between items-center gap-4 rounded-xl border p-4">
+    <div className="border-gray mt-4 flex items-center justify-between gap-4 rounded-xl border p-4">
       <button
         onClick={() => updatePage(page - 1)}
         disabled={page <= 1}
@@ -35,8 +35,16 @@ export default function Pagination({
       >
         Предыдущая
       </button>
-      <span className="border-b">
-        Страница {page} из {totalPages}
+      <span>
+        Страница {page} из{" "}
+        <button
+          className="border-b cursor-pointer"
+          onClick={
+            page === totalPages ? undefined : () => updatePage(totalPages)
+          }
+        >
+          {totalPages}
+        </button>
       </span>
       <button
         onClick={() => updatePage(page + 1)}

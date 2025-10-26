@@ -1,4 +1,3 @@
-import { cn } from "@/utils/cn";
 import Link from "next/link";
 
 interface IShevropProps {
@@ -8,8 +7,9 @@ interface IShevropProps {
 
 export default function ShevronArrow({ className, href }: IShevropProps) {
   return (
-    <Link href={href} className={cn("fixed right-[3%] bottom-[3%]", className)}>
+    <Link href={href}>
       <svg
+        className={className}
         width={40}
         height={40}
         xmlns="http://www.w3.org/2000/svg"

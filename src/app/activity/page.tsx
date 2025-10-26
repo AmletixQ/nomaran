@@ -6,13 +6,13 @@ export default function ActivityPage() {
   return (
     <main
       className={cn(
-        "flex flex-col gap-10 pt-25 md:py-40 2xl:mx-25 2xl:py-70",
+        "flex flex-col gap-10 py-25 md:py-40 2xl:mx-25 2xl:py-70",
         "font-times",
       )}
     >
       <h2 className="text-center text-[38px]">Деятельность организации</h2>
 
-      <section className="flex justify-between gap-18">
+      <section className="flex flex-col md:flex-row justify-between gap-5 md:gap-18">
         <article className="flex flex-col gap-5">
           <article className="flex flex-col gap-3">
             <h6 className="text-[22px] font-bold">Издания книг</h6>
@@ -60,8 +60,8 @@ export default function ActivityPage() {
           </article>
         </article>
 
-        <article className="flex h-fit flex-col gap-5">
-          <h5 className="text-center text-[22px]">Книги Памяти</h5>
+        <article className="flex h-fit flex-col gap-3 md:gap-5">
+          <h5 className="md:text-center text-[22px]">Книги Памяти</h5>
           <div className="flex gap-5">
             {BOOKS.slice(0, 3).map((b, i) => (
               <div key={b.image} className="flex flex-col items-center gap-1">
@@ -112,7 +112,7 @@ export default function ActivityPage() {
           alt="stone of tears"
           width={800}
           height={600}
-          className="h-[600px]"
+          className=""
         />
       </section>
 

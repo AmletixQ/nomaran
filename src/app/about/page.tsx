@@ -9,10 +9,10 @@ export default function AboutPage() {
         "font-times",
       )}
     >
-      <section className="flex flex-col gap-8">
+      <section className="flex flex-col gap-4 md:gap-8">
         <h2 className="text-center">Об организации</h2>
         <article className="flex flex-col gap-2.5">
-          <h5 className="text-[22px]">История создания</h5>
+          <h5 className="text-[18px] md:text-[22px]">История создания</h5>
           <p>
             В декабре 1990 года Министерством юстиции РСО-Алания было
             зарегистрировано общественное благотворительное объединение
@@ -61,7 +61,7 @@ export default function AboutPage() {
           </div>
         </article>
         <article className="flex flex-col gap-5">
-          <h5 className="text-[22px]">Первый председатель</h5>
+          <h5 className="text-[18px] md:text-[22px]">Первый председатель</h5>
           <div className="flex flex-col justify-between gap-6 md:flex-row">
             <div className="flex flex-col gap-2.5">
               <p>
@@ -88,7 +88,9 @@ export default function AboutPage() {
               </p>
 
               <article className="flex flex-col gap-5 pt-4">
-                <h5 className="text-[22px]">Нынешнее руководство</h5>
+                <h5 className="text-[18px] md:text-[22px]">
+                  Нынешнее руководство
+                </h5>
                 <p>
                   14 апреля 2021 года на базе СОИГСИ прошла отчетно-выборная
                   конференция Ассоциации жертв политических репрессий «Номаран»
@@ -106,9 +108,9 @@ export default function AboutPage() {
                 alt="image"
                 height={254}
                 width={223}
-                className="self-center md:min-h-[254px] md:min-w-[223px] lg:min-h-[280px] lg:min-w-[245px] xl:min-h-[336px] xl:min-w-[294px]"
+                className="justify-self-center md:justify-self-start md:min-h-[254px] md:min-w-[223px] lg:min-h-[280px] lg:min-w-[245px] xl:min-h-[336px] xl:min-w-[294px]"
               />
-              <p className="text-[17px]">
+              <p className="text-center text-[14px] md:text-[17px]">
                 Зураев А. Б. (10.03.1926 - 4.12.2020 г.г.)
               </p>
             </div>

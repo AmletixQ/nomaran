@@ -25,19 +25,18 @@ export default function VictimsPage() {
 
             <p>
               <span className="font-bold">III.</span> Третья массовая категория
-              жертв политических репрессий — народы (корейцы, чеченцы, ингуши,
-              греки, немцы, турки, армяне), проживавшие на территории
-              Северо-Осетинской АССР, которые были депортированы на переселение
-              в Сибирь, Среднюю Азию и Казахстан.
+              жертв политических репрессий — граждане Северо-Осетинской АССР,
+              репрессированные по национальному признаку (корейцы, чеченцы,
+              ингуши, греки, немцы, турки, армяне).
             </p>
 
             <div className="flex flex-col gap-4 pt-4">
               <h2 className="text-center text-[16px] uppercase">
                 ИНФОРМАЦИЯ ПО 6-ТИ ТОМАМ КНИГИ ПАМЯТИ ЖЕРТВ НЕЗАКОННЫХ
-                ПОЛИТИЧЕСКИХ РЕПРЕССИЙ И РЕПРЕССИРОВАННЫМ НАРОДАМ 20-30-40-
-                НАЧАЛА 50-х гг. XX ВЕКА ПО СЕВЕРО-ОСЕТИНСКОЙ АССР.
+                ПОЛИТИЧЕСКИХ РЕПРЕССИЙ 20-30-40- НАЧАЛА 50-х гг. XX ВЕКА ПО
+                СЕВЕРО-ОСЕТИНСКОЙ АССР.
               </h2>
-              <div className="border-gray w-fit flex flex-col xl:flex-row border-separate border-spacing-4 gap-4 rounded-md border bg-white">
+              <div className="border-gray flex w-fit border-separate border-spacing-4 flex-col gap-4 rounded-md border bg-white xl:flex-row">
                 <div className="text-center">
                   <h5 className="text-[15px]">
                     Реабелитировано репрессированных по политическим мотивам

@@ -36,7 +36,7 @@ export default function VictimsPage() {
                 ПОЛИТИЧЕСКИХ РЕПРЕССИЙ 20-30-40- НАЧАЛА 50-х гг. XX ВЕКА ПО
                 СЕВЕРО-ОСЕТИНСКОЙ АССР.
               </h2>
-              <div className="border-gray flex w-fit border-separate border-spacing-4 flex-col gap-4 rounded-md border bg-white xl:flex-row">
+              <article className="border-gray grid grid-cols-4 rounded-md border bg-white p-2">
                 <div className="text-center">
                   <h5 className="text-[15px]">
                     Реабелитировано репрессированных по политическим мотивам
@@ -59,17 +59,17 @@ export default function VictimsPage() {
                 </div>
 
                 <div className="text-center">
-                  <h5 className="text-[15px]">
-                    Реабелитированно приговоренных к ВМН (расстрел)
-                  </h5>
-                  <p className="text-[1.6rem]">1684</p>
-                </div>
-
-                <div className="text-center">
                   <h5 className="text-[15px]">Итого</h5>
                   <p className="text-[1.6rem]">13222</p>
                 </div>
-              </div>
+
+                <div className="text-center">
+                  <h5 className="text-[15px]">
+                    Из них приговоренных к ВМН (расстрел)
+                  </h5>
+                  <p className="text-[1.6rem]">1684</p>
+                </div>
+              </article>
             </div>
           </div>
           <div className="relative order-first flex flex-col items-center gap-6 md:order-none md:col-start-4 md:col-end-6">

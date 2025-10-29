@@ -30,7 +30,7 @@ export default function VictimRow({
         <p className="text-[10px] md:text-[16px]">
           {data.join(", ")}
           {data.length ? ", " : ""}
-          категория: {categoryDisplay(isShooted, category)}
+          Категория: {categoryDisplay(isShooted, category)}
         </p>
       </div>
     </div>

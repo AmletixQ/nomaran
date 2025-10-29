@@ -5,5 +5,7 @@ export function categoryDisplay(isShooted: boolean, category?: Category) {
     ? "Расстрелянные"
     : category === "DISPOSSESSED"
       ? "Раскулаченные"
-      : "ИТЛ, тюремные заключения, ссылки";
+      : category === "NATATTRIBUTE"
+        ? "Репрессированные по нац.признаку"
+        : "ИТЛ, тюремные заключения, ссылки";
 }

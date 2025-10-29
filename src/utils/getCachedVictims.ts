@@ -63,7 +63,7 @@ export async function getCachedVictims(
 
     if (filters.includes("list-of-shooted"))
       categoryConditions.push(
-        Prisma.sql`(category = 'REPRESSED' AND lower("other_data") LIKE '%расстрел%')`,
+        Prisma.sql`(category = 'REPRESSED' AND (lower("other_data") LIKE '%расстр%' OR lower("other_data") LIKE '%вмн%'))`,
       );
 
     if (filters.includes("repressed-nat-attribute"))

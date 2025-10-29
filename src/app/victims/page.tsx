@@ -49,36 +49,37 @@ export default function VictimsPage() {
                   <h5 className="text-[15px]">
                     Реабелитировано репрессированных по политическим мотивам
                   </h5>
-                  <p className="text-[1.6rem]">8755</p>
+                  <p className="text-[1.6rem]">7580</p>
                 </div>
                 <div className="text-center">
                   <h5 className="text-[15px]">
                     Из них приговоренных к ВМН (расстрел)
                   </h5>
-                  <p className="text-[1.6rem]">1684</p>
+                  <p className="text-[1.6rem]">1666</p>
                 </div>
 
                 <div className="bg-gray h-[1px]"></div>
 
                 <div className="text-center">
                   <h5 className="text-[15px]">
-                    Реабелитировано по админ. мотивам раскулаченных
+                    Реабелитированно репрессированных по админ. мотивам
+                    (раскулаченных)
                   </h5>
-                  <p className="text-[1.6rem]">2177</p>
+                  <p className="text-[1.6rem]">1710</p>
                 </div>
 
                 <div className="text-center">
                   <h5 className="text-[15px]">
                     Реабелитировано репрессированных по национальному признаку
                   </h5>
-                  <p className="text-[1.6rem]">2290</p>
+                  <p className="text-[1.6rem]">1848</p>
                 </div>
 
                 <div className="bg-gray h-[1px]"></div>
 
                 <div className="text-center">
                   <h5 className="text-[15px]">Итого</h5>
-                  <p className="text-[1.6rem]">13222</p>
+                  <p className="text-[1.6rem]">11138</p>
                 </div>
               </article>
             </div>
@@ -93,7 +94,7 @@ export default function VictimsPage() {
             />
 
             <div className="border-gray order-first hidden max-w-[500px] flex-col rounded-[10px] border bg-white px-2 py-6 text-center md:order-none md:flex 2xl:px-5.5 2xl:py-12.5">
-              <h1>13 222</h1>
+              <h1>11 138</h1>
               <p className="text-[11px] font-bold md:text-[14px] xl:text-[18px]">
                 Общее число реабелитированных, подвергшихся незаконным
                 политическим репрессиям в Северо-Осетинской АССР.

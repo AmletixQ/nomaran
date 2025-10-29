@@ -55,7 +55,7 @@ export default function VictimsPage() {
                   <h5 className="text-[15px]">
                     Из них приговоренных к ВМН (расстрел)
                   </h5>
-                  <p className="text-[1.6rem]">1666</p>
+                  <p className="text-[1.6rem]">1656</p>
                 </div>
 
                 <div className="bg-gray h-[1px]"></div>

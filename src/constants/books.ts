@@ -12,7 +12,7 @@ export const BOOKS = [
   {
     image: "/images/books/book-3.png",
     file: "/files/books/tom-3.djvu",
-    year: 3007,
+    year: 2007,
   },
   {
     image: "/images/books/book-4.png",

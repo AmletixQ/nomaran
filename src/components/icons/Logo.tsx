@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 
 export default function Logo() {
@@ -5,8 +6,8 @@ export default function Logo() {
     <>
       <Image
         src="/images/logo-mobile.svg"
-        width="67"
-        height="56"
+        width="112"
+        height="95"
         alt="logo"
         className="block md:hidden"
       />

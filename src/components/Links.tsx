@@ -1,6 +1,7 @@
 "use client";
 import { links } from "@/constants/links";
 import Anchor from "./ui/Anchor";
+import { cn } from "@/utils/cn";
 
 export default function Links({
   className,
@@ -10,7 +11,7 @@ export default function Links({
   handleClick?: () => void;
 }) {
   return (
-    <nav className="flex flex-col items-center gap-4">
+    <nav className={cn("flex flex-col items-center gap-4")}>
       {links.map((link, i) => (
         <Anchor
           {...link}

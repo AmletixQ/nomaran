@@ -34,10 +34,10 @@ export default async function SearchPage({
       <ScreenContainer className="flex items-center justify-center">
         <div className="absolute top-0 left-0 -z-20 h-full w-full bg-[url(/images/search-bg.jpg)] bg-cover bg-center bg-no-repeat md:bg-fixed" />
 
-        <section className="flex flex-col items-center gap-10 text-white md:max-w-[80%]">
+        <section className="flex flex-col items-center gap-10 text-white md:max-w-[90%]">
           <div className="flex flex-col items-center text-center">
             <h1 className="pb-2">Поиск жертв репрессий</h1>
-            <p className="leading-[140%] xl:w-5/7">
+            <p className="leading-[140%]">
               Этот сайт предназначен для поиска информации о людях, пострадавших
               от политических репрессий в Северо-Осетинской АССР.
             </p>

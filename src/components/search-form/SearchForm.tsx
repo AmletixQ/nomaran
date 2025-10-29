@@ -13,12 +13,12 @@ export default function SearchForm({ filters, query }: ISearchForm) {
     <form
       method="get"
       action="#results"
-      className="relative flex flex-col gap-3 2xl:w-10/12"
+      className="relative flex flex-col gap-3 w-full px-2"
     >
       <div className="border-gray relative flex w-full justify-between rounded-[10px] border-3 bg-white px-2.5 py-2 md:px-4 md:py-[14px]">
         <Input
           name="query"
-          className="placeholder:text-gray outline-gray w-full rounded-sm p-1 text-black outline-0 placeholder:text-[10px] focus:outline-2 lg:placeholder:text-[14px] xl:w-10/12"
+          className="placeholder:text-gray outline-gray w-full rounded-sm p-1 text-black outline-0 placeholder:text-[14px] focus:outline-2 lg:placeholder:text-[14px]"
           type="text"
           placeholder="Введите информацию про репрессированного"
           defaultValue={query}

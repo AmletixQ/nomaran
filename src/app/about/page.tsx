@@ -5,13 +5,13 @@ export default function AboutPage() {
   return (
     <main
       className={cn(
-        "flex flex-col justify-center gap-7.5 py-25 md:gap-12.5 md:py-35 lg:py-45 2xl:mx-25 2xl:gap-30 2xl:py-70",
-        "font-times",
+        "flex flex-col justify-center gap-7.5 pt-40 pb-25 md:gap-12.5 md:py-35 md:pt-50 lg:py-45 2xl:mx-25 2xl:gap-30 2xl:py-70",
+        "font-helvetica",
       )}
     >
-      <section className="flex flex-col gap-4 md:gap-8">
+      <section className="flex flex-col gap-6">
         <h2 className="text-center">Об организации</h2>
-        <article className="flex flex-col gap-2.5">
+        <article className="flex flex-col gap-4">
           <h5 className="text-[18px] md:text-[22px]">История создания</h5>
           <p>
             В декабре 1990 года Министерством юстиции РСО-Алания была
@@ -59,7 +59,7 @@ export default function AboutPage() {
             </ul>
           </div>
         </article>
-        <article className="flex flex-col gap-5">
+        <article className="flex flex-col gap-4">
           <h5 className="text-[18px] md:text-[22px]">Первый председатель</h5>
           <div className="flex flex-col justify-between gap-6 md:flex-row">
             <div className="flex flex-col gap-2.5">
@@ -88,7 +88,22 @@ export default function AboutPage() {
                 заслуги перед Отечеством» II степени.
               </p>
 
-              <article className="flex flex-col gap-5 pt-4">
+              <div className="flex justify-center">
+                <div className="relative flex flex-col items-center">
+                  <Image
+                    src={"/images/president-image.png"}
+                    alt="image"
+                    height={254}
+                    width={223}
+                    className="justify-self-center md:min-h-[254px] md:min-w-[223px] md:justify-self-start lg:min-h-[280px] lg:min-w-[245px] xl:min-h-[336px] xl:min-w-[294px]"
+                  />
+                  <p className="text-[14px] md:text-[17px]">
+                    Зураев А. Б. (10.03.1926 - 4.12.2020 г.г.)
+                  </p>
+                </div>
+              </div>
+
+              <article className="flex flex-col gap-4 pt-4">
                 <h5 className="text-[18px] md:text-[22px]">
                   Нынешнее руководство
                 </h5>
@@ -102,18 +117,6 @@ export default function AboutPage() {
                   заместителем — Тамара Габоевна Кайтукова.
                 </p>
               </article>
-            </div>
-            <div className="relative">
-              <Image
-                src={"/images/president-image.png"}
-                alt="image"
-                height={254}
-                width={223}
-                className="justify-self-center md:min-h-[254px] md:min-w-[223px] md:justify-self-start lg:min-h-[280px] lg:min-w-[245px] xl:min-h-[336px] xl:min-w-[294px]"
-              />
-              <p className="text-center text-[14px] md:text-[17px]">
-                Зураев А. Б. (10.03.1926 - 4.12.2020 г.г.)
-              </p>
             </div>
           </div>
         </article>

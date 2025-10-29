@@ -8,6 +8,7 @@
   --color-gray: #a7a7a7; /* disabled */
 
   --font-times: "Times New Roman", Times, serif;
+  --font-helvetica: "Helvetica Neue";
 }
 
 @font-face {
@@ -42,6 +43,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Helvetice Neue";
+  src: url("/fonts/helvetica-neue/HelveticaNeue-Roman.otf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   body {
     font-family: "Courier New", sans-serif;
@@ -51,7 +60,7 @@
     background-size: cover;
     background-position: center;
 
-    font-size: 12px;
+    font-size: 14px;
     line-height: 120%;
 
     scroll-behavior: smooth;
@@ -89,7 +98,7 @@
   }
 
   p {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 120%;
   }
 

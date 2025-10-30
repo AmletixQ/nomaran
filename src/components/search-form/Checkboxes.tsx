@@ -37,7 +37,7 @@ const filterOptions = [
     title: "Общий список",
     id: "all",
     value: "all-list",
-    className: "col-start-1 col-end-3",
+    className: "col-start-1 col-end-3 py-4!",
     defaultChecked: true,
   },
 ];

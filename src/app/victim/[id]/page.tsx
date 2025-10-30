@@ -15,7 +15,7 @@ export default async function VictimProfile({
   });
 
   return (
-    <main className="h-screen pt-30 md:pt-45 xl:pt-80 2xl:mx-30">
+    <main className="h-screen pt-40 md:pt-50 xl:pt-80 2xl:mx-30">
       <div className="flex flex-col gap-4 md:gap-8">
         <Backlink />
         <h3>{victim?.fullname}</h3>

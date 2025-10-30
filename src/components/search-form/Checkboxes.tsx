@@ -9,22 +9,27 @@ interface ICheckboxesProps {
 
 const filterOptions = [
   {
-    title: "ИТЛ, тюремные заключения, ссылки",
+    title: (
+      <>
+        Список репрессированных по полит. мотивам <br /> (ИТЛ, тюремные
+        заключения, ссылки)
+      </>
+    ),
     id: "list-of-itl",
     value: "list-of-itl",
   },
   {
-    title: "Список расстрелянных",
+    title: "Список репрессированных по полит. мотивам (расстрелянных)",
     id: "list-shooted",
     value: "list-of-shooted",
   },
   {
-    title: "Репрессированные по нац. признаку",
+    title: "Список репрессированных по нац. признаку",
     id: "repressed-nat-attribute",
     value: "repressed-nat-attribute",
   },
   {
-    title: "Список раскулаченных",
+    title: "Список репрессированных по админ. мотивам (раскулаченных)",
     id: "list-of-dispossessed",
     value: "list-of-dispossessed",
   },

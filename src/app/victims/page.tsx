@@ -49,11 +49,17 @@ export default function VictimsPage() {
                   <h5 className="text-[15px]">
                     Реабелитировано репрессированных по политическим мотивам
                   </h5>
-                  <p className="text-[1.6rem]">7580</p>
+                  <div className="flex flex-col pt-2">
+                    <h5 className="text-[15px]">
+                      1. ИТЛ, тюремные заключения, ссылки
+                    </h5>
+                    <p className="text-[1.6rem]">5924</p>
+                  </div>
                 </div>
-                <div className="text-center">
+
+                <div className="text-center flex flex-col">
                   <h5 className="text-[15px]">
-                    Из них приговоренных к ВМН (расстрел)
+                    2. Высшая мера наказания (расстрел)
                   </h5>
                   <p className="text-[1.6rem]">1656</p>
                 </div>

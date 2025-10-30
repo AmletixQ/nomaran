@@ -15,7 +15,7 @@ export async function getCachedVictims(
   const numberParts: number[] = [];
 
   if (query) {
-    const queryParts = query.split(/[\s,]/).filter((q) => q.trim() !== "");
+    const queryParts = query.split(/[\s,]+/).filter((q) => q.trim() !== "");
     queryParts.forEach((part) => {
       const trimmedPart = part.trim();
       const isNumber = !isNaN(Number(trimmedPart)) && trimmedPart !== "";
@@ -32,27 +32,6 @@ export async function getCachedVictims(
     whereConditions.push(
       Prisma.sql`(${Prisma.join(numberConditions, " OR ")})`,
     );
-  }
-
-  if (stringParts.length > 0) {
-    const allWords = Prisma.sql`string_to_array(
-      lower("fullname") || ' ' ||
-      COALESCE(lower(birth_place), '') || ' ' || 
-      COALESCE(lower(national), ''), ' '
-    )
-    `;
-
-    whereConditions.push(Prisma.sql`
-      EXISTS (
-        SELECT 1
-        FROM unnest(${allWords}) as word
-        CROSS JOIN (VALUES ${Prisma.join(
-          stringParts.map((p) => Prisma.sql`(${p})`),
-          ", ",
-        )}) as sp(part)
-        WHERE levenshtein(word, sp.part) <= 1
-      )
-    `);
   }
 
   if (filters.length > 0 && !filters.includes("all")) {
@@ -83,38 +62,66 @@ export async function getCachedVictims(
       ? Prisma.sql`WHERE ${Prisma.join(whereConditions, " AND ")}`
       : Prisma.empty;
 
-  let minDistanceClause = Prisma.empty;
-  let orderByClause = Prisma.sql`ORDER BY "id" ASC`;
+  let cteClause = Prisma.empty;
+  let minDistanceSelect = Prisma.empty;
+  let orderByClause = Prisma.sql`ORDER BY "fullname" ASC`;
+
   if (stringParts.length > 0) {
-    const allWords = Prisma.sql`string_to_array(
-      lower("fullname") || ' ' ||
-      COALESCE(lower(birth_place), '') || ' ' || 
-      COALESCE(lower(national), ''), ' '
-    )
+    const allText = Prisma.sql`
+      LOWER("fullname") || ' ' ||
+      COALESCE(LOWER("birth_place"), '') || ' ' ||
+      COALESCE(LOWER("other_data"), '') || ' ' ||
+      COALESCE(LOWER("national"), '')
+    `;
+    const words = Prisma.sql`STRING_TO_ARRAY(${allText}, ' ')`;
+    const queryValues = Prisma.join(
+      stringParts.map((p) => Prisma.sql`(${p})`),
+      ", ",
+    );
+
+    minDistanceSelect = Prisma.sql`, (
+      SELECT MIN(LEVENSHTEIN(word, LOWER(q.part)))
+      FROM UNNEST(${words}) AS word
+      CROSS JOIN (VALUES ${queryValues}) AS q(part)
+      WHERE LEVENSHTEIN(word, q.part) <= 2
+    ) AS min_distance
     `;
 
-    minDistanceClause = Prisma.sql`, (
-      SELECT MIN(levenshtein(word, sp.part))
-      FROM unnest(${allWords}) as word
-      CROSS JOIN (VALUES ${Prisma.join(
-        stringParts.map((p) => Prisma.sql`(${p})`),
-        ", ",
-      )}) as sp(part)
-    ) as min_distance
+    cteClause = Prisma.sql`
+      WITH victims_with_distance AS (
+        SELECT
+          *
+          ${minDistanceSelect}
+        FROM "victims"
+        ${whereClause}
+      )
     `;
 
-    orderByClause = Prisma.sql`ORDER BY min_distance ASC, "id" ASC`;
+    orderByClause = Prisma.sql`ORDER BY min_distance ASC, "fullname" ASC`;
+  } else {
+    cteClause = Prisma.sql`
+      WITH victims_with_distance AS (
+        SELECT *, NULL::int AS min_distance
+        FROM "victims"
+        ${whereClause}
+      )
+    `;
   }
+
+  const sql = Prisma.sql`
+    ${cteClause}
+    SELECT *
+    FROM victims_with_distance
+    WHERE min_distance IS NOT NULL OR ${stringParts.length === 0}::boolean
+    ${orderByClause}
+    LIMIT ${pageSize} OFFSET ${(page - 1) * pageSize}
+  `;
+
+  // console.log("SQL:", sql.strings.join("?"));
 
   const rawVictims = await unstable_cache(
     async () => {
-      return prisma.$queryRaw<Victim[]>`
-        SELECT * ${minDistanceClause}
-        FROM "victims"
-        ${whereClause}
-        ${orderByClause}
-        LIMIT ${pageSize} OFFSET ${(page - 1) * pageSize}
-      `;
+      return prisma.$queryRaw<(Victim & { min_distance: number })[]>`${sql}`;
     },
     [cacheKey],
     { revalidate: 900, tags: ["victims", cacheKey] },
@@ -122,10 +129,14 @@ export async function getCachedVictims(
 
   const victims = rawVictims.map(mapRawVictim);
 
-  const totalResult = await prisma.$queryRaw<{ count: bigint }[]>`
-    SELECT COUNT(*) as count FROM victims ${whereClause}
+  const countSql = Prisma.sql`
+    ${cteClause}
+    SELECT COUNT(*) AS count
+    FROM victims_with_distance
+    WHERE min_distance IS NOT NULL OR ${stringParts.length === 0}::boolean
   `;
 
+  const totalResult = await prisma.$queryRaw<{ count: bigint }[]>`${countSql}`;
   const total = Number(totalResult[0].count || 0);
 
   return { victims, total };

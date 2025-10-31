@@ -33,6 +33,12 @@ export default async function VictimProfile({
               <p>{victim.birthPlace}</p>
             </div>
           )}
+          {victim?.national && (
+            <div className="flex items-center gap-2.5">
+              <h6 className="md:text-[18px]">Национальность:</h6>
+              <p>{victim.national}</p>
+            </div>
+          )}
           <VictimCategory category={victim?.category} />
         </div>
 

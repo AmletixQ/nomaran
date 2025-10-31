@@ -1,7 +1,7 @@
 import { Category } from "@prisma/client";
 
-export function categoryDisplay(isShooted: boolean, category?: Category) {
-  return isShooted
+export function categoryDisplay(category?: Category) {
+  return category === "SHOOTED"
     ? "Расстрелянные"
     : category === "DISPOSSESSED"
       ? "Раскулаченные"

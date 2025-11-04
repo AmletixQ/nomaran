@@ -57,7 +57,7 @@ export default function VictimsPage() {
                   </div>
                 </div>
 
-                <div className="text-center flex flex-col">
+                <div className="flex flex-col text-center">
                   <h5 className="text-[15px]">
                     2. Высшая мера наказания (расстрел)
                   </h5>
@@ -92,13 +92,6 @@ export default function VictimsPage() {
           </div>
 
           <div className="relative hidden flex-col items-center gap-6 md:order-none md:col-start-4 md:col-end-6 md:flex">
-            <Image
-              src="/images/victims-ill.png"
-              width={500}
-              height={500}
-              alt="victims"
-            />
-
             <div className="border-gray order-first hidden max-w-[500px] flex-col rounded-[10px] border bg-white px-2 py-6 text-center md:order-none md:flex 2xl:px-5.5 2xl:py-12.5">
               <h1>11 138</h1>
               <p className="text-[11px] font-bold md:text-[14px] xl:text-[18px]">
@@ -106,6 +99,13 @@ export default function VictimsPage() {
                 политическим репрессиям в Северо-Осетинской АССР.
               </p>
             </div>
+
+            <Image
+              src="/images/victims-ill.png"
+              width={500}
+              height={500}
+              alt="victims"
+            />
           </div>
         </div>
       </section>

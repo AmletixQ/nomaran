@@ -30,13 +30,22 @@ export default function VictimsPage() {
               ингуши, греки, немцы, турки, армяне).
             </p>
 
-            <Image
-              className="md:hidden"
-              src="/images/victims-ill.png"
-              width={500}
-              height={500}
-              alt="victims"
-            />
+            <div className="relative flex flex-col items-center gap-6 md:order-none md:col-start-4 md:col-end-6 md:hidden">
+              <div className="border-gray order-first flex max-w-[500px] flex-col rounded-[10px] border bg-white px-2 py-6 text-center md:order-none 2xl:px-5.5 2xl:py-12.5">
+                <h1>11 138</h1>
+                <p className="text-[11px] font-bold md:text-[14px] xl:text-[18px]">
+                  Общее число реабелитированных, подвергшихся незаконным
+                  политическим репрессиям в Северо-Осетинской АССР.
+                </p>
+              </div>
+
+              <Image
+                src="/images/victims-ill.png"
+                width={500}
+                height={500}
+                alt="victims"
+              />
+            </div>
 
             <div className="order-3 flex flex-col gap-4 pt-4">
               <h2 className="text-center text-[16px] uppercase">
@@ -53,7 +62,7 @@ export default function VictimsPage() {
                     <h5 className="text-[15px]">
                       1. ИТЛ, тюремные заключения, ссылки
                     </h5>
-                    <p className="text-[1.6rem]">5924</p>
+                    <p className="text-[1.6rem]">5924 чел.</p>
                   </div>
                 </div>
 
@@ -61,7 +70,7 @@ export default function VictimsPage() {
                   <h5 className="text-[15px]">
                     2. Высшая мера наказания (расстрел)
                   </h5>
-                  <p className="text-[1.6rem]">1656</p>
+                  <p className="text-[1.6rem]">1656 чел.</p>
                 </div>
 
                 <div className="bg-gray h-[1px]"></div>
@@ -71,21 +80,21 @@ export default function VictimsPage() {
                     Реабелитированно репрессированных по админ. мотивам
                     (раскулаченных)
                   </h5>
-                  <p className="text-[1.6rem]">1710</p>
+                  <p className="text-[1.6rem]">1710 чел.</p>
                 </div>
 
                 <div className="text-center">
                   <h5 className="text-[15px]">
                     Реабелитировано репрессированных по национальному признаку
                   </h5>
-                  <p className="text-[1.6rem]">1848</p>
+                  <p className="text-[1.6rem]">1848 чел.</p>
                 </div>
 
                 <div className="bg-gray h-[1px]"></div>
 
                 <div className="text-center">
                   <h5 className="text-[15px]">Итого</h5>
-                  <p className="text-[1.6rem]">11138</p>
+                  <p className="text-[1.6rem]">11138 человек</p>
                 </div>
               </article>
             </div>

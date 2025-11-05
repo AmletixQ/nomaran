@@ -7,7 +7,7 @@ export default function VictimsPage() {
         <h2 className="text-center uppercase">Три массовые категории...</h2>
         <div className="flex flex-col gap-3 pt-7.5 leading-[160%] md:grid md:grid-cols-5 md:gap-5">
           <div className="flex flex-col gap-3 md:col-start-1 md:col-end-4">
-            <p>
+            <p className="text-[16px]">
               <span className="font-bold">I.</span> Первая массовая категория —
               люди, арестованные по политическим обвинениям органами
               государственной безопасности (ВЧК-ОГПУ-НКВД-МГБ-КГБ) и
@@ -16,14 +16,14 @@ export default function VictimsPage() {
               заключения в лагерях и тюрьмах или к ссылке.
             </p>
 
-            <p>
+            <p className="text-[16px]">
               <span className="font-bold">II.</span> Вторая массовая категория
               репрессированных по политическим мотивам — крестьяне,
               административно высланные с места жительства в ходе кампании
               «уничтожения кулачества как класса».
             </p>
 
-            <p>
+            <p className="text-[16px]">
               <span className="font-bold">III.</span> Третья массовая категория
               жертв политических репрессий — граждане Северо-Осетинской АССР,
               репрессированные по национальному признаку (корейцы, чеченцы,
@@ -33,7 +33,7 @@ export default function VictimsPage() {
             <div className="relative flex flex-col items-center gap-6 md:order-none md:col-start-4 md:col-end-6 md:hidden">
               <div className="border-gray order-first flex max-w-[500px] flex-col rounded-[10px] border bg-white px-2 py-6 text-center md:order-none 2xl:px-5.5 2xl:py-12.5">
                 <h1>11 138</h1>
-                <p className="text-[14px] font-bold xl:text-[18px]">
+                <p className="text-[16px] font-bold xl:text-[18px]">
                   Общее число реабелитированных, подвергшихся незаконным
                   политическим репрессиям в Северо-Осетинской АССР.
                 </p>

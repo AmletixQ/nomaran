@@ -112,7 +112,7 @@ export default function ActivityPage() {
           </p>
         </article>
         <Image
-          src="/images/restavration-stone.jpg"
+          src="/images/restavration-stone-second.jpg"
           alt="stone of tears"
           width={700}
           height={300}
@@ -135,6 +135,12 @@ export default function ActivityPage() {
             тема всех выступлений — «Такое не должно повториться!»
           </p>
         </article>
+        <Image
+          src="/images/event-of-memory.jpg"
+          alt="event of memory"
+          width={700}
+          height={400}
+        />
       </section>
     </main>
   );

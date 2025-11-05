@@ -28,7 +28,10 @@ export default function Header() {
         ["/", "/search"].includes(pathname) ? "text-white" : "text-black",
       )}
     >
-      <Link href="/">
+      <Link
+        className={cn("rounded p-1", pathname === "/" && `bg-[#000]/70`)}
+        href="/"
+      >
         <Logo />
       </Link>
 

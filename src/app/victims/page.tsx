@@ -33,7 +33,7 @@ export default function VictimsPage() {
             <div className="relative flex flex-col items-center gap-6 md:order-none md:col-start-4 md:col-end-6 md:hidden">
               <div className="border-gray order-first flex max-w-[500px] flex-col rounded-[10px] border bg-white px-2 py-6 text-center md:order-none 2xl:px-5.5 2xl:py-12.5">
                 <h1>11 138</h1>
-                <p className="text-[11px] font-bold md:text-[14px] xl:text-[18px]">
+                <p className="text-[12px] font-bold md:text-[14px] xl:text-[18px]">
                   Общее число реабелитированных, подвергшихся незаконным
                   политическим репрессиям в Северо-Осетинской АССР.
                 </p>
@@ -104,8 +104,8 @@ export default function VictimsPage() {
             <div className="border-gray order-first hidden max-w-[500px] flex-col rounded-[10px] border bg-white px-2 py-6 text-center md:order-none md:flex 2xl:px-5.5 2xl:py-12.5">
               <h1>11 138</h1>
               <p className="text-[11px] font-bold md:text-[14px] xl:text-[18px]">
-                Общее число реабелитированных, подвергшихся незаконным
-                политическим репрессиям в Северо-Осетинской АССР.
+                Общее число граждан Северо-Осетинской АССР, подвергшихся
+                незаконным политическим репрессиям.
               </p>
             </div>
 

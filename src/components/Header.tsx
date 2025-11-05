@@ -29,7 +29,7 @@ export default function Header() {
       )}
     >
       <Link
-        className={cn("rounded p-1", pathname === "/" && `bg-[#000]/70`)}
+        className={cn("rounded p-1", pathname === "/" && `lg:bg-[#000]/70`)}
         href="/"
       >
         <Logo />

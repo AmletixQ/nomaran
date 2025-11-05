@@ -55,46 +55,46 @@ export default function VictimsPage() {
               </h2>
               <article className="border-gray grid grid-cols-1 gap-1 rounded-md border bg-white p-2">
                 <div className="text-center">
-                  <h5 className="text-[18px]">
+                  <h5 className="text-[16px]">
                     Реабелитировано репрессированных по политическим мотивам
                   </h5>
                   <div className="flex flex-col pt-2">
-                    <h5 className="text-[18px]">
+                    <h5 className="text-[16px]">
                       1. ИТЛ, тюремные заключения, ссылки
                     </h5>
-                    <p className="text-[20px]">5924 чел.</p>
+                    <p className="text-[22px]">5924 чел.</p>
                   </div>
                 </div>
 
                 <div className="flex flex-col text-center">
-                  <h5 className="text-[18px]">
+                  <h5 className="text-[16px]">
                     2. Высшая мера наказания (расстрел)
                   </h5>
-                  <p className="text-[20px]">1656 чел.</p>
+                  <p className="text-[22px]">1656 чел.</p>
                 </div>
 
                 <div className="bg-gray h-[1px]"></div>
 
                 <div className="text-center">
-                  <h5 className="text-[18px]">
+                  <h5 className="text-[16px]">
                     Реабелитированно репрессированных по админ. мотивам
                     (раскулаченных)
                   </h5>
-                  <p className="text-[20px]">1710 чел.</p>
+                  <p className="text-[22px]">1710 чел.</p>
                 </div>
 
                 <div className="text-center">
-                  <h5 className="text-[18px]">
+                  <h5 className="text-[16px]">
                     Реабелитировано репрессированных по национальному признаку
                   </h5>
-                  <p className="text-[20px]">1848 чел.</p>
+                  <p className="text-[22px]">1848 чел.</p>
                 </div>
 
                 <div className="bg-gray h-[1px]"></div>
 
                 <div className="text-center">
-                  <h5 className="text-[18px]">Итого</h5>
-                  <p className="text-[20px]">11138 человек</p>
+                  <h5 className="text-[16px]">Итого</h5>
+                  <p className="text-[22px]">11138 человек</p>
                 </div>
               </article>
             </div>

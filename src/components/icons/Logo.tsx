@@ -5,7 +5,7 @@ export default function Logo() {
   return (
     <>
       <Image
-        src="/images/logo-mobile.svg"
+        src="/images/logos/logo-mobile.svg"
         width="112"
         height="95"
         alt="logo"

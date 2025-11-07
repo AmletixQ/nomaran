@@ -114,7 +114,7 @@ export default function ActivityPage() {
         <Image
           src="/images/restavration-stone-second.jpg"
           alt="stone of tears"
-          width={700}
+          width={800}
           height={300}
           className=""
         />
@@ -136,9 +136,9 @@ export default function ActivityPage() {
           </p>
         </article>
         <Image
-          src="/images/event-of-memory.jpg"
+          src="/images/event-of-memory.png"
           alt="event of memory"
-          width={700}
+          width={800}
           height={400}
         />
       </section>

@@ -47,13 +47,13 @@ export default function VictimsPage() {
               />
             </div>
 
-            <div className="order-3 flex flex-col gap-4 pt-4">
+            <div className="order-3 flex flex-col gap-4 pt-4 h-full">
               <h2 className="text-center text-[16px] uppercase">
                 ИНФОРМАЦИЯ ПО 6-ТИ ТОМАМ КНИГИ ПАМЯТИ ЖЕРТВ НЕЗАКОННЫХ
                 ПОЛИТИЧЕСКИХ РЕПРЕССИЙ 20-30-40- НАЧАЛА 50-х гг. XX ВЕКА ПО
                 СЕВЕРО-ОСЕТИНСКОЙ АССР.
               </h2>
-              <article className="border-gray grid grid-cols-1 gap-1 rounded-md border bg-white p-2">
+              <article className="border-gray grid grid-cols-1 h-full gap-1 rounded-md border bg-white p-2">
                 <div className="text-center">
                   <h5 className="text-[16px]">
                     Реабелитировано репрессированных по политическим мотивам
@@ -100,8 +100,8 @@ export default function VictimsPage() {
             </div>
           </div>
 
-          <div className="relative hidden flex-col items-center gap-6 md:order-none md:col-start-4 md:col-end-6 md:flex">
-            <div className="border-gray order-first hidden max-w-[500px] flex-col rounded-[10px] border bg-white px-2 py-6 text-center md:order-none md:flex 2xl:px-5.5 2xl:py-12.5">
+          <div className="relative hidden flex-col items-center gap-6 md:col-start-4 md:col-end-6 md:flex">
+            <div className="border-gray hidden max-w-[500px] flex-col rounded-[10px] border bg-white px-2 py-6 text-center md:flex 2xl:px-5.5 2xl:py-12.5">
               <h1>11 138</h1>
               <p className="text-[11px] font-bold md:text-[14px] xl:text-[18px]">
                 Общее число граждан Северо-Осетинской АССР, подвергшихся

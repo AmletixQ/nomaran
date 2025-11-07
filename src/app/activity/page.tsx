@@ -87,7 +87,7 @@ export default function ActivityPage() {
           src="/images/stone-of-tears.jpg"
           alt="stone of tears"
           width={800}
-          height={600}
+          height={480}
           className=""
         />
       </section>
@@ -112,11 +112,10 @@ export default function ActivityPage() {
           </p>
         </article>
         <Image
-          src="/images/restavration-stone-second.jpg"
+          src="/images/restavration-stone.jpg"
           alt="stone of tears"
           width={800}
-          height={300}
-          className=""
+          height={480}
         />
       </section>
 
@@ -136,11 +135,38 @@ export default function ActivityPage() {
           </p>
         </article>
         <Image
-          src="/images/event-of-memory.png"
+          src="/images/event-of-memory.jpg"
           alt="event of memory"
           width={800}
-          height={400}
+          height={480}
         />
+      </section>
+
+      <section className="flex flex-col gap-3">
+        <h6 className="text-[18px] md:text-[22px]">Открытие памятника</h6>
+        <article className="flex flex-wrap gap-2">
+          <Image
+            width={450}
+            height={300}
+            alt="first"
+            src="/images/open-monument/first.jpg"
+            className="aspect-[75 / 53]"
+          />
+          <Image
+            width={450}
+            height={200}
+            alt="second"
+            src="/images/open-monument/second.jpg"
+            className="aspect-[75 / 53]"
+          />
+          <Image
+            width={450}
+            height={200}
+            alt="third"
+            src="/images/open-monument/third.jpg"
+            className="aspect-[75 / 53]"
+          />
+        </article>
       </section>
     </main>
   );

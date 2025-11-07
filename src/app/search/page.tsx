@@ -32,7 +32,7 @@ export default async function SearchPage({
   return (
     <main className="pb-25" id="top">
       <ScreenContainer className="flex items-center justify-center md:pt-50">
-        <div className="absolute top-0 left-0 -z-20 h-full w-full bg-[url(/images/search-bg.jpg)] bg-cover bg-center bg-no-repeat md:bg-fixed" />
+        <div className="absolute top-0 left-0 -z-20 h-full w-full bg-[url(/images/backgrounds/search-bg.jpg)] bg-cover bg-center bg-no-repeat md:bg-fixed" />
 
         <section className="flex flex-col items-center gap-10 text-white md:max-w-[90%]">
           <div className="flex flex-col items-center text-center">

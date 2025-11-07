@@ -12,21 +12,21 @@ export default function Logo() {
         className="block md:hidden"
       />
       <Image
-        src="/images/logo-tablet.svg"
+        src="/images/logos/logo-tablet.svg"
         width="121"
         height="112"
         alt="logo"
         className="hidden md:block xl:hidden"
       />
       <Image
-        src="/images/logo-desktop.svg"
+        src="/images/logos/logo-desktop.svg"
         width="145"
         height="135"
         alt="logo"
         className="hidden xl:block 2xl:hidden"
       />
       <Image
-        src="/images/logo-desktop.svg"
+        src="/images/logos/logo-desktop.svg"
         width="218"
         height="208"
         alt="logo"

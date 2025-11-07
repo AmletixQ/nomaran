@@ -83,13 +83,29 @@ export default function ActivityPage() {
       </section>
 
       <section className="flex justify-between gap-30">
-        <Image
-          src="/images/stone-of-tears.jpg"
-          alt="stone of tears"
-          width={800}
-          height={480}
-          className=""
-        />
+        <article className="grid grid-cols-1 gap-2 md:grid-cols-4">
+          <Image
+            width={990}
+            height={300}
+            alt="first"
+            src="/images/open-monument/first.jpg"
+            className="aspect-[75 / 53] md:col-start-1 md:col-end-3"
+          />
+          <Image
+            width={990}
+            height={200}
+            alt="second"
+            src="/images/open-monument/second.jpg"
+            className="aspect-[75 / 53] md:col-start-3 md:col-end-5"
+          />
+          <Image
+            src="/images/stone-of-tears.jpg"
+            alt="stone of tears"
+            width={900}
+            height={200}
+            className="md:col-start-2 md:col-end-4"
+          />
+        </article>
       </section>
 
       <section className="flex flex-col gap-3">
@@ -135,38 +151,11 @@ export default function ActivityPage() {
           </p>
         </article>
         <Image
-          src="/images/event-of-memory.jpg"
+          src="/images/open-monument/fourth.jpg"
           alt="event of memory"
           width={800}
           height={480}
         />
-      </section>
-
-      <section className="flex flex-col gap-3">
-        <h6 className="text-[18px] md:text-[22px]">Открытие памятника</h6>
-        <article className="flex flex-wrap gap-2">
-          <Image
-            width={450}
-            height={300}
-            alt="first"
-            src="/images/open-monument/first.jpg"
-            className="aspect-[75 / 53]"
-          />
-          <Image
-            width={450}
-            height={200}
-            alt="second"
-            src="/images/open-monument/second.jpg"
-            className="aspect-[75 / 53]"
-          />
-          <Image
-            width={450}
-            height={200}
-            alt="third"
-            src="/images/open-monument/third.jpg"
-            className="aspect-[75 / 53]"
-          />
-        </article>
       </section>
     </main>
   );

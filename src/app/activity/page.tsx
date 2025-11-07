@@ -83,27 +83,26 @@ export default function ActivityPage() {
       </section>
 
       <section className="flex justify-between gap-30">
-        <article className="grid grid-cols-1 gap-2 md:grid-cols-4">
+        <article className="grid grid-cols-1 gap-2 md:grid-cols-2">
           <Image
             width={990}
             height={300}
             alt="first"
             src="/images/open-monument/first.jpg"
-            className="aspect-[75 / 53] md:col-start-1 md:col-end-3"
+            className="aspect-[75 / 53]"
           />
           <Image
             width={990}
             height={200}
             alt="second"
             src="/images/open-monument/second.jpg"
-            className="aspect-[75 / 53] md:col-start-3 md:col-end-5"
+            className="aspect-[75 / 53]"
           />
           <Image
             src="/images/stone-of-tears.jpg"
             alt="stone of tears"
             width={900}
             height={200}
-            className="md:col-start-2 md:col-end-4"
           />
         </article>
       </section>

@@ -135,17 +135,16 @@ export default function ActivityPage() {
         </article>
         <article className="relative grid grid-cols-1 gap-2 md:grid-cols-2">
           <div className="relative aspect-video w-full overflow-hidden">
-            <video controls preload="metadata">
-              <source src="/video.mp4#t=1" type="video/mp4" />
-            </video>
-          </div>
-          <div className="relative row-start-1 aspect-video w-full overflow-hidden md:row-start-auto">
             <Image
               src="/images/restavration-stone.jpg"
               alt="stone of tears"
               fill
-              className=""
             />
+          </div>
+          <div className="relative aspect-video w-full overflow-hidden">
+            <video controls preload="metadata">
+              <source src="/video.mp4#t=1" type="video/mp4" />
+            </video>
           </div>
         </article>
       </section>

@@ -133,21 +133,20 @@ export default function ActivityPage() {
             прошлых ошибок.
           </p>
         </article>
-        <article className="grid grid-cols-1 gap-2 md:grid-cols-2">
-          <iframe
-            className="w-full h-[350px] md:h-full"
-            src="https://www.youtube.com/embed/H9YKaG1cxas?si=ygq8uKkKwl_JtyRa"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          ></iframe>
-          <Image
-            src="/images/restavration-stone.jpg"
-            alt="stone of tears"
-            width={694}
-            height={480}
-          />
+        <article className="relative grid grid-cols-1 gap-2 md:grid-cols-2">
+          <div className="relative aspect-video w-full overflow-hidden">
+            <video controls>
+              <source src="/video.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div className="relative aspect-video w-full overflow-hidden">
+            <Image
+              src="/images/restavration-stone.jpg"
+              alt="stone of tears"
+              fill
+              className=""
+            />
+          </div>
         </article>
       </section>
 
@@ -168,7 +167,7 @@ export default function ActivityPage() {
         </article>
       </section>
 
-      <section className="">
+      <section>
         <article className="grid grid-cols-1 gap-2 md:grid-cols-2">
           <Image
             width={990}
@@ -179,31 +178,31 @@ export default function ActivityPage() {
           <Image
             width={990}
             height={300}
-            alt="first"
+            alt="second"
             src="/images/events-of-memory/second.png"
           />
           <Image
             width={990}
             height={300}
-            alt="first"
-            src="/images/events-of-memory/third.png"
-          />
-          <Image
-            width={990}
-            height={300}
-            alt="first"
+            alt="fourth"
             src="/images/events-of-memory/fourth.png"
           />
           <Image
+            width={990}
+            height={300}
+            alt="third"
+            src="/images/events-of-memory/third.png"
+          />
+          <Image
             src="/images/events-of-memory/fifth.png"
-            alt="event of memory"
+            alt="fifth"
             width={990}
             height={300}
           />
           <Image
             width={990}
             height={300}
-            alt="first"
+            alt="sixth"
             src="/images/events-of-memory/sixth.png"
           />
         </article>

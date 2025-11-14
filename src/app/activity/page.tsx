@@ -99,9 +99,16 @@ export default function ActivityPage() {
             className="aspect-[75 / 53]"
           />
           <Image
-            src="/images/stone-of-tears.jpg"
+            width={990}
+            height={200}
+            alt="second"
+            src="/images/open-monument/fourth.png"
+            className="aspect-[75 / 53]"
+          />
+          <Image
+            src="/images/open-monument/stone-of-tears.jpg"
             alt="stone of tears"
-            width={900}
+            width={990}
             height={200}
           />
         </article>
@@ -126,12 +133,22 @@ export default function ActivityPage() {
             прошлых ошибок.
           </p>
         </article>
-        <Image
-          src="/images/restavration-stone.jpg"
-          alt="stone of tears"
-          width={800}
-          height={480}
-        />
+        <article className="grid grid-cols-1 gap-2 md:grid-cols-2">
+          <iframe
+            className="w-full h-[350px] md:h-full"
+            src="https://www.youtube.com/embed/H9YKaG1cxas?si=ygq8uKkKwl_JtyRa"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
+          ></iframe>
+          <Image
+            src="/images/restavration-stone.jpg"
+            alt="stone of tears"
+            width={694}
+            height={480}
+          />
+        </article>
       </section>
 
       <section className="flex flex-col gap-3">
@@ -149,12 +166,47 @@ export default function ActivityPage() {
             тема всех выступлений — «Такое не должно повториться!»
           </p>
         </article>
-        <Image
-          src="/images/open-monument/fourth.jpg"
-          alt="event of memory"
-          width={800}
-          height={480}
-        />
+      </section>
+
+      <section className="">
+        <article className="grid grid-cols-1 gap-2 md:grid-cols-2">
+          <Image
+            width={990}
+            height={300}
+            alt="first"
+            src="/images/events-of-memory/first.png"
+          />
+          <Image
+            width={990}
+            height={300}
+            alt="first"
+            src="/images/events-of-memory/second.png"
+          />
+          <Image
+            width={990}
+            height={300}
+            alt="first"
+            src="/images/events-of-memory/third.png"
+          />
+          <Image
+            width={990}
+            height={300}
+            alt="first"
+            src="/images/events-of-memory/fourth.png"
+          />
+          <Image
+            src="/images/events-of-memory/fifth.png"
+            alt="event of memory"
+            width={990}
+            height={300}
+          />
+          <Image
+            width={990}
+            height={300}
+            alt="first"
+            src="/images/events-of-memory/sixth.png"
+          />
+        </article>
       </section>
     </main>
   );

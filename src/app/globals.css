@@ -6,6 +6,9 @@
   --color-black: #19181a;
   --color-dark-red: #970d1d; /* hover */
   --color-gray: #a7a7a7; /* disabled */
+
+  --font-times: "Times New Roman", Times, serif;
+  --font-helvetica: "Helvetica Neue";
 }
 
 @font-face {
@@ -40,16 +43,24 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Helvetice Neue";
+  src: url("/fonts/helvetica-neue/HelveticaNeue-Roman.otf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   body {
     font-family: "Courier New", sans-serif;
 
-    background-image: url("/images/body-bg.jpg");
+    background-image: url("/images/backgrounds/body-bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 
-    font-size: 12px;
+    font-size: 14px;
     line-height: 120%;
 
     scroll-behavior: smooth;
@@ -87,7 +98,7 @@
   }
 
   p {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 120%;
   }
 
@@ -154,7 +165,7 @@
   @media (width >= 64rem) {
     body,
     p {
-      font-size: 16px;
+      font-size: 18px;
     }
 
     h1 {
@@ -164,7 +175,7 @@
     }
 
     h2 {
-      font-size: 46px;
+      font-size: 38px;
       line-height: 120%;
       font-weight: bold;
     }

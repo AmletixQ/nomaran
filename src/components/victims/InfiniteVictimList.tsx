@@ -2,9 +2,8 @@
 import { Victim } from "@prisma/client";
 import { useCallback, useEffect, useRef, useState } from "react";
 import VictimList from "./VictimList";
-import Up from "../icons/Up";
-import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import ShevronArrow from "../icons/ShevronArrow";
 
 interface IInfiniteVictimList {
   initialVictims: Victim[];
@@ -84,16 +83,14 @@ export default function InfiniteVictimList({
         <h2>Не найдено никаких записей...</h2>
       ) : (
         <>
-          <VictimList victims={victims} />
+          <VictimList page={initialPage} pageSize={pageSize} victims={victims} />
           {hasMore && (
             <div ref={observeRef} className="pt-5">
               {isLoading && <h3>Загрузка...</h3>}
             </div>
           )}
 
-          <Link href="#top" className="fixed right-[3%] bottom-[3%]">
-            <Up />
-          </Link>
+          <ShevronArrow href="#top" />
         </>
       )}
     </div>

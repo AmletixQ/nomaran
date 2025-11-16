@@ -7,9 +7,17 @@ import SearchAnchorButton from "./SearchAnchorButton";
 import { links } from "@/constants/links";
 import Anchor from "./ui/Anchor";
 import BurgerMenu from "./ui/BurgerMenu";
+import { useEffect } from "react";
 
 export default function Header() {
   const pathname = usePathname();
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  let isMobile: boolean = false;
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    isMobile = window.innerWidth < 768;
+  }, []);
 
   return (
     <header
@@ -20,11 +28,14 @@ export default function Header() {
         ["/", "/search"].includes(pathname) ? "text-white" : "text-black",
       )}
     >
-      <Link href="/">
+      <Link
+        className={cn("rounded p-1", pathname === "/" && `lg:bg-[#000]/70`)}
+        href="/"
+      >
         <Logo />
       </Link>
 
-      <nav className="hidden h-fit gap-7.5 pt-4 xl:flex">
+      <nav className="hidden h-fit gap-7.5 pt-4 text-[18px] xl:flex">
         {links.map((link, i) => (
           <Anchor {...link} key={i} />
         ))}

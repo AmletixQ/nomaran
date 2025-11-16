@@ -1,16 +1,23 @@
 "use client";
+import { cn } from "@/utils/cn";
 import { usePathname } from "next/navigation";
 import { ButtonHTMLAttributes } from "react";
 
-export default function MenuToggle(
-  props: ButtonHTMLAttributes<HTMLButtonElement>,
-) {
+export default function MenuToggle({
+  ...props
+}: ButtonHTMLAttributes<HTMLButtonElement>) {
   const pathname = usePathname();
 
   const color = ["/", "/search"].includes(pathname) ? "white" : "black";
 
   return (
-    <button {...props} className="h-fit xl:hidden">
+    <button
+      {...props}
+      className={cn(
+        "h-fit xl:hidden",
+        pathname === "/" ? "hidden md:block" : "",
+      )}
+    >
       <svg
         width="32"
         height="32"

@@ -16,7 +16,7 @@ export default function BurgerMenu() {
       <div
         className={cn(
           "fixed top-0 left-[150%] z-20 overflow-hidden transition-all duration-300 ease-in-out",
-          "h-screen w-screen bg-[url(/images/body-bg.jpg)] bg-cover bg-center bg-no-repeat",
+          "h-screen w-screen bg-[url(/images/backgrounds/body-bg.jpg)] bg-cover bg-center bg-no-repeat",
           "flex flex-col items-center justify-center gap-7.5",
           open ? "left-0" : "",
         )}
@@ -25,10 +25,13 @@ export default function BurgerMenu() {
           handleClick={() => setOpen(false)}
           className="text-[20px] text-black"
         />
-        <SearchAnchorButton handleClick={() => setOpen(false)} />
+        <SearchAnchorButton
+          className="text-[20px]"
+          handleClick={() => setOpen(false)}
+        />
 
         <button
-          className="absolute top-[5%] right-[5%]"
+          className="absolute top-[2%] right-[3%]"
           onClick={() => setOpen(false)}
         >
           <Cross />

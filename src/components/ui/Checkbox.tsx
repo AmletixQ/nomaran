@@ -24,7 +24,7 @@ export default function Checkbox({
         type="checkbox"
         className={cn("min-h-3 min-w-3 border xl:min-h-5 xl:min-w-5")}
       />
-      <label htmlFor={id} className="text-[11px] md:text-[14px] lg:text-[18px]">
+      <label htmlFor={id} className="text-[14px] lg:text-[18px]">
         {children}
       </label>
     </div>

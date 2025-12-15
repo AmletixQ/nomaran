@@ -2,6 +2,40 @@ import React from "react";
 import prisma from "@/utils/prisma";
 import Backlink from "@/components/ui/Backlink";
 import VictimCategory from "@/components/victims/VictimCategory";
+import { Metadata } from "next";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+
+  const victim = await prisma.victim.findUnique({
+    where: { id: parseInt(id) },
+  });
+
+  return {
+    title: victim?.fullname || "Профиль жертвы репрессий",
+    description: `Информация о жертве политических репрессий: ${victim?.fullname}`,
+    keywords: [
+      "жертвы репрессий",
+      "политические репрессии",
+      "номаран",
+      "Северо-Осетинская АССР",
+    ],
+    openGraph: {
+      title: victim?.fullname || "Профиль жертвы репрессий",
+      description: `Информация о жертве политических репрессий: ${victim?.fullname}`,
+      images: ["/og-image.jpg"],
+    },
+    twitter: {
+      title: victim?.fullname || "Профиль жертвы репрессий",
+      description: `Информация о жертве политических репрессий: ${victim?.fullname}`,
+      images: ["/og-image.jpg"],
+    },
+  };
+}
 
 export default async function VictimProfile({
   params,

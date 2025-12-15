@@ -1,6 +1,29 @@
 import { BOOKS } from "@/constants/books";
 import { cn } from "@/utils/cn";
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Деятельность организации",
+  description: "Информация о деятельности организации Номаран",
+  keywords: [
+    "деятельность организации",
+    "издание книги памяти",
+    "мемориал камень слез",
+    "акция памяти",
+    "реставрация мемориала",
+  ],
+  openGraph: {
+    title: "Деятельность организации",
+    description: "Информация о деятельности организации Номаран",
+    images: ["/og-image.jpg"],
+  },
+  twitter: {
+    title: "Деятельность организации",
+    description: "Информация о деятельности организации Номаран",
+    images: ["/og-image.jpg"],
+  },
+};
 
 export default function ActivityPage() {
   return (
@@ -41,7 +64,7 @@ export default function ActivityPage() {
                   height="151"
                   src={b.image}
                   alt={`book-${i}`}
-                  className="h-[151px] w-[101px]"
+                  className="h-37.75 w-25.25"
                 />
                 <a
                   download

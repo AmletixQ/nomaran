@@ -3,8 +3,34 @@ import SearchForm from "@/components/search-form/SearchForm";
 import { getCachedVictims } from "@/utils/getCachedVictims";
 import VictimList from "@/components/victims/VictimList";
 import Pagination from "@/components/victims/Pagination";
+import { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+  title: "Поиск жертв репрессий",
+  description:
+    "Поиск информации о людях, пострадавших от политических репрессий в Северо-Осетинской АССР",
+  keywords: [
+    "поиск жертв репрессий",
+    "репрессированные",
+    "политические репрессии",
+    "номаран",
+    "Северо-Осетинская АССР",
+  ],
+  openGraph: {
+    title: "Поиск жертв репрессий",
+    description:
+      "Поиск информации о людях, пострадавших от политических репрессий в Северо-Осетинской АССР",
+    images: ["/og-image.jpg"],
+  },
+  twitter: {
+    title: "Поиск жертв репрессий",
+    description:
+      "Поиск информации о людях, пострадавших от политических репрессий в Северо-Осетинской АССР",
+    images: ["/og-image.jpg"],
+  },
+};
 
 export default async function SearchPage({
   searchParams,

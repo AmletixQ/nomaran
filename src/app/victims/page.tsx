@@ -1,6 +1,32 @@
 import { STAT_TABLE_DATA } from "@/constants/stat-table";
+import { Metadata } from "next";
 import Image from "next/image";
 import { Fragment } from "react";
+
+export const metadata: Metadata = {
+  title: "Жертвы репрессий",
+  description:
+    "Общее число граждан Северо-Осетинской АССР, подвергшихся незаконным политическим репрессиям.",
+  keywords: [
+    "жертвы репрессий",
+    "репрессированные Северная Осетия",
+    "политические репрессии Северная Осетия",
+    "реабилитация репрессированных Северная Осетия",
+    "номаран",
+  ],
+  openGraph: {
+    title: "Жертвы репрессий",
+    description:
+      "Общее число граждан Северо-Осетинской АССР, подвергшихся незаконным политическим репрессиям.",
+    images: ["/og-image.jpg"],
+  },
+  twitter: {
+    title: "Жертвы репрессий",
+    description:
+      "Общее число граждан Северо-Осетинской АССР, подвергшихся незаконным политическим репрессиям.",
+    images: ["/og-image.jpg"],
+  },
+};
 
 export default function VictimsPage() {
   return (

@@ -1,4 +1,6 @@
+import { STAT_TABLE_DATA } from "@/constants/stat-table";
 import Image from "next/image";
+import { Fragment } from "react";
 
 export default function VictimsPage() {
   return (
@@ -30,8 +32,8 @@ export default function VictimsPage() {
               ингуши, греки, немцы, турки, армяне).
             </p>
 
-            <div className="relative flex flex-col items-center gap-6 md:order-none md:col-start-4 md:col-end-6 md:hidden">
-              <div className="border-gray order-first flex max-w-[500px] flex-col rounded-[10px] border bg-white px-2 py-6 text-center md:order-none 2xl:px-5.5 2xl:py-12.5">
+            <div className="relative flex flex-col items-center gap-6 md:order-0 md:col-start-4 md:col-end-6 md:hidden">
+              <div className="border-gray order-first flex max-w-125 flex-col rounded-[10px] border bg-white px-2 py-6 text-center md:order-0 2xl:px-5.5 2xl:py-12.5">
                 <h1>11 138</h1>
                 <p className="text-[16px] font-bold xl:text-[18px]">
                   Общее число граждан Северо-Осетинской АССР, подвергшихся
@@ -53,100 +55,50 @@ export default function VictimsPage() {
                 ПОЛИТИЧЕСКИХ РЕПРЕССИЙ 20-30-40- НАЧАЛА 50-х гг. XX ВЕКА ПО
                 СЕВЕРО-ОСЕТИНСКОЙ АССР.
               </h2>
-              <table className="border-gray mx-2 rounded-sm border text-[16px]">
+              <table className="border-gray mx-2 border-collapse rounded-sm border text-[16px] md:text-[18px]">
                 <tbody>
-                  <tr className="border-gray border">
-                    <td valign="top" align="center" className="w-12 hidden md:table-cell">
-                      1
-                    </td>
-                    <td className="border-gray border px-2">
-                      Реабелитировано репрессированных по политическим
-                      обвинениям
-                      <br />
-                      – ИТЛ, тюремные заключения, ссылки
-                      <br />– Высшая мера наказания (расстрел)
-                    </td>
-                    <td valign="bottom" className="w-32 px-2">
-                      5924 чел.
-                      <br />
-                      1656 чел.
-                    </td>
-                  </tr>
-                  <tr className="border-gray border px-2">
-                    <td valign="top" align="center" className="w-12 hidden md:table-cell">
-                      2
-                    </td>
-                    <td className="border-gray border px-2">
-                      Реабелитировано в ходе кампании по
-                      &quot;раскулачиванию&quot;
-                    </td>
-                    <td className="px-2">1710 чел.</td>
-                  </tr>
-                  <tr className="border-gray border">
-                    <td valign="top" align="center" className="w-12 hidden md:table-cell">
-                      3
-                    </td>
-                    <td className="border-gray border px-2">
-                      Репрессировано по национальному признаку
-                    </td>
-                    <td className="px-2">1848 чел.</td>
-                  </tr>
-                  <tr className="border-gray border">
-                    <td className="hidden md:table-cell"></td>
-                    <td className="border-gray border px-2">Всего</td>
-                    <td className="px-2">11138 чел.</td>
-                  </tr>
+                  {STAT_TABLE_DATA.map((item, idx) => (
+                    <Fragment key={idx}>
+                      <tr>
+                        <td
+                          valign="middle"
+                          align="center"
+                          className="border-gray w-12 border"
+                          rowSpan={item.rowSpan}
+                        >
+                          {item.id}
+                        </td>
+                        <td
+                          className="border-gray border px-2 py-2"
+                          colSpan={item.colSpan}
+                        >
+                          {item.description}
+                        </td>
+                        {item.count && (
+                          <td className="border-gray w-32 border px-2">
+                            {item.count}
+                          </td>
+                        )}
+                      </tr>
+                      {item.subItems?.map((subItem) => (
+                        <tr key={subItem.description}>
+                          <td className="border-gray border px-2 py-2">
+                            {subItem.description}
+                          </td>
+                          <td className="border-gray w-32 border px-2">
+                            {subItem.count}
+                          </td>
+                        </tr>
+                      ))}
+                    </Fragment>
+                  ))}
                 </tbody>
               </table>
-              {/* <article className="border-gray grid grid-cols-1 h-full gap-1 rounded-md border bg-white p-2">
-                <div className="text-center">
-                  <h5 className="text-[16px]">
-                    Реабелитировано репрессированных по политическим мотивам
-                  </h5>
-                  <div className="flex flex-col pt-2">
-                    <h5 className="text-[16px]">
-                      1. ИТЛ, тюремные заключения, ссылки
-                    </h5>
-                    <p className="text-[22px]">5924 чел.</p>
-                  </div>
-                </div>
-
-                <div className="flex flex-col text-center">
-                  <h5 className="text-[16px]">
-                    2. Высшая мера наказания (расстрел)
-                  </h5>
-                  <p className="text-[22px]">1656 чел.</p>
-                </div>
-
-                <div className="bg-gray h-[1px]"></div>
-
-                <div className="text-center">
-                  <h5 className="text-[16px]">
-                    Реабелитированно репрессированных по админ. мотивам
-                    (раскулаченных)
-                  </h5>
-                  <p className="text-[22px]">1710 чел.</p>
-                </div>
-
-                <div className="text-center">
-                  <h5 className="text-[16px]">
-                    Реабелитировано репрессированных по национальному признаку
-                  </h5>
-                  <p className="text-[22px]">1848 чел.</p>
-                </div>
-
-                <div className="bg-gray h-[1px]"></div>
-
-                <div className="text-center">
-                  <h5 className="text-[16px]">Итого</h5>
-                  <p className="text-[22px]">11138 человек</p>
-                </div>
-              </article> */}
             </div>
           </div>
 
           <div className="relative hidden flex-col items-center gap-6 md:col-start-4 md:col-end-6 md:flex">
-            <div className="border-gray hidden max-w-[500px] flex-col rounded-[10px] border bg-white px-2 py-6 text-center md:flex 2xl:px-5.5 2xl:py-12.5">
+            <div className="border-gray hidden max-w-125 flex-col rounded-[10px] border bg-white px-2 py-6 text-center md:flex 2xl:px-5.5 2xl:py-12.5">
               <h1>11 138</h1>
               <p className="text-[11px] font-bold md:text-[14px] xl:text-[18px]">
                 Общее число граждан Северо-Осетинской АССР, подвергшихся

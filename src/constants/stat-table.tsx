@@ -6,12 +6,12 @@ export const STAT_TABLE_DATA = [
     colSpan: 2,
     subItems: [
       {
-        description: "– ИТЛ, тюремные заключения, ссылки",
-        count: "5924 чел.",
-      },
-      {
         description: "– Высшая мера наказания (расстрел)",
         count: "1656 чел.",
+      },
+      {
+        description: "– ИТЛ, тюремные заключения, ссылки",
+        count: "5924 чел.",
       },
     ],
   },

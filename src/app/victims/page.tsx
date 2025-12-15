@@ -18,13 +18,13 @@ export const metadata: Metadata = {
     title: "Жертвы репрессий",
     description:
       "Общее число граждан Северо-Осетинской АССР, подвергшихся незаконным политическим репрессиям.",
-    images: ["/og-image.jpg"],
+    images: ["https://nomaran.ru/og-image.jpg"],
   },
   twitter: {
     title: "Жертвы репрессий",
     description:
       "Общее число граждан Северо-Осетинской АССР, подвергшихся незаконным политическим репрессиям.",
-    images: ["/og-image.jpg"],
+    images: ["https://nomaran.ru/og-image.jpg"],
   },
 };
 

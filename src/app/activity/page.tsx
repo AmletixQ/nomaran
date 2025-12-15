@@ -16,12 +16,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Деятельность организации",
     description: "Информация о деятельности организации Номаран",
-    images: ["/og-image.jpg"],
+    images: ["https://nomaran.ru/og-image.jpg"],
   },
   twitter: {
     title: "Деятельность организации",
     description: "Информация о деятельности организации Номаран",
-    images: ["/og-image.jpg"],
+    images: ["https://nomaran.ru/og-image.jpg"],
   },
 };
 

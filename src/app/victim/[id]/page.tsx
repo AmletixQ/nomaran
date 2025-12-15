@@ -27,12 +27,12 @@ export async function generateMetadata({
     openGraph: {
       title: victim?.fullname || "Профиль жертвы репрессий",
       description: `Информация о жертве политических репрессий: ${victim?.fullname}`,
-      images: ["/og-image.jpg"],
+      images: ["https://nomaran.ru/og-image.jpg"],
     },
     twitter: {
       title: victim?.fullname || "Профиль жертвы репрессий",
       description: `Информация о жертве политических репрессий: ${victim?.fullname}`,
-      images: ["/og-image.jpg"],
+      images: ["https://nomaran.ru/og-image.jpg"],
     },
   };
 }

@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Список ИТЛ",
     description: "Список исправительно-трудовых лагерей (ИТЛ)",
-    images: ["/og-image.jpg"],
+    images: ["https://nomaran.ru/og-image.jpg"],
   },
   twitter: {
     title: "Список ИТЛ",
     description: "Список исправительно-трудовых лагерей (ИТЛ)",
-    images: ["/og-image.jpg"],
+    images: ["https://nomaran.ru/og-image.jpg"],
   },
 };
 

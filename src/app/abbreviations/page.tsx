@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Список аббревиатур",
     description: "Список аббревиатур, используемых в проекте",
-    images: ["/og-image.jpg"],
+    images: ["https://nomaran.ru/og-image.jpg"],
   },
   twitter: {
     title: "Список аббревиатур",
     description: "Список аббревиатур, используемых в проекте",
-    images: ["/og-image.jpg"],
+    images: ["https://nomaran.ru/og-image.jpg"],
   },
 };
 

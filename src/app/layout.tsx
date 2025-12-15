@@ -20,13 +20,13 @@ export const metadata: Metadata = {
     title: "Номаран – Память Имен",
     description:
       "Северо-Осетинская региональная общественная организация «Ассоциация жертв политических репрессий «Номаран (Память Имен)»».",
-    images: ["/og-image.jpg"],
+    images: ["https://nomaran.ru/og-image.jpg"],
   },
   twitter: {
     title: "Номаран – Память Имен",
     description:
       "Северо-Осетинская региональная общественная организация «Ассоциация жертв политических репрессий «Номаран (Память Имен)»».",
-    images: ["/og-image.jpg"],
+    images: ["https://nomaran.ru/og-image.jpg"],
   },
 };
 

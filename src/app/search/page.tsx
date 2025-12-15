@@ -22,13 +22,13 @@ export const metadata: Metadata = {
     title: "Поиск жертв репрессий",
     description:
       "Поиск информации о людях, пострадавших от политических репрессий в Северо-Осетинской АССР",
-    images: ["/og-image.jpg"],
+    images: ["https://nomaran.ru/og-image.jpg"],
   },
   twitter: {
     title: "Поиск жертв репрессий",
     description:
       "Поиск информации о людях, пострадавших от политических репрессий в Северо-Осетинской АССР",
-    images: ["/og-image.jpg"],
+    images: ["https://nomaran.ru/og-image.jpg"],
   },
 };
 

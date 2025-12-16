@@ -7,7 +7,7 @@ async function getVictims() {
   });
 
   return victims.map((victim) => ({
-    url: `https://nomaran.ru/victims/${victim.id}`,
+    url: `https://nomaran.ru/victim/${victim.id}`,
     lastModified: new Date(),
   }));
 }

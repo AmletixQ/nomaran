@@ -3,6 +3,9 @@ import { Metadata } from "next";
 import Image from "next/image";
 import { Fragment } from "react";
 
+import victimIll from "../../../public/images/victims-ill.png";
+import { cn } from "@/utils/cn";
+
 export const metadata: Metadata = {
   title: "Жертвы репрессий",
   description:
@@ -67,12 +70,7 @@ export default function VictimsPage() {
                 </p>
               </div>
 
-              <Image
-                src="/images/victims-ill.png"
-                width={500}
-                height={500}
-                alt="victims"
-              />
+              <Image src={victimIll} width={500} height={500} alt="victims" />
             </div>
 
             <div className="order-3 flex h-full flex-col gap-4 pt-4">
@@ -95,7 +93,10 @@ export default function VictimsPage() {
                           {item.id}
                         </td>
                         <td
-                          className="border-gray border px-2 py-2"
+                          className={cn(
+                            "border-gray border px-2 py-2",
+                            item.subItems && "border-0",
+                          )}
                           colSpan={item.colSpan}
                         >
                           {item.description}
@@ -108,12 +109,8 @@ export default function VictimsPage() {
                       </tr>
                       {item.subItems?.map((subItem) => (
                         <tr key={subItem.description}>
-                          <td className="border-gray border px-2 py-2">
-                            {subItem.description}
-                          </td>
-                          <td className="border-gray w-32 border px-2">
-                            {subItem.count}
-                          </td>
+                          <td className="px-2 py-2">{subItem.description}</td>
+                          <td className="w-32 px-2">{subItem.count}</td>
                         </tr>
                       ))}
                     </Fragment>
@@ -132,12 +129,7 @@ export default function VictimsPage() {
               </p>
             </div>
 
-            <Image
-              src="/images/victims-ill.png"
-              width={500}
-              height={500}
-              alt="victims"
-            />
+            <Image src={victimIll} width={500} height={500} alt="victims" />
           </div>
         </div>
       </section>

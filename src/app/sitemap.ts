@@ -9,6 +9,7 @@ async function getVictims() {
   return victims.map((victim) => ({
     url: `https://nomaran.ru/victim/${victim.id}`,
     lastModified: new Date(),
+    priority: 0.1,
   }));
 }
 
@@ -44,13 +45,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${baseUrl}/itls`,
       lastModified: new Date(),
       changeFrequency: "yearly",
-      priority: 0.7,
+      priority: 0.3,
     },
     {
       url: `${baseUrl}/abbreviations`,
       lastModified: new Date(),
       changeFrequency: "yearly",
-      priority: 0.6,
+      priority: 0.3,
     },
     {
       url: `${baseUrl}/search`,

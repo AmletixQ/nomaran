@@ -2,6 +2,8 @@ import { cn } from "@/utils/cn";
 import { Metadata } from "next";
 import Image from "next/image";
 
+import presidentImage from "../../../public/images/president-image.jpg";
+
 export const metadata: Metadata = {
   title: "Об организации",
   description: "Информация об организации Номаран",
@@ -111,10 +113,10 @@ export default function AboutPage() {
               <div className="flex justify-center">
                 <div className="relative flex flex-col items-center">
                   <Image
-                    src={"/images/president-image.png"}
+                    src={presidentImage}
                     alt="image"
-                    height={254}
-                    width={223}
+                    height={279}
+                    width={245}
                     className="justify-self-center rounded-md md:min-h-63.5 md:min-w-55.75 md:justify-self-start lg:min-h-70 lg:min-w-61.25 xl:min-h-84 xl:min-w-73.5"
                   />
                   <p className="text-[14px] md:text-[17px]">

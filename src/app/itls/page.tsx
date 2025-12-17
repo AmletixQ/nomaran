@@ -27,7 +27,7 @@ export default function page() {
         {ITLS.map((itl, i) => (
           <div
             key={i}
-            className="flex list-none items-center gap-2.5 border-b border-black/20 pb-1.5 text-[22px]"
+            className="flex list-none items-center gap-2.5 border-b border-black/20 pb-1.5"
           >
             <Image
               src="/images/star.png"
@@ -35,7 +35,9 @@ export default function page() {
               width="20"
               height="18"
             />
-            <p>{itl}</p>
+            <p className="2xl:text-[22px]">
+              {itl}
+            </p>
           </div>
         ))}
       </ul>

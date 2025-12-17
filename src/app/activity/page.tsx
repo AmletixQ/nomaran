@@ -3,6 +3,19 @@ import { cn } from "@/utils/cn";
 import { Metadata } from "next";
 import Image from "next/image";
 
+import monumentFirst from "../../../public/images/open-monument/first.jpg";
+import monumentSecond from "../../../public/images/open-monument/second.jpg";
+import monumentFourth from "../../../public/images/open-monument/fourth.png";
+import stoneOfTears from "../../../public/images/open-monument/stone-of-tears.jpg";
+import restavrationStone from "../../../public/images/restavration-stone.jpg";
+
+import eventMemoryFirst from "../../../public/images/events-of-memory/first.png";
+import eventMemorySecond from "../../../public/images/events-of-memory/second.png";
+import eventMemoryThird from "../../../public/images/events-of-memory/third.png";
+import eventMemoryFourth from "../../../public/images/events-of-memory/fourth.png";
+import eventMemoryFifth from "../../../public/images/events-of-memory/fifth.png";
+import eventMemorySixth from "../../../public/images/events-of-memory/sixth.png";
+
 export const metadata: Metadata = {
   title: "Деятельность организации",
   description: "Информация о деятельности организации Номаран",
@@ -58,13 +71,13 @@ export default function ActivityPage() {
         <article className="flex flex-col gap-3">
           <div className="flex flex-wrap justify-evenly gap-2 lg:justify-between">
             {BOOKS.map((b, i) => (
-              <div key={b.image} className="flex flex-col items-center gap-1">
+              <div key={i} className="flex flex-col items-center gap-1">
                 <Image
-                  width="101"
-                  height="151"
+                  width="157"
+                  height="235"
                   src={b.image}
                   alt={`book-${i}`}
-                  className="h-37.75 w-25.25"
+                  className="h-37.75 w-25.25 lg:h-54 lg:w-36 xl:h-59.5 xl:w-39.5 2xl:h-70 2xl:w-46"
                 />
                 <a
                   download
@@ -111,28 +124,28 @@ export default function ActivityPage() {
             width={990}
             height={300}
             alt="first"
-            src="/images/open-monument/first.jpg"
+            src={monumentFirst}
             className="aspect-[75 / 53]"
           />
           <Image
             width={990}
             height={200}
             alt="second"
-            src="/images/open-monument/second.jpg"
+            src={monumentSecond}
             className="aspect-[75 / 53]"
           />
           <Image
             width={990}
             height={200}
-            alt="second"
-            src="/images/open-monument/fourth.png"
+            alt="fourth"
+            src={monumentFourth}
             className="aspect-[75 / 53]"
           />
           <Image
-            src="/images/open-monument/stone-of-tears.jpg"
+            width={990}
+            height={200}
             alt="stone of tears"
-            width={990}
-            height={200}
+            src={stoneOfTears}
           />
         </article>
       </section>
@@ -158,11 +171,7 @@ export default function ActivityPage() {
         </article>
         <article className="relative grid grid-cols-1 gap-2 md:grid-cols-2">
           <div className="relative aspect-video w-full overflow-hidden">
-            <Image
-              src="/images/restavration-stone.jpg"
-              alt="stone of tears"
-              fill
-            />
+            <Image src={restavrationStone} alt="stone of tears" fill />
           </div>
           <div className="relative aspect-video w-full overflow-hidden">
             <video controls preload="metadata">
@@ -191,42 +200,22 @@ export default function ActivityPage() {
 
       <section>
         <article className="grid grid-cols-1 gap-2 md:grid-cols-2">
-          <Image
-            width={990}
-            height={300}
-            alt="first"
-            src="/images/events-of-memory/first.png"
-          />
+          <Image width={990} height={300} alt="first" src={eventMemoryFirst} />
           <Image
             width={990}
             height={300}
             alt="second"
-            src="/images/events-of-memory/second.png"
+            src={eventMemorySecond}
           />
           <Image
             width={990}
             height={300}
             alt="fourth"
-            src="/images/events-of-memory/fourth.png"
+            src={eventMemoryFourth}
           />
-          <Image
-            width={990}
-            height={300}
-            alt="third"
-            src="/images/events-of-memory/third.png"
-          />
-          <Image
-            src="/images/events-of-memory/fifth.png"
-            alt="fifth"
-            width={990}
-            height={300}
-          />
-          <Image
-            width={990}
-            height={300}
-            alt="sixth"
-            src="/images/events-of-memory/sixth.png"
-          />
+          <Image width={990} height={300} alt="third" src={eventMemoryThird} />
+          <Image width={990} height={300} alt="fifth" src={eventMemoryFifth} />
+          <Image width={990} height={300} alt="sixth" src={eventMemorySixth} />
         </article>
       </section>
     </main>

@@ -36,8 +36,8 @@ export default function VictimsPage() {
     <main className="flex flex-col gap-10 pt-40 pb-25 md:pt-50 2xl:mx-25 2xl:py-70">
       <section>
         <h2 className="text-center uppercase">Три массовые категории...</h2>
-        <div className="flex flex-col gap-3 pt-7.5 leading-[160%] md:grid md:grid-cols-5 md:gap-5">
-          <div className="flex flex-col justify-between gap-3 md:col-start-1 md:col-end-4">
+        <div className="flex flex-col gap-3 pt-7.5 leading-[160%] md:grid md:grid-cols-6 md:gap-5">
+          <div className="flex flex-col justify-between gap-3 md:col-start-1 md:col-end-5">
             <p className="text-[16px]">
               <span className="font-bold">I.</span> Первая массовая категория —
               люди, арестованные по политическим обвинениям органами
@@ -61,8 +61,8 @@ export default function VictimsPage() {
               ингуши, греки, немцы, турки, армяне).
             </p>
 
-            <div className="relative flex flex-col items-center gap-6 md:order-0 md:col-start-4 md:col-end-6 md:hidden">
-              <div className="border-gray order-first flex max-w-125 flex-col rounded-[10px] border bg-white px-2 py-6 text-center md:order-0 2xl:px-5.5 2xl:py-12.5">
+            <div className="relative flex flex-col items-center gap-6 md:order-0 md:col-start-5 md:col-end-7 md:hidden">
+              <div className="border-gray order-first flex max-w-106.25 flex-col rounded-[10px] border bg-white px-2 py-6 text-center md:order-0 2xl:px-5.5 2xl:py-12.5">
                 <h1>11 146</h1>
                 <p className="text-[16px] font-bold xl:text-[18px]">
                   Общее число граждан Северо-Осетинской АССР, подвергшихся
@@ -70,7 +70,7 @@ export default function VictimsPage() {
                 </p>
               </div>
 
-              <Image src={victimIll} width={400} height={400} alt="victims" />
+              <Image src={victimIll} width={425} height={425} alt="victims" />
             </div>
 
             <div className="order-3 flex flex-col gap-4 pt-4">
@@ -79,7 +79,7 @@ export default function VictimsPage() {
                 ПОЛИТИЧЕСКИХ РЕПРЕССИЙ 20-30-40- НАЧАЛА 50-х гг. XX ВЕКА ПО
                 СЕВЕРО-ОСЕТИНСКОЙ АССР.
               </h2>
-              <table className="border-gray mx-2 border-collapse rounded-sm border text-[16px] md:text-[18px]">
+              <table className="border-gray mx-2 border-collapse rounded-sm border text-[16px] md:text-[18px] font-bold">
                 <tbody>
                   {STAT_TABLE_DATA.map((item, idx) => (
                     <Fragment key={idx}>
@@ -129,8 +129,8 @@ export default function VictimsPage() {
             </div>
           </div>
 
-          <div className="relative hidden flex-col items-center justify-between gap-6 md:col-start-4 md:col-end-6 md:flex">
-            <div className="border-gray hidden max-w-125 flex-col rounded-[10px] border bg-white px-2 py-6 text-center md:flex 2xl:px-5.5 2xl:py-12.5">
+          <div className="relative hidden flex-col items-center justify-between gap-6 md:col-start-5 md:col-end-7 md:flex">
+            <div className="border-gray hidden max-w-106.25 flex-col rounded-[10px] border bg-white px-2 py-6 text-center md:flex 2xl:px-4 2xl:py-12.5">
               <h1>11 146</h1>
               <p className="text-[11px] font-bold md:text-[14px] xl:text-[18px]">
                 Общее число граждан Северо-Осетинской АССР, подвергшихся
@@ -138,7 +138,7 @@ export default function VictimsPage() {
               </p>
             </div>
 
-            <Image src={victimIll} width={400} height={400} alt="victims" />
+            <Image src={victimIll} width={425} height={425} alt="victims" />
           </div>
         </div>
       </section>

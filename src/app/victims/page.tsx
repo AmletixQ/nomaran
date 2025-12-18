@@ -63,14 +63,14 @@ export default function VictimsPage() {
 
             <div className="relative flex flex-col items-center gap-6 md:order-0 md:col-start-4 md:col-end-6 md:hidden">
               <div className="border-gray order-first flex max-w-125 flex-col rounded-[10px] border bg-white px-2 py-6 text-center md:order-0 2xl:px-5.5 2xl:py-12.5">
-                <h1>11 138</h1>
+                <h1>11 146</h1>
                 <p className="text-[16px] font-bold xl:text-[18px]">
                   Общее число граждан Северо-Осетинской АССР, подвергшихся
                   незаконным политическим репрессиям.
                 </p>
               </div>
 
-              <Image src={victimIll} width={500} height={500} alt="victims" />
+              <Image src={victimIll} width={400} height={400} alt="victims" />
             </div>
 
             <div className="order-3 flex h-full flex-col gap-4 pt-4">
@@ -87,7 +87,7 @@ export default function VictimsPage() {
                         <td
                           valign="middle"
                           align="center"
-                          className="border-gray w-12 border"
+                          className={cn("border-gray w-12 border")}
                           rowSpan={item.rowSpan}
                         >
                           {item.id}
@@ -97,20 +97,29 @@ export default function VictimsPage() {
                             "border-gray border px-2 py-2",
                             item.subItems && "border-0",
                           )}
-                          colSpan={item.colSpan}
                         >
                           {item.description}
                         </td>
-                        {item.count && (
-                          <td className="border-gray w-32 border px-2">
-                            {item.count}
-                          </td>
-                        )}
+                        <td
+                          className={cn(
+                            "border-gray w-32 border px-2 text-end",
+                            item.countClassName,
+                          )}
+                        >
+                          {item.count}
+                        </td>
                       </tr>
                       {item.subItems?.map((subItem) => (
                         <tr key={subItem.description}>
                           <td className="px-2 py-2">{subItem.description}</td>
-                          <td className="w-32 px-2">{subItem.count}</td>
+                          <td
+                            className={cn(
+                              "w-32 px-2 text-end",
+                              subItem.countClassName,
+                            )}
+                          >
+                            {subItem.count}
+                          </td>
                         </tr>
                       ))}
                     </Fragment>
@@ -120,16 +129,16 @@ export default function VictimsPage() {
             </div>
           </div>
 
-          <div className="relative hidden flex-col items-center gap-6 md:col-start-4 md:col-end-6 md:flex">
+          <div className="relative hidden flex-col items-center justify-between gap-6 md:col-start-4 md:col-end-6 md:flex">
             <div className="border-gray hidden max-w-125 flex-col rounded-[10px] border bg-white px-2 py-6 text-center md:flex 2xl:px-5.5 2xl:py-12.5">
-              <h1>11 138</h1>
+              <h1>11 146</h1>
               <p className="text-[11px] font-bold md:text-[14px] xl:text-[18px]">
                 Общее число граждан Северо-Осетинской АССР, подвергшихся
                 незаконным политическим репрессиям.
               </p>
             </div>
 
-            <Image src={victimIll} width={500} height={500} alt="victims" />
+            <Image src={victimIll} width={400} height={400} alt="victims" />
           </div>
         </div>
       </section>

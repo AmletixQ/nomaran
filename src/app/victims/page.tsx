@@ -37,7 +37,7 @@ export default function VictimsPage() {
       <section>
         <h2 className="text-center uppercase">Три массовые категории...</h2>
         <div className="flex flex-col gap-3 pt-7.5 leading-[160%] md:grid md:grid-cols-5 md:gap-5">
-          <div className="flex flex-col gap-3 md:col-start-1 md:col-end-4">
+          <div className="flex flex-col justify-between gap-3 md:col-start-1 md:col-end-4">
             <p className="text-[16px]">
               <span className="font-bold">I.</span> Первая массовая категория —
               люди, арестованные по политическим обвинениям органами
@@ -73,7 +73,7 @@ export default function VictimsPage() {
               <Image src={victimIll} width={400} height={400} alt="victims" />
             </div>
 
-            <div className="order-3 flex h-full flex-col gap-4 pt-4">
+            <div className="order-3 flex flex-col gap-4 pt-4">
               <h2 className="text-center text-[16px] uppercase">
                 ИНФОРМАЦИЯ ПО 6-ТИ ТОМАМ КНИГИ ПАМЯТИ ЖЕРТВ НЕЗАКОННЫХ
                 ПОЛИТИЧЕСКИХ РЕПРЕССИЙ 20-30-40- НАЧАЛА 50-х гг. XX ВЕКА ПО

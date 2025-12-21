@@ -119,9 +119,9 @@ export default function AboutPage() {
                     width={245}
                     className="justify-self-center rounded-md md:min-h-63.5 md:min-w-55.75 md:justify-self-start lg:min-h-70 lg:min-w-61.25 xl:min-h-115 xl:min-w-100 2xl:min-h-140 2xl:min-w-122.5"
                   />
-                  <p className="text-[14px] md:text-[17px]">
+                  <h5 className="text-[18px] md:text-[22px] pt-1">
                     Зураев А. Б. (10.03.1926 - 4.12.2020)
-                  </p>
+                  </h5>
                 </div>
               </div>
 

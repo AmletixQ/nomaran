@@ -13,11 +13,13 @@ const filterOptions = [
       "Список репрессированных по политическим обвинениям — высшая мера наказания (расстрел)",
     id: "list-shooted",
     value: "list-of-shooted",
+    className: "order-1 md:order-none",
   },
   {
     title: 'Список репрессированных в ходе кампании по "раскулачиванию"',
     id: "list-of-dispossessed",
     value: "list-of-dispossessed",
+    className: "order-3 md:order-none",
   },
   {
     title: (
@@ -28,17 +30,19 @@ const filterOptions = [
     ),
     id: "list-of-itl",
     value: "list-of-itl",
+    className: "order-2 md:order-none",
   },
   {
     title: "Список репрессированных по национальному признаку",
     id: "repressed-nat-attribute",
     value: "repressed-nat-attribute",
+    className: "order-4 md:order-none",
   },
   {
     title: "Общий список",
     id: "all",
     value: "all-list",
-    className: "col-start-1 col-end-3 py-4!",
+    className: "col-start-1 col-end-3 py-4! order-last md:order-none",
     defaultChecked: true,
   },
 ];
@@ -69,7 +73,7 @@ export default function Checkboxes({
   };
 
   return (
-    <div className="flex grid-cols-2 flex-col gap-3 md:grid">
+    <div className="flex grid-cols-2 grid-rows-3 flex-col gap-3 md:grid">
       {filterOptions.map((option) => (
         <Checkbox
           id={option.id}

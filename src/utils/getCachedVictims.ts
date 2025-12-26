@@ -1,4 +1,3 @@
-import { unstable_cache } from "next/cache";
 import prisma from "./prisma";
 import { Prisma, Victim } from "@prisma/client";
 import { mapRawVictim } from "./mapRawVictim";
@@ -9,7 +8,6 @@ export async function getCachedVictims(
   page: number,
   pageSize: number = 15,
 ) {
-  const cacheKey = `victims_${query}_${filters.join("_")}_page_${page}`;
   const whereConditions: Prisma.Sql[] = [];
   const stringParts: string[] = [];
   const numberParts: number[] = [];
@@ -115,15 +113,9 @@ export async function getCachedVictims(
     LIMIT ${pageSize} OFFSET ${(page - 1) * pageSize}
   `;
 
-  // console.log("SQL:", sql.strings.join("?"));
-
-  const rawVictims = await unstable_cache(
-    async () => {
-      return prisma.$queryRaw<(Victim & { min_distance: number })[]>`${sql}`;
-    },
-    [cacheKey],
-    { revalidate: 900, tags: ["victims", cacheKey] },
-  )();
+  const rawVictims = await prisma.$queryRaw<
+    (Victim & { min_distance: number })[]
+  >`${sql}`;
 
   const victims = rawVictims.map(mapRawVictim);
 

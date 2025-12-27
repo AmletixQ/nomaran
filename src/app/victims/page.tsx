@@ -32,6 +32,7 @@ export const metadata: Metadata = {
 };
 
 export default function VictimsPage() {
+  const totalCount = "11 136"
   return (
     <main className="flex flex-col gap-10 pt-40 pb-25 md:pt-50 2xl:mx-25 2xl:py-70">
       <section>
@@ -63,7 +64,7 @@ export default function VictimsPage() {
 
             <div className="relative flex flex-col items-center gap-6 md:order-0 md:col-start-5 md:col-end-7 md:hidden">
               <div className="border-gray order-first flex max-w-106.25 flex-col rounded-[10px] border bg-white px-2 py-6 text-center md:order-0 2xl:px-5.5 2xl:py-12.5">
-                <h1>11 146</h1>
+                <h1>{totalCount}</h1>
                 <p className="text-[16px] font-bold xl:text-[18px]">
                   Общее число граждан Северо-Осетинской АССР, подвергшихся
                   незаконным политическим репрессиям.
@@ -131,7 +132,7 @@ export default function VictimsPage() {
 
           <div className="relative hidden flex-col items-center justify-between gap-6 md:col-start-5 md:col-end-7 md:flex">
             <div className="border-gray hidden max-w-106.25 flex-col rounded-[10px] border bg-white px-2 py-6 text-center md:flex 2xl:px-4 2xl:py-12.5">
-              <h1>11 146</h1>
+              <h1>{totalCount}</h1>
               <p className="text-[11px] font-bold md:text-[14px] xl:text-[18px]">
                 Общее число граждан Северо-Осетинской АССР, подвергшихся
                 незаконным политическим репрессиям.

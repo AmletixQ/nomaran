@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 };
 
 export default function VictimsPage() {
-  const totalCount = "11 136"
+  const totalCount = "11 104"
   return (
     <main className="flex flex-col gap-10 pt-40 pb-25 md:pt-50 2xl:mx-25 2xl:py-70">
       <section>

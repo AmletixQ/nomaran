@@ -8,12 +8,12 @@ export const STAT_TABLE_DATA = [
     subItems: [
       {
         description: "– Высшая мера наказания (расстрел)",
-        count: " 1619 чел.",
+        count: " 1618 чел.",
         countClassName: "border-l border-gray",
       },
       {
         description: "– ИТЛ, тюремные заключения, ссылки",
-        count: " 5927 чел.",
+        count: " 5928 чел.",
         countClassName: "border-l border-gray",
       },
     ],

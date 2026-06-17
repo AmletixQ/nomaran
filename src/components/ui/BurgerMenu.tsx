@@ -16,7 +16,7 @@ export default function BurgerMenu() {
       <div
         className={cn(
           "fixed top-0 left-[150%] z-20 overflow-hidden transition-all duration-300 ease-in-out",
-          "h-screen w-screen bg-[url(/images/backgrounds/body-bg.jpg)] bg-cover bg-center bg-no-repeat",
+          "h-screen w-screen bg-[url(/images/backgrounds/body-bg.webp)] bg-cover bg-center bg-no-repeat",
           "flex flex-col items-center justify-center gap-7.5",
           open ? "left-0" : "",
         )}

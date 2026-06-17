@@ -23,8 +23,7 @@ export const metadata: Metadata = {
     "Расстрелянные в годы репрессий Осетия",
     "Репрессии 1937 года в Осетии",
     "Красный террор в СО АССР",
-    "Ссылки в годы репрессий"
-
+    "Ссылки в годы репрессий",
   ],
   openGraph: {
     title: "Поиск жертв репрессий",
@@ -66,7 +65,7 @@ export default async function SearchPage({
   return (
     <main className="pb-25" id="top">
       <ScreenContainer className="flex items-center justify-center md:pt-50">
-        <div className="absolute top-0 left-0 -z-20 h-full w-full bg-[url(/images/backgrounds/search-bg.jpg)] bg-cover bg-center bg-no-repeat md:bg-fixed" />
+        <div className="absolute top-0 left-0 -z-20 h-full w-full bg-[url(/images/backgrounds/search-bg.webp)] bg-cover bg-center bg-no-repeat md:bg-fixed" />
 
         <section className="flex flex-col items-center gap-10 text-white md:max-w-[90%]">
           <div className="flex flex-col items-center text-center">

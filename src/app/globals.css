@@ -55,7 +55,7 @@
   body {
     font-family: "Courier New", sans-serif;
 
-    background-image: url("../../public/images/backgrounds/body-bg.jpg");
+    background-image: url("../../public/images/backgrounds/body-bg.webp");
     z-index: -21;
     background-repeat: no-repeat;
     background-size: cover;

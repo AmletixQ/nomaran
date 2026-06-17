@@ -171,7 +171,7 @@ export default function ActivityPage() {
         </article>
         <article className="relative grid grid-cols-1 gap-2 md:grid-cols-2">
           <div className="relative aspect-video w-full overflow-hidden">
-            <Image src={restavrationStone} alt="stone of tears" fill />
+            <Image src={restavrationStone} alt="stone of tears" fill sizes="(max-width: 768px) 100vw, (min-width: 768px) 50vw" />
           </div>
           <div className="relative aspect-video w-full overflow-hidden">
             <video controls preload="metadata">

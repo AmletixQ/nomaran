@@ -119,7 +119,7 @@ export default function AboutPage() {
                     width={245}
                     className="justify-self-center rounded-md md:min-h-63.5 md:min-w-55.75 md:justify-self-start lg:min-h-70 lg:min-w-61.25 xl:min-h-115 xl:min-w-100 2xl:min-h-140 2xl:min-w-122.5"
                   />
-                  <h5 className="text-[18px] md:text-[22px] pt-1">
+                  <h5 className="pt-1 text-[18px] md:text-[22px]">
                     Зураев А. Б. (10.03.1926 - 4.12.2020)
                   </h5>
                 </div>
@@ -137,6 +137,12 @@ export default function AboutPage() {
                   конференции был сформирован новый состав правления:
                   председателем был избран Аркадий Аузбиевич Зураев, а
                   заместителем — Тамара Габоевна Кайтукова.
+                </p>
+              </article>
+              <article className="flex flex-col gap-4 pt-4">
+                <h5 className="text-[18px] md:text-[22px]">Контакты</h5>
+                <p>
+                  <a href="tel:+79194239100">тел.: +7 (919) 423-91-00</a>
                 </p>
               </article>
             </div>

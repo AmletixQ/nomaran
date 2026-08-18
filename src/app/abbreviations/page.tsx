@@ -1,34 +1,27 @@
 import { ABBREVIATIONS } from "@/constants/abbreviations";
 import { Metadata } from "next";
+import { pageMetadata } from "@/utils/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Список аббревиатур",
-  description: "Список аббревиатур, используемых в проекте",
+  description:
+    "Расшифровка аббревиатур, используемых в Книге Памяти и на сайте ассоциации «Номаран».",
+  path: "/abbreviations",
   keywords: ["аббревиатуры", "список аббревиатур", "номаран", "репрессии"],
-  openGraph: {
-    title: "Список аббревиатур",
-    description: "Список аббревиатур, используемых в проекте",
-    images: ["https://nomaran.ru/og-image.jpg"],
-  },
-  twitter: {
-    title: "Список аббревиатур",
-    description: "Список аббревиатур, используемых в проекте",
-    images: ["https://nomaran.ru/og-image.jpg"],
-  },
-};
+});
 
 export default function page() {
   return (
-    <main className="flex flex-col gap-7.5 pt-40 pb-25 md:pt-50 2xl:mx-25 2xl:gap-15 2xl:py-80">
-      <h2>Список аббревиатур</h2>
+    <main className="flex flex-col gap-7.5 pt-6 pb-25 md:pt-8 2xl:mx-25 2xl:gap-15 2xl:pb-80">
+      <h1 className="page-title">Список аббревиатур</h1>
       <ul className="flex flex-col gap-5 2xl:gap-6">
         {ABBREVIATIONS.map((abbr, i) => (
-          <p
+          <li
             key={i}
-            className="list-item list-none border-b border-black/20 pb-1.5 2xl:text-[22px]"
+            className="list-none border-b border-black/20 pb-1.5 2xl:text-[22px]"
           >
             {abbr}
-          </p>
+          </li>
         ))}
       </ul>
     </main>

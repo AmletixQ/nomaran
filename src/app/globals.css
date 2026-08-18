@@ -52,6 +52,35 @@
 }
 
 @layer base {
+  html {
+    /* logo + Link p-1 + header padding-top */
+    --header-height: 7.1875rem; /* 115px: 95 + 8 + 12 */
+  }
+
+  @media (width >= 48rem) {
+    html {
+      --header-height: 8.25rem; /* 132px: 112 + 8 + 12 */
+    }
+  }
+
+  @media (width >= 64rem) {
+    html {
+      --header-height: 8.75rem; /* 140px: 112 + 8 + 20 */
+    }
+  }
+
+  @media (width >= 80rem) {
+    html {
+      --header-height: 10.1875rem; /* 163px: 135 + 8 + 20 */
+    }
+  }
+
+  @media (width >= 96rem) {
+    html {
+      --header-height: 16.625rem; /* 266px: 218 + 8 + 40 */
+    }
+  }
+
   body {
     font-family: "Courier New", sans-serif;
 
@@ -74,15 +103,23 @@
     font-weight: bold;
   }
 
+  h1.page-title,
   h2 {
     font-size: 21px;
     line-height: 120%;
     font-weight: bold;
   }
 
+  h1.profile-title,
   h3 {
     font-size: 22px;
     line-height: 120%;
+    font-weight: bold;
+  }
+
+  .stat-highlight {
+    font-size: 24px;
+    line-height: 90%;
     font-weight: bold;
   }
 
@@ -104,10 +141,12 @@
   }
 
   @media (width >= 48rem) {
-    h1 {
+    h1,
+    .stat-highlight {
       font-size: 36px;
     }
 
+    h1.page-title,
     h2 {
       font-size: 32px;
       line-height: 120%;
@@ -121,18 +160,21 @@
       line-height: 160%;
     }
 
-    h1 {
+    h1,
+    .stat-highlight {
       font-size: 48px;
       line-height: 140%;
       font-weight: bold;
     }
 
+    h1.page-title,
     h2 {
       font-size: 40px;
       line-height: 120%;
       font-weight: bold;
     }
 
+    h1.profile-title,
     h3 {
       font-size: 36px;
       line-height: 120%;
@@ -169,18 +211,21 @@
       font-size: 18px;
     }
 
-    h1 {
+    h1,
+    .stat-highlight {
       font-size: 64px;
       line-height: 140%;
       font-weight: bold;
     }
 
+    h1.page-title,
     h2 {
       font-size: 38px;
       line-height: 120%;
       font-weight: bold;
     }
 
+    h1.profile-title,
     h3 {
       font-size: 40px;
       line-height: 120%;

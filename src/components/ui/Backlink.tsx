@@ -1,12 +1,13 @@
-"use client";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import Arrow from "../icons/Arrow";
 
 export default function Backlink() {
-  const router = useRouter();
   return (
-    <button className="flex items-center gap-2.5 cursor-pointer opacity-60" onClick={() => router.back()}>
+    <Link
+      href="/search"
+      className="flex cursor-pointer items-center gap-2.5 opacity-60"
+    >
       <Arrow /> <p>вернуться назад</p>
-    </button>
+    </Link>
   );
 }

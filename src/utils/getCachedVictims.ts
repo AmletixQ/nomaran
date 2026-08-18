@@ -1,3 +1,4 @@
+import { unstable_cache } from "next/cache";
 import prisma from "./prisma";
 import { Prisma, Victim } from "@prisma/client";
 import { mapRawVictim } from "./mapRawVictim";
@@ -7,6 +8,26 @@ export async function getCachedVictims(
   filters: string[],
   page: number,
   pageSize: number = 15,
+) {
+  const filtersKey = [...filters].sort().join("|");
+
+  return getVictimsCached(query, filtersKey, page, pageSize);
+}
+
+const getVictimsCached = unstable_cache(
+  async (query: string, filtersKey: string, page: number, pageSize: number) => {
+    const filters = filtersKey ? filtersKey.split("|") : [];
+    return queryVictims(query, filters, page, pageSize);
+  },
+  ["victims-search"],
+  { revalidate: 3600 },
+);
+
+async function queryVictims(
+  query: string,
+  filters: string[],
+  page: number,
+  pageSize: number,
 ) {
   const whereConditions: Prisma.Sql[] = [];
   const stringParts: string[] = [];

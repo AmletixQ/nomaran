@@ -1,12 +1,15 @@
 import { cn } from "@/utils/cn";
 import { Metadata } from "next";
 import Image from "next/image";
+import { pageMetadata } from "@/utils/seo";
 
 import presidentImage from "../../../public/images/president-image.jpg";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Об организации",
-  description: "Информация об организации Номаран",
+  description:
+    "История ассоциации «Номаран» («Память имен»): создание в 1990 году, Аузби Зураев, нынешнее руководство и контакты.",
+  path: "/about",
   keywords: [
     "Номаран",
     "Ассоциация жертв незаконных политических репрессий",
@@ -14,28 +17,18 @@ export const metadata: Metadata = {
     "Аузби Зураев",
     "Руководство Номаран",
   ],
-  openGraph: {
-    title: "Об организации",
-    description: "Информация об организации Номаран",
-    images: ["https://nomaran.ru/og-image.jpg"],
-  },
-  twitter: {
-    title: "Об организации",
-    description: "Информация об организации Номаран",
-    images: ["https://nomaran.ru/og-image.jpg"],
-  },
-};
+});
 
 export default function AboutPage() {
   return (
     <main
       className={cn(
-        "flex flex-col justify-center gap-7.5 pt-40 pb-25 md:gap-12.5 md:py-35 md:pt-50 lg:py-45 2xl:mx-25 2xl:gap-30 2xl:py-70",
+        "flex flex-col justify-center gap-7.5 pt-6 pb-25 md:gap-12.5 md:pb-35 lg:pb-45 2xl:mx-25 2xl:gap-30 2xl:pb-70",
         "font-helvetica",
       )}
     >
       <section className="flex flex-col gap-6">
-        <h2 className="text-center">Об организации</h2>
+        <h1 className="page-title text-center">Об организации</h1>
         <article className="flex flex-col gap-4">
           <h5 className="text-[18px] md:text-[22px]">История создания</h5>
           <p>
@@ -114,7 +107,7 @@ export default function AboutPage() {
                 <div className="relative flex flex-col items-center">
                   <Image
                     src={presidentImage}
-                    alt="image"
+                    alt="Аузби Борисович Зураев, первый председатель ассоциации «Номаран»"
                     height={279}
                     width={245}
                     className="justify-self-center rounded-md md:min-h-63.5 md:min-w-55.75 md:justify-self-start lg:min-h-70 lg:min-w-61.25 xl:min-h-115 xl:min-w-100 2xl:min-h-140 2xl:min-w-122.5"
@@ -126,9 +119,9 @@ export default function AboutPage() {
               </div>
 
               <article className="flex flex-col gap-4 pt-4">
-                <h5 className="text-[18px] md:text-[22px]">
-                  Нынешнее руководство
-                </h5>
+                  <h5 className="text-[18px] md:text-[22px]">
+                    Нынешнее руководство
+                  </h5>
                 <p>
                   14 апреля 2021 года на базе СОИГСИ состоялась отчетно-выборная
                   конференция Ассоциации жертв политических репрессий «Номаран»

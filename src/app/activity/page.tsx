@@ -2,6 +2,7 @@ import { BOOKS } from "@/constants/books";
 import { cn } from "@/utils/cn";
 import { Metadata } from "next";
 import Image from "next/image";
+import { pageMetadata } from "@/utils/seo";
 
 import monumentFirst from "../../../public/images/open-monument/first.jpg";
 import monumentSecond from "../../../public/images/open-monument/second.jpg";
@@ -16,9 +17,11 @@ import eventMemoryFourth from "../../../public/images/events-of-memory/fourth.pn
 import eventMemoryFifth from "../../../public/images/events-of-memory/fifth.png";
 import eventMemorySixth from "../../../public/images/events-of-memory/sixth.png";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Деятельность организации",
-  description: "Информация о деятельности организации Номаран",
+  description:
+    "Книга Памяти, мемориал «Камень слез», реставрация комплекса и ежегодная акция памяти 30 октября во Владикавказе.",
+  path: "/activity",
   keywords: [
     "деятельность организации",
     "издание книги памяти",
@@ -27,28 +30,18 @@ export const metadata: Metadata = {
     "реставрация мемориала",
     "ссылки в годы репрессий",
   ],
-  openGraph: {
-    title: "Деятельность организации",
-    description: "Информация о деятельности организации Номаран",
-    images: ["https://nomaran.ru/og-image.jpg"],
-  },
-  twitter: {
-    title: "Деятельность организации",
-    description: "Информация о деятельности организации Номаран",
-    images: ["https://nomaran.ru/og-image.jpg"],
-  },
-};
+});
 
 export default function ActivityPage() {
   return (
     <main
       className={cn(
-        "flex flex-col gap-6 pt-40 pb-25 md:py-40 md:pt-50 2xl:mx-25 2xl:py-70",
+        "flex flex-col gap-6 pt-6 pb-25 md:pb-40 2xl:mx-25 2xl:pb-70",
         "font-helvetica",
       )}
     >
       <section className={cn("flex flex-col justify-between gap-6")}>
-        <h2 className="text-center">Деятельность организации</h2>
+        <h1 className="page-title text-center">Деятельность организации</h1>
         <article className="flex flex-col gap-3">
           <h6 className="text-[18px] font-bold md:text-[22px]">
             Издание «Книги Памяти»
@@ -78,7 +71,7 @@ export default function ActivityPage() {
                   width="157"
                   height="235"
                   src={b.image}
-                  alt={`book-${i}`}
+                  alt={`Обложка ${i + 1} тома Книги Памяти (${b.year})`}
                   className="h-37.75 w-25.25 lg:h-54 lg:w-36 xl:h-59.5 xl:w-39.5 2xl:h-70 2xl:w-46"
                 />
                 <a
@@ -127,28 +120,28 @@ export default function ActivityPage() {
           <Image
             width={990}
             height={300}
-            alt="first"
+            alt="Мемориал «Камень слез» во Владикавказе"
             src={monumentFirst}
             className="aspect-[75 / 53]"
           />
           <Image
             width={990}
             height={200}
-            alt="second"
+            alt="Расколотый валун мемориала «Камень слез»"
             src={monumentSecond}
             className="aspect-[75 / 53]"
           />
           <Image
             width={990}
             height={200}
-            alt="fourth"
+            alt="Надпись на мемориале жертвам политических репрессий"
             src={monumentFourth}
             className="aspect-[75 / 53]"
           />
           <Image
             width={990}
             height={200}
-            alt="stone of tears"
+            alt="Мемориальный комплекс «Камень слез»"
             src={stoneOfTears}
           />
         </article>
@@ -171,7 +164,11 @@ export default function ActivityPage() {
         </article>
         <article className="relative grid grid-cols-1 gap-2 md:grid-cols-2">
           <div className="relative aspect-video w-full overflow-hidden">
-            <Image src={restavrationStone} alt="stone of tears" fill />
+            <Image
+              src={restavrationStone}
+              alt="Реставрация мемориала «Камень слез»"
+              fill
+            />
           </div>
           <div className="relative aspect-video w-full overflow-hidden">
             <video controls preload="metadata">
@@ -200,22 +197,42 @@ export default function ActivityPage() {
 
       <section>
         <article className="grid grid-cols-1 gap-2 md:grid-cols-2">
-          <Image width={990} height={300} alt="first" src={eventMemoryFirst} />
           <Image
             width={990}
             height={300}
-            alt="second"
+            alt="Акция памяти у мемориала «Камень слез»"
+            src={eventMemoryFirst}
+          />
+          <Image
+            width={990}
+            height={300}
+            alt="Участники акции памяти во Владикавказе"
             src={eventMemorySecond}
           />
           <Image
             width={990}
             height={300}
-            alt="fourth"
+            alt="Возложение цветов к мемориалу «Камень слез»"
             src={eventMemoryFourth}
           />
-          <Image width={990} height={300} alt="third" src={eventMemoryThird} />
-          <Image width={990} height={300} alt="fifth" src={eventMemoryFifth} />
-          <Image width={990} height={300} alt="sixth" src={eventMemorySixth} />
+          <Image
+            width={990}
+            height={300}
+            alt="Митинг в День памяти жертв политических репрессий"
+            src={eventMemoryThird}
+          />
+          <Image
+            width={990}
+            height={300}
+            alt="Церемония памяти у мемориала во Владикавказе"
+            src={eventMemoryFifth}
+          />
+          <Image
+            width={990}
+            height={300}
+            alt="Жители республики на акции памяти 30 октября"
+            src={eventMemorySixth}
+          />
         </article>
       </section>
     </main>

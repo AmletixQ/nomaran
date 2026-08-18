@@ -4,7 +4,6 @@ import Link from "next/link";
 
 type IVictimProps = Victim & {
   number: number;
-  isShooted: boolean;
 };
 
 export default function VictimRow({
@@ -14,17 +13,16 @@ export default function VictimRow({
   category,
   fullname,
   number,
-  isShooted,
 }: IVictimProps) {
   const data: string[] = [];
   if (birthPlace) data.push(birthPlace);
   if (birthYear) data.push(birthYear.toString());
 
   return (
-    <div key={id} className="border-gray flex gap-2.5 border-b-2 pb-1.5">
+    <li className="border-gray flex gap-2.5 border-b-2 pb-1.5">
       <h6 className="font-normal">{number}.</h6>
       <div className="flex flex-col gap-1">
-        <Link href={`victim/${id}${isShooted ? "?type=shooted" : ""}`}>
+        <Link href={`/victim/${id}`}>
           <h6 className="font-normal">{fullname}</h6>
         </Link>
         <p className="text-[10px] md:text-[16px]">
@@ -33,6 +31,6 @@ export default function VictimRow({
           Категория: {categoryDisplay(category)}
         </p>
       </div>
-    </div>
+    </li>
   );
 }

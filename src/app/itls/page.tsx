@@ -1,44 +1,34 @@
 import { ITLS } from "@/constants/itls";
 import { Metadata } from "next";
 import Image from "next/image";
-import React from "react";
+import { pageMetadata } from "@/utils/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Список ИТЛ",
-  description: "Список исправительно-трудовых лагерей (ИТЛ)",
+  description:
+    "Список исправительно-трудовых лагерей (ИТЛ), упоминаемых в материалах о жертвах политических репрессий Северо-Осетинской АССР.",
+  path: "/itls",
   keywords: ["ИТЛ", "исправительно-трудовые лагеря", "номаран", "репрессии"],
-  openGraph: {
-    title: "Список ИТЛ",
-    description: "Список исправительно-трудовых лагерей (ИТЛ)",
-    images: ["https://nomaran.ru/og-image.jpg"],
-  },
-  twitter: {
-    title: "Список ИТЛ",
-    description: "Список исправительно-трудовых лагерей (ИТЛ)",
-    images: ["https://nomaran.ru/og-image.jpg"],
-  },
-};
+});
 
 export default function page() {
   return (
-    <main className="flex flex-col gap-7.5 pt-40 pb-25 md:pt-50 2xl:mx-25 2xl:gap-15 2xl:py-80">
-      <h2>Список ИТЛ</h2>
+    <main className="flex flex-col gap-7.5 pt-6 pb-25 md:pt-8 2xl:mx-25 2xl:gap-15 2xl:pb-80">
+      <h1 className="page-title">Список ИТЛ</h1>
       <ul className="flex flex-col gap-5">
         {ITLS.map((itl, i) => (
-          <div
+          <li
             key={i}
             className="flex list-none items-center gap-2.5 border-b border-black/20 pb-1.5"
           >
             <Image
               src="/images/star.png"
-              alt="star itl"
+              alt=""
               width="20"
               height="18"
             />
-            <p className="2xl:text-[22px]">
-              {itl}
-            </p>
-          </div>
+            <p className="2xl:text-[22px]">{itl}</p>
+          </li>
         ))}
       </ul>
     </main>

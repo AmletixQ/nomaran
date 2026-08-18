@@ -12,7 +12,7 @@ export default function SearchForm({ filters, query }: ISearchForm) {
   return (
     <form
       method="get"
-      action="#results"
+      action="/search#results"
       className="relative flex w-full flex-col gap-3 px-2"
     >
       <div className="border-gray relative flex w-full justify-between rounded-[10px] border-3 bg-white px-2.5 py-2 md:px-4 md:py-3.5">

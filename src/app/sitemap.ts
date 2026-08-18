@@ -1,67 +1,62 @@
 import type { MetadataRoute } from "next";
+import { baseUrl } from "@/constants/config";
 import prisma from "@/utils/prisma";
 
-async function getVictims() {
-  const victims = await prisma.victim.findMany({
-    select: { id: true },
-  });
+export const revalidate = 86400;
 
-  return victims.map((victim) => ({
-    url: `https://nomaran.ru/victim/${victim.id}`,
-    lastModified: new Date(),
-    priority: 0.1,
-  }));
-}
+const staticPages: MetadataRoute.Sitemap = [
+  {
+    url: baseUrl,
+    changeFrequency: "monthly",
+    priority: 1,
+  },
+  {
+    url: `${baseUrl}/about`,
+    changeFrequency: "yearly",
+    priority: 0.8,
+  },
+  {
+    url: `${baseUrl}/activity`,
+    changeFrequency: "yearly",
+    priority: 0.8,
+  },
+  {
+    url: `${baseUrl}/victims`,
+    changeFrequency: "yearly",
+    priority: 0.9,
+  },
+  {
+    url: `${baseUrl}/itls`,
+    changeFrequency: "yearly",
+    priority: 0.3,
+  },
+  {
+    url: `${baseUrl}/abbreviations`,
+    changeFrequency: "yearly",
+    priority: 0.3,
+  },
+  {
+    url: `${baseUrl}/search`,
+    changeFrequency: "weekly",
+    priority: 0.9,
+  },
+];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://nomaran.ru";
+  try {
+    const victims = await prisma.victim.findMany({
+      select: { id: true },
+      orderBy: { id: "asc" },
+    });
 
-  const basePages = [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
+    const victimPages: MetadataRoute.Sitemap = victims.map((victim) => ({
+      url: `${baseUrl}/victim/${victim.id}`,
       changeFrequency: "yearly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/activity`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/victims`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/itls`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/abbreviations`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/search`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-  ];
+      priority: 0.7,
+    }));
 
-  const victimPages = await getVictims();
-
-  return [...basePages, ...victimPages];
+    return [...staticPages, ...victimPages];
+  } catch {
+    return staticPages;
+  }
 }

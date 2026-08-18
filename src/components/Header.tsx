@@ -7,31 +7,20 @@ import SearchAnchorButton from "./SearchAnchorButton";
 import { links } from "@/constants/links";
 import Anchor from "./ui/Anchor";
 import BurgerMenu from "./ui/BurgerMenu";
-import { useEffect } from "react";
 
 export default function Header() {
   const pathname = usePathname();
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  let isMobile: boolean = false;
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    isMobile = window.innerWidth < 768;
-  }, []);
+  const isHeroPage = pathname === "/" || pathname === "/search";
 
   return (
     <header
       className={cn(
-        "absolute w-[95%]",
-        "flex justify-between",
-        "mt-3 lg:mt-5 2xl:mt-10",
-        ["/", "/search"].includes(pathname) ? "text-white" : "text-black",
+        "relative z-10 flex h-(--header-height) w-full items-start justify-between",
+        "box-border pt-3 lg:pt-5 2xl:pt-10",
+        isHeroPage ? "text-white" : "text-black",
       )}
     >
-      <Link
-        className={cn("rounded p-1")}
-        href="/"
-      >
+      <Link className="rounded p-1" href="/">
         <Logo />
       </Link>
 

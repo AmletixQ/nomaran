@@ -71,10 +71,10 @@ export default async function SearchPage({
 
   return (
     <main className="pb-25" id="top">
-      <ScreenContainer className="flex items-center justify-center md:-mt-(--header-height) md:pt-(--header-height)">
-        <div className="absolute top-0 left-0 -z-20 h-full w-full bg-cover bg-center bg-no-repeat md:bg-[url(/images/backgrounds/search-bg.webp)] md:bg-fixed" />
+      <ScreenContainer className="flex justify-center pt-[calc(var(--header-height)/4)] md:-mt-(--header-height) md:items-center md:pt-(--header-height)">
+        <div className="absolute top-0 left-0 -z-20 h-full w-full bg-[url(/images/backgrounds/search-bg.webp)] bg-cover bg-center bg-no-repeat md:bg-fixed" />
 
-        <section className="flex flex-col items-center gap-10 text-black md:max-w-[90%] md:text-white">
+        <section className="black flex flex-col items-center gap-5 text-white md:max-w-[90%]">
           <div className="flex flex-col items-center text-center">
             <h1 className="pb-2">Поиск жертв репрессий</h1>
             <p className="leading-[140%]">

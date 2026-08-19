@@ -15,7 +15,7 @@ export default function MenuToggle({
   // Returns className for the burger rects according to route and screen
   const getRectClass = () => {
     if (isHeroPage) return "fill-white";
-    if (isSearchPage) return "fill-black md:fill-white";
+    if (isSearchPage) return "fill-white";
     return "fill-black";
   };
 

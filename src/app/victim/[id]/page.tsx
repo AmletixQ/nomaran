@@ -67,7 +67,7 @@ export default async function VictimProfile({
   if (!victim) notFound();
 
   return (
-    <main className="pt-6 md:pt-8 2xl:mx-30">
+    <main className="min-h-[calc(100dvh-var(--header-height))] pt-6 md:pt-8 2xl:mx-30">
       <JsonLd
         data={{
           "@context": "https://schema.org",
@@ -75,7 +75,9 @@ export default async function VictimProfile({
             {
               "@type": "Person",
               name: victim.fullname,
-              birthDate: victim.birthYear ? String(victim.birthYear) : undefined,
+              birthDate: victim.birthYear
+                ? String(victim.birthYear)
+                : undefined,
               birthPlace: victim.birthPlace || undefined,
               description: victim.otherData || undefined,
               url: `${baseUrl}/victim/${id}`,

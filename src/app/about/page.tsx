@@ -132,12 +132,7 @@ export default function AboutPage() {
                   заместителем — Тамара Габоевна Кайтукова.
                 </p>
               </article>
-              <article className="flex flex-col gap-4 pt-4">
-                <h5 className="text-[18px] md:text-[22px]">Контакты</h5>
-                <p>
-                  <a href="tel:+79194239100">тел.: +7 (919) 423-91-00</a>
-                </p>
-              </article>
+             
             </div>
           </div>
         </article>

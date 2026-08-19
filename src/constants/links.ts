@@ -4,4 +4,4 @@ export const links = [
   { title: "Жертвы репрессий", href: "/victims" },
   { title: "Список ИТЛ", href: "/itls" },
   { title: "Список аббревиатур", href: "/abbreviations" },
-] as const;
+] as { title: string; href: string; className?: string }[];

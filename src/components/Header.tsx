@@ -11,6 +11,7 @@ import BurgerMenu from "./ui/BurgerMenu";
 export default function Header() {
   const pathname = usePathname();
   const isHeroPage = pathname === "/" || pathname === "/search";
+  const isSearchPage = pathname === "/search";
 
   return (
     <header
@@ -29,11 +30,24 @@ export default function Header() {
           <Anchor {...link} key={i} />
         ))}
       </nav>
-
-      <SearchAnchorButton
-        pathname={pathname}
-        className="hidden lg:text-[17px] xl:flex"
-      />
+      <div className="flex flex-col items-center gap-2">
+        <SearchAnchorButton
+          pathname={pathname}
+          className="hidden lg:text-[17px] xl:flex"
+        />
+        {isHeroPage && !isSearchPage && (
+          <Link
+            href="/contacts"
+            className={cn(
+              "h-fit w-full cursor-pointer items-center gap-2.5 rounded-[10px] bg-white/60 px-3 py-3 text-[16px] font-bold lg:text-[17px]",
+              "hidden xl:flex"
+            )}
+          >
+            Контакты
+          </Link>
+        )}
+   
+      </div>
 
       <BurgerMenu />
     </header>

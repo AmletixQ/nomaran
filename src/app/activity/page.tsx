@@ -168,6 +168,7 @@ export default function ActivityPage() {
               src={restavrationStone}
               alt="Реставрация мемориала «Камень слез»"
               fill
+              sizes="(max-width: 768px) 100vw, (min-width: 768px) 50vw"
             />
           </div>
           <div className="relative aspect-video w-full overflow-hidden">

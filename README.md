@@ -37,14 +37,14 @@ nomaran/
 │   │   └── courier_new/
 │   └── images/
 │       ├── books/
-│       ├── body-bg.jpg
-│       ├── hero-bg.jpg
+│       ├── body-bg.webp
+│       ├── hero-bg.webp
 │       ├── logo-desktop.svg
 │       ├── logo-mobile.svg
 │       ├── logo-tablet.svg
 │       ├── old-logo.svg
 │       ├── president-image.png
-│       ├── search-bg.jpg
+│       ├── search-bg.webp
 │       ├── star.png
 │       └── victims-ill.png
 ├── src/

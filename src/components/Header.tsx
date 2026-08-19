@@ -1,12 +1,14 @@
 "use client";
-import Logo from "./icons/Logo";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { cn } from "@/utils/cn";
+import Link from "next/link";
+
 import SearchAnchorButton from "./SearchAnchorButton";
-import { links } from "@/constants/links";
-import Anchor from "./ui/Anchor";
 import BurgerMenu from "./ui/BurgerMenu";
+import Anchor from "./ui/Anchor";
+import Logo from "./icons/Logo";
+
+import { links } from "@/constants/links";
+import { cn } from "@/utils/cn";
 
 export default function Header() {
   const pathname = usePathname();
@@ -40,13 +42,12 @@ export default function Header() {
             href="/contacts"
             className={cn(
               "h-fit w-full cursor-pointer items-center gap-2.5 rounded-[10px] bg-white/60 px-3 py-3 text-[16px] font-bold lg:text-[17px]",
-              "hidden xl:flex"
+              "hidden xl:flex",
             )}
           >
             Контакты
           </Link>
         )}
-   
       </div>
 
       <BurgerMenu />

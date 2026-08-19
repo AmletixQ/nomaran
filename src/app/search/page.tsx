@@ -6,7 +6,6 @@ import Pagination from "@/components/victims/Pagination";
 import { Metadata } from "next";
 import { pageMetadata } from "@/utils/seo";
 import { hasSearchIndexParams } from "@/utils/searchHref";
-import { notFound } from "next/navigation";
 import Link from "next/link";
 
 type SearchParams = { [key: string]: string | string[] | undefined };
@@ -72,10 +71,10 @@ export default async function SearchPage({
 
   return (
     <main className="pb-25" id="top">
-      <ScreenContainer className="md:-mt-(--header-height) md:pt-(--header-height) flex items-center justify-center">
-        <div className="absolute top-0 left-0 -z-20 h-full w-full md:bg-[url(/images/backgrounds/search-bg.jpg)] bg-cover bg-center bg-no-repeat md:bg-fixed" />
+      <ScreenContainer className="flex items-center justify-center md:-mt-(--header-height) md:pt-(--header-height)">
+        <div className="absolute top-0 left-0 -z-20 h-full w-full bg-cover bg-center bg-no-repeat md:bg-[url(/images/backgrounds/search-bg.webp)] md:bg-fixed" />
 
-        <section className="flex flex-col items-center gap-10 text-black md:text-white md:max-w-[90%]">
+        <section className="flex flex-col items-center gap-10 text-black md:max-w-[90%] md:text-white">
           <div className="flex flex-col items-center text-center">
             <h1 className="pb-2">Поиск жертв репрессий</h1>
             <p className="leading-[140%]">

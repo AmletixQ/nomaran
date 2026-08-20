@@ -23,7 +23,7 @@ export default function AboutPage() {
   return (
     <main
       className={cn(
-        "flex flex-col justify-center gap-7.5 pt-6 pb-25 md:gap-12.5 md:pb-35 lg:pb-45 2xl:mx-25 2xl:gap-30 2xl:pb-70",
+        "flex flex-col justify-center gap-7.5 pt-[calc(var(--header-height)/3)] pb-25 md:gap-12.5 md:pb-35 lg:pb-45 2xl:mx-25 2xl:gap-30 2xl:pb-70",
         "font-helvetica",
       )}
     >

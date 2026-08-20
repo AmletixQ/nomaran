@@ -67,7 +67,7 @@ export default async function VictimProfile({
   if (!victim) notFound();
 
   return (
-    <main className="min-h-[calc(100dvh-var(--header-height))] pt-6 md:pt-8 2xl:mx-30">
+    <main className="min-h-[calc(100dvh-var(--header-height))] pt-[calc(var(--header-height)/3)] 2xl:mx-30">
       <JsonLd
         data={{
           "@context": "https://schema.org",

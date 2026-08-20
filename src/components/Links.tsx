@@ -12,14 +12,7 @@ export default function Links({
 }) {
   return (
     <nav className={cn("flex flex-col items-center gap-4")}>
-      {[
-        ...links,
-        {
-          title: "Контакты",
-          href: "/contacts",
-          className: "text-[20px] xl:hidden",
-        },
-      ].map((link, i) => (
+      {links.map((link, i) => (
         <Anchor
           {...link}
           key={i}

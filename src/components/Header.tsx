@@ -19,7 +19,7 @@ export default function Header() {
     <header
       className={cn(
         "relative z-10 flex h-(--header-height) w-full items-start justify-between",
-        "box-border pt-3 mb-2 lg:pt-5 2xl:pt-10",
+        "mb-2 box-border pt-3 lg:pt-5 2xl:pt-10",
         isHeroPage ? "text-white" : "text-black",
       )}
     >
@@ -27,28 +27,15 @@ export default function Header() {
         <Logo />
       </Link>
 
-      <nav className="hidden h-fit gap-7.5 pt-4 text-[18px] xl:flex">
+      <nav className="hidden h-fit gap-5 pt-4 text-[18px] xl:flex">
         {links.map((link, i) => (
           <Anchor {...link} key={i} />
         ))}
       </nav>
-      <div className="flex flex-col items-center gap-2">
-        <SearchAnchorButton
-          pathname={pathname}
-          className="hidden lg:text-[17px] xl:flex"
-        />
-        {isHeroPage && !isSearchPage && (
-          <Link
-            href="/contacts"
-            className={cn(
-              "lg:text-[17px]",
-              "hidden xl:flex",
-            )}
-          >
-            Контакты
-          </Link>
-        )}
-      </div>
+      <SearchAnchorButton
+        pathname={pathname}
+        className="hidden lg:text-[17px] xl:flex"
+      />
 
       <BurgerMenu />
     </header>

@@ -24,7 +24,7 @@ export const metadata: Metadata = pageMetadata({
 export default function VictimsPage() {
   const totalCount = "11 104"
   return (
-    <main className="flex flex-col gap-10 pt-6 pb-25 md:pt-8 2xl:mx-25 2xl:pb-70">
+    <main className="flex flex-col gap-10 pt-[calc(var(--header-height)/3)] pb-25 2xl:mx-25 2xl:pb-70">
       <section>
         <h1 className="page-title text-center uppercase">
           Три массовые категории...

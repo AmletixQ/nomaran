@@ -13,7 +13,7 @@ export const metadata: Metadata = pageMetadata({
 
 export default function page() {
   return (
-    <main className="flex flex-col gap-7.5 pt-[calc(var(--header-height)/3)] pb-25 2xl:mx-25 2xl:gap-15 2xl:pb-80">
+    <main className="mx-auto flex w-[95%] flex-col gap-7.5 pt-[calc(var(--header-height)/3)] pb-25 2xl:gap-15 2xl:pb-80">
       <h1 className="page-title">Список ИТЛ</h1>
       <ul className="flex flex-col gap-5">
         {ITLS.map((itl, i) => (
@@ -21,12 +21,7 @@ export default function page() {
             key={i}
             className="flex list-none items-center gap-2.5 border-b border-black/20 pb-1.5"
           >
-            <Image
-              src="/images/star.png"
-              alt=""
-              width="20"
-              height="18"
-            />
+            <Image src="/images/star.png" alt="" width="20" height="18" />
             <p className="2xl:text-[22px]">{itl}</p>
           </li>
         ))}

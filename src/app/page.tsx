@@ -20,11 +20,13 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   return (
-    <main className="-mt-(--header-height) flex flex-col items-center justify-center gap-6 lg:px-12">
-      <div className="absolute top-0 left-0 -z-20 h-full w-full bg-[url(../../public/images/backgrounds/hero-bg.webp)] bg-contain bg-no-repeat md:bg-cover md:bg-fixed" />
+    <main className="relative flex min-h-dvh flex-col items-center justify-center gap-6">
+      <div className="absolute inset-0 -z-20 bg-[url(../../public/images/backgrounds/hero-bg.webp)] bg-contain bg-no-repeat md:bg-cover md:bg-fixed" />
 
-      <Links className="text-[20px] md:hidden" />
-      <SearchAnchorButton className="text-[20px] md:hidden" />
+      <div className="flex w-[95%] flex-col items-center justify-center gap-6 lg:px-12">
+        <Links className="text-[20px] md:hidden" />
+        <SearchAnchorButton className="text-[20px] md:hidden" />
+      </div>
     </main>
   );
 }

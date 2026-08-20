@@ -71,10 +71,10 @@ export default async function SearchPage({
 
   return (
     <main className="pb-25" id="top">
-      <ScreenContainer className="flex justify-center pt-[calc(var(--header-height)/3)] md:-mt-(--header-height) md:h-[calc(100vh-var(--header-height))] md:items-center md:pt-(--header-height) lg:h-screen">
-        <div className="absolute top-0 left-0 -z-20 h-full w-full bg-[url(/images/backgrounds/search-bg.webp)] bg-cover bg-center bg-no-repeat md:bg-fixed" />
+      <ScreenContainer className="flex justify-center pt-[calc(var(--header-height)+var(--header-height)/3)] pb-4 md:items-center md:pt-(--header-height) w-full">
+        <div className="absolute inset-0 -z-20 bg-[url(/images/backgrounds/search-bg.webp)] bg-cover bg-center bg-no-repeat md:bg-fixed" />
 
-        <section className="black flex flex-col items-center gap-5 text-white md:max-w-[90%]">
+        <section className="flex w-[95%] flex-col items-center gap-5 text-white md:max-w-[90%]">
           <div className="flex flex-col items-center text-center">
             <h1 className="pb-2">Поиск жертв репрессий</h1>
             <p className="leading-[140%]">
@@ -88,10 +88,7 @@ export default async function SearchPage({
       </ScreenContainer>
 
       {page <= totalPages ? (
-        <section
-          id="results"
-          className="pt-5 md:mt-10 md:pt-25 lg:pt-0 2xl:mx-25"
-        >
+        <section id="results" className="mx-auto w-[90%] pt-5 md:pt-10">
           <VictimList page={page} pageSize={pageSize} victims={victims} />
           <Pagination
             filters={filters}
@@ -103,7 +100,7 @@ export default async function SearchPage({
       ) : (
         <div
           id="results"
-          className="mt-10 flex flex-col items-center justify-center"
+          className="mx-auto mt-10 flex w-[95%] flex-col items-center justify-center"
         >
           <h2 className="text-3xl font-bold">Страница не найдена</h2>
           <p className="text-gray-500">

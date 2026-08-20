@@ -9,5 +9,7 @@ export default function ScreenContainer({
   className,
   children,
 }: IScreenContainer) {
-  return <section className={cn(className)}>{children}</section>;
+  return (
+    <section className={cn("relative min-h-dvh", className)}>{children}</section>
+  );
 }

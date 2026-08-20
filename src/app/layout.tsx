@@ -96,7 +96,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className="mx-auto max-w-[95%]">
+      <body>
         <JsonLd data={structuredData} />
         <Header />
         {children}

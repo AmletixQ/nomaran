@@ -36,7 +36,7 @@ export default function ActivityPage() {
   return (
     <main
       className={cn(
-        "flex flex-col gap-6 pt-[calc(var(--header-height)/3)] pb-25 md:pb-40 2xl:mx-25 2xl:pb-70",
+        "mx-auto flex w-[95%] flex-col gap-6 pt-[calc(var(--header-height)/3)] pb-25 md:pb-40 2xl:pb-70",
         "font-helvetica",
       )}
     >

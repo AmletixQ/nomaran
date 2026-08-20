@@ -22,9 +22,9 @@ export const metadata: Metadata = pageMetadata({
 });
 
 export default function VictimsPage() {
-  const totalCount = "11 104"
+  const totalCount = "11 104";
   return (
-    <main className="flex flex-col gap-10 pt-[calc(var(--header-height)/3)] pb-25 2xl:mx-25 2xl:pb-70">
+    <main className="mx-auto flex w-[95%] flex-col gap-10 pt-[calc(var(--header-height)/3)] pb-25 2xl:pb-70">
       <section>
         <h1 className="page-title text-center uppercase">
           Три массовые категории...
@@ -51,7 +51,8 @@ export default function VictimsPage() {
               <span className="font-bold">III.</span> Третья массовая категория
               жертв политических репрессий — граждане Северо-Осетинской АССР,
               репрессированные по национальному признаку (корейцы, чеченцы,
-              ингуши, греки, немцы, турки, армяне)<span className="-ml-1">.</span>
+              ингуши, греки, немцы, турки, армяне)
+              <span className="-ml-1">.</span>
             </p>
 
             <div className="relative flex flex-col items-center gap-6 md:order-0 md:col-start-5 md:col-end-7 md:hidden">
@@ -77,7 +78,7 @@ export default function VictimsPage() {
                 ПОЛИТИЧЕСКИХ РЕПРЕССИЙ 20-30-40- НАЧАЛА 50-х гг. XX ВЕКА ПО
                 СЕВЕРО-ОСЕТИНСКОЙ АССР.
               </h2>
-              <table className="border-gray mx-2 border-collapse rounded-sm border text-[16px] md:text-[18px] font-bold">
+              <table className="border-gray mx-2 border-collapse rounded-sm border text-[16px] font-bold md:text-[18px]">
                 <tbody>
                   {STAT_TABLE_DATA.map((item, idx) => (
                     <Fragment key={idx}>

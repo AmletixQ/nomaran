@@ -51,7 +51,7 @@ export default function VictimsPage() {
               <span className="font-bold">III.</span> Третья массовая категория
               жертв политических репрессий — граждане Северо-Осетинской АССР,
               репрессированные по национальному признаку (корейцы, чеченцы,
-              ингуши, греки, немцы, турки, армяне).
+              ингуши, греки, немцы, турки, армяне)<span className="-ml-1">.</span>
             </p>
 
             <div className="relative flex flex-col items-center gap-6 md:order-0 md:col-start-5 md:col-end-7 md:hidden">

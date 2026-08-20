@@ -19,7 +19,7 @@ export default function Header() {
     <header
       className={cn(
         "relative z-10 flex h-(--header-height) w-full items-start justify-between",
-        "box-border pt-3 lg:pt-5 2xl:pt-10",
+        "box-border pt-3 mb-2 lg:pt-5 2xl:pt-10",
         isHeroPage ? "text-white" : "text-black",
       )}
     >

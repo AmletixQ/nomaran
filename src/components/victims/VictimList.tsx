@@ -11,7 +11,7 @@ interface IVictimsProps {
 export default function VictimList({ victims, page, pageSize }: IVictimsProps) {
   return (
     <>
-      <div className="flex flex-col gap-7.5 md:gap-10">
+      <div className="flex flex-col gap-2.5 md:gap-5">
         <h6 className="text-[22px] font-bold">ФИО</h6>
         <ol className="flex list-none flex-col gap-5 text-[22px]">
           {victims.map((v, i) => (

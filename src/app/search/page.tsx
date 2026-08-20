@@ -71,10 +71,10 @@ export default async function SearchPage({
 
   return (
     <main className="pb-25" id="top">
-      <ScreenContainer className="flex justify-center pt-[calc(var(--header-height)/4)] md:-mt-(--header-height) md:items-center md:pt-(--header-height)">
+      <ScreenContainer className="flex h-[calc(100vh-var(--header-height))] justify-center pt-[calc(var(--header-height)/3)] md:-mt-(--header-height) md:items-center md:pt-(--header-height) lg:h-screen">
         <div className="absolute top-0 left-0 -z-20 h-full w-full bg-[url(/images/backgrounds/search-bg.webp)] bg-cover bg-center bg-no-repeat md:bg-fixed" />
 
-        <section className="black flex flex-col items-center gap-5 text-white md:max-w-[90%]">
+        <section className="black flex flex-col items-center gap-5 text-white md:max-w-[90%] ">
           <div className="flex flex-col items-center text-center">
             <h1 className="pb-2">Поиск жертв репрессий</h1>
             <p className="leading-[140%]">
@@ -88,7 +88,7 @@ export default async function SearchPage({
       </ScreenContainer>
 
       {page <= totalPages ? (
-        <section id="results" className="md:mt-20 2xl:mx-25 2xl:mt-20">
+        <section id="results" className="md:mt-10 2xl:mx-25 pt-5 md:pt-25 lg:pt-0">
           <VictimList page={page} pageSize={pageSize} victims={victims} />
           <Pagination
             filters={filters}

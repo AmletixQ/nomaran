@@ -9,5 +9,5 @@ export default function ScreenContainer({
   className,
   children,
 }: IScreenContainer) {
-  return <section className={cn("h-screen", className)}>{children}</section>;
+  return <section className={cn(className)}>{children}</section>;
 }
